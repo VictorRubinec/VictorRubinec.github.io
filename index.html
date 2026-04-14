@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Rubinec | Vitrine de Serviços Tecnológicos</title>
+    <!-- SEO e Meta -->
+    <meta name="description" content="Soluções Tecnológicas Sob Medida: Sites de Alta Performance sem mensalidade e Automação de Processos (RPA) para o seu negócio.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Font Awesome (Marcas / Redes Sociais) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+
+    <!-- Header Simples -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <i data-lucide="terminal" class="logo-icon"></i>
+                <span>Victor Rubinec.</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#vitrine">Serviços</a>
+                <a href="#cases">Casos de Sucesso</a>
+                <a href="#sobre">Sobre Mim</a>
+            </nav>
+            <a href="https://wa.me/5511975958383" class="btn btn-ghost open-whatsapp" target="_blank" rel="noopener">Falar Direto</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero fade-in">
+        <div class="container hero-content">
+            <span class="badge purple-text">Consultoria de Automação de Processos | Desenvolvimento de Sites</span>
+            <h1 class="hero-title">Soluções Tecnológicas <span class="highlight">Sob Medida</span> para o Seu Negócio.</h1>
+            <p class="hero-subtitle">De sites premium ultrarrápidos <strong>sem custos mensais</strong> a robôs (RPA) que automatizam completamente o seu trabalho manual.</p>
+            <div class="hero-actions">
+                <a href="#vitrine" class="btn btn-primary">
+                    <i data-lucide="layout-grid"></i> Explorar Vitrine de Serviços
+                </a>
+                <a href="https://wa.me/5511975958383" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i data-lucide="message-circle"></i> Falar no WhatsApp
+                </a>
+            </div>
+            <!-- Features (Diferenciais) -->
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i data-lucide="zap" class="feature-icon cyan-icon"></i> <span>Alta Performance</span>
+                </div>
+                <div class="feature-item">
+                    <i data-lucide="badge-dollar-sign" class="feature-icon green-icon"></i> <span>Custo Zero Mensal (Sites)</span>
+                </div>
+                <div class="feature-item">
+                    <i data-lucide="bot" class="feature-icon purple-icon"></i> <span>Automação 24/7</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vitrine de Serviços -->
+    <section id="vitrine" class="vitrine fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>O Que Você Precisa Resolver Hoje?</h2>
+                <p>Escolha um dos nossos departamentos da Vitrine e solicite um serviço sob medida.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card Serviço 1: Criação de Site -->
+                <article class="service-card reveal-card">
+                    <div class="card-icon purple-glow">
+                        <i data-lucide="monitor-smartphone"></i>
+                    </div>
+                    <h3>Criação de Site Premium Alta Performance</h3>
+                    <p>Sites institucionais, portfólios e landing pages desenvolvidos de forma artesanal. Absurdamente rápidos, diretos ao ponto e com <strong>Hospedagem Inclusa (Zero Mensalidades)</strong>.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> <strong>Site Base: R$ 1.200</strong> (Landing Page + Form + Google)</li>
+                        <li><i data-lucide="check"></i> <strong>Página Adicional: + R$ 150</strong></li>
+                        <li><i data-lucide="check"></i> <strong>Página Especial (Dinâmica): + R$ 400</strong></li>
+                        <li><i data-lucide="check"></i> Pagamento único, sem mensalidade atrelada</li>
+                    </ul>
+                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-sites">Solicitar Proposta de Site</button>
+                </article>
+
+                <!-- Card Serviço 2: Sistemas Web Complexos -->
+                <article class="service-card reveal-card">
+                    <div class="card-icon cyan-glow">
+                        <i data-lucide="server"></i>
+                    </div>
+                    <h3>Sistemas Web e Plataformas</h3>
+                    <p>Desenvolvemos soluções robustas para a web. De painéis administrativos a portais que necessitam de servidores dinâmicos, APIs e suporte a Bancos de Dados.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> Conexão com Banco de Dados e APIs</li>
+                        <li><i data-lucide="check"></i> Soluções Frontend e Backend (Servidor)</li>
+                        <li><i data-lucide="check"></i> Projetos escaláveis sob medida</li>
+                    </ul>
+                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-sistemas">Criar Plataforma Web</button>
+                </article>
+
+                <!-- Card Serviço 3: Automação RPA -->
+                <article class="service-card reveal-card">
+                    <div class="card-icon green-glow">
+                        <i data-lucide="cpu"></i>
+                    </div>
+                    <h3>Automação de Processos (Robôs RPA)</h3>
+                    <p>Elimine trabalhos maçantes, repetitivos e manuais da sua empresa. Desenvolvemos robôs em Python que operam sistemas, planilhas e mensagens de forma 100% autônoma.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> Projetos sob cotação (Conforme complexidade)</li>
+                        <li><i data-lucide="check"></i> Robôs de Disparo e Manuseio de Dados</li>
+                        <li><i data-lucide="check"></i> Preenchimento de Sistemas Web</li>
+                    </ul>
+                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-rpa">Solicitar Diagnóstico RPA</button>
+                </article>
+
+                <!-- Card Serviço 3: Integrações API -->
+                <article class="service-card reveal-card">
+                    <div class="card-icon cyan-glow">
+                        <i data-lucide="network"></i>
+                    </div>
+                    <h3>Integrações Inteligentes de APIs</h3>
+                    <p>Sua empresa usa dois sistemas e as informações precisam ser copiadas à mão? Nós fazemos eles se comunicarem sozinhos via APIs, conectando CRMs, ERPs e Bancos.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> Projetos sob cotação</li>
+                        <li><i data-lucide="check"></i> Conexão entre CRMs e WhatsApp</li>
+                        <li><i data-lucide="check"></i> Tratamento de Dados e Webhooks</li>
+                    </ul>
+                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-api">Desenhar Integração de Sistemas</button>
+                </article>
+
+                <!-- Card Serviço 4: Bots para Aplicativos -->
+                <article class="service-card reveal-card">
+                    <div class="card-icon purple-glow">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <h3>Bots: WhatsApp, Telegram e Discord</h3>
+                    <p>Atenda seus clientes 24 horas por dia e automatize fluxos e comunidades nos maiores aplicativos de mensagens. Crie interações e cardápios autônomos.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> Projetos sob cotação</li>
+                        <li><i data-lucide="check"></i> Integração Inteligente com IA</li>
+                    </ul>
+                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-bots">Quero um Bot de Atendimento</button>
+                </article>
+
+                <!-- Card Serviço 5: Projetos Customizáveis -->
+                <article class="service-card reveal-card">
+                    <div class="card-icon green-glow">
+                        <i data-lucide="code-2"></i>
+                    </div>
+                    <h3>Serviços Customizáveis (Tech Partner)</h3>
+                    <p><em>"Se você pode imaginar, o código pode construir. Toda ideia é possível com programação."</em><br><br>Sua necessidade não se encaixou acima? Nós resolvemos.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> Soluções em Backend e Frontend</li>
+                        <li><i data-lucide="check"></i> Desenho de Arquitetura Sob Medida</li>
+                    </ul>
+                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-custom">Apresentar Meu Desafio</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social (Cases) -->
+    <section id="cases" class="cases fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Serviços na Prática</h2>
+                <p>Veja como nossos produtos operam no mundo real.</p>
+            </div>
+
+            <div class="cases-list">
+                <!-- Case 1 -->
+                <div class="case-item">
+                    <div class="case-media">
+                        <img src="./assets/rubinec-seguros.gif" alt="Demonstração do Fluxo Automatizado da Rubinec Seguros" class="case-gif">
+                    </div>
+                    <div class="case-info">
+                        <span class="badge">Automação de Vendas</span>
+                        <h3>Captação e Resposta Automática: Rubinec Seguros</h3>
+                        <p>O cliente preenchia um formulário no site e muitas vezes os corretores perdiam o "timing" de atendimento. Construímos um fluxo que captura o lead no site Premium e, em instantes, uma cotação formatada é construída com um sistema RPA e enviada direto.</p>
+                        <div class="case-actions" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                            <a href="https://rubinecseguros.com.br/" target="_blank" rel="noopener" class="btn btn-primary-outline"><i data-lucide="external-link"></i> Visitar Site</a>
+                            <button class="btn btn-text open-modal" data-modal="modal-sites">Eu quero esse resultado <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case 2 -->
+                <!-- <div class="case-item reverse">
+                    <div class="case-media">
+                        <div class="video-placeholder rpa-placeholder">
+                            <i data-lucide="terminal-square"></i>
+                            <p>Automação em Execução</p>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <span class="badge">Robô RPA Python</span>
+                        <h3>Escalabilidade com Auto Checklist</h3>
+                        <p>Rotinas administrativas tomavam quase 4 horas diárias da equipe operacional. Desenhamos um robô (RPA) Python rodando agendado que acessa portais, avalia checklists técnicos e envia relatórios executivos para diretoria sem nenhuma intervenção humana.</p>
+                        <button class="btn btn-text open-modal" data-modal="modal-rpa">Eu quero automatizar meus relatórios <i data-lucide="arrow-right"></i></button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim Section -->
+    <section id="sobre" class="sobre fade-in">
+        <div class="container sobre-content">
+            <div class="sobre-grid">
+                <div class="sobre-imagem">
+                    <img src="./assets/profile-picture-2.png" alt="Victor Zanin Rubinec" class="profile-img">
+                </div>
+                <div class="sobre-texto">
+                    <h2>Muito prazer, sou o Victor.</h2>
+                    <h3 class="sobre-cargo">Consultor de Automação de Processos | Especialista em Python, Java & Engenharia Backend</h3>
+                    <p>Sou <strong>Bacharel em Ciência da Computação (SPTech)</strong> e minha paixão é transformar negócios locais e regras de negócios complexas em códigos eficientes. Acredito na construção tecnológica sem mensalidades abusivas e na automatização agressiva de processos.</p>
+                    <p>Meu foco é ser seu parceiro estratégico: solucionando a perda de tempo da sua equipe com inteligências autônomas (Robôs RPA) que imitam ações humanas no computador, ou construindo vitrines virtuais velozes para alavancar seu modelo de negócio.</p>
+                    
+                    <p><em>"Se você pode imaginar, o código pode construir."</em></p>
+                    
+                    <div class="sobre-redes">
+                        <a href="https://www.linkedin.com/in/victor-zanin-rubinec-8a69931a2" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i> Meu LinkedIn
+                        </a>
+                        <a href="https://github.com/VictorRubinec" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> Meu GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trajetória e Perfil Técnico Section -->
+    <section id="experiencia" class="experiencia fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trajetória Tecnológica & Skills</h2>
+                <p>Background ágil que une visão consultiva de negócios com alta capacidade de engenharia backend.</p>
+            </div>
+            
+            <div class="cv-grid">
+                <!-- Coluna 1: Experiência e Formação -->
+                <div class="cv-timeline-col">
+                    <h3 class="cv-title"><i data-lucide="briefcase"></i> Experiência Profissional</h3>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot purple-glow"></div>
+                            <h4>Consultor em Automação de Processos</h4>
+                            <h5>Join4 <span>• Abr/2025 – Atual</span></h5>
+                            <p>Ciclo de vida completo da otimização de workflow de clientes corporativos. Abordagem híbrida misturando plataformas Low-code e códigos sob medida para RPA. Utilização pesada de <strong>JavaScript</strong> para automação web (extração de DOM), <strong>Python</strong> para pipelines backend e <strong>Java</strong> escalável para operações e robôs críticos de alto volume massivo.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot green-glow"></div>
+                            <h4>Desenvolvedor RPA (Estágio)</h4>
+                            <h5>Hewlett Packard Enterprise (HPE) <span>• Abr/2024 – Mar/2025</span></h5>
+                            <p>Desenvolvimento focado em eficiência operacional e mitigação de erros operacionais. Implementação de códigos usando ambientes virtuais Python, Dockerização de aplicações e coberturas sólidas de testes unitários.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot cyan-glow"></div>
+                            <h4>Pre-Sales Techub (Estágio)</h4>
+                            <h5>Hewlett Packard Enterprise (HPE) <span>• Mar/2023 – Abr/2024</span></h5>
+                            <p>Colaboração com o braço de Vendas para arquitetar topologia de infraestrutura. Esforço vital para traduzir requisitos complexos de negócio em soluções de Hardware/Software viáveis.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="cv-title mt-lg"><i data-lucide="graduation-cap"></i> Formação Acadêmica</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot purple-glow"></div>
+                            <h4>Bacharelado em Ciência da Computação</h4>
+                            <h5>SPTech School <span>• Conclusão: Dez/2025</span></h5>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot cyan-glow"></div>
+                            <h4>Técnico em Desenvolvimento de Sistemas</h4>
+                            <h5>ETEC Jorge Street <span>• Concluído: Nov/2021</span></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Habilidades Técnicas -->
+                <div class="cv-skills-col">
+                    <h3 class="cv-title"><i data-lucide="cpu"></i> Hard Skills & Capacidades</h3>
+                    
+                    <div class="skill-category">
+                        <h4>Linguagens Mainstream</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge"><i data-lucide="code"></i> Python (Avançado)</span>
+                            <span class="tech-badge"><i data-lucide="coffee"></i> Java (Avançado)</span>
+                            <span class="tech-badge"><i data-lucide="file-json-2"></i> JavaScript / Node.js</span>
+                            <span class="tech-badge"><i data-lucide="database"></i> SQL (Supabase / MS SQL)</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Frameworks Web & Backend</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Spring Boot</span>
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">React.js / Router</span>
+                            <span class="tech-badge">JPA</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>DevOps, Cloud & Infra</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge"><i data-lucide="cloud"></i> AWS (EC2/Lambda/S3)</span>
+                            <span class="tech-badge"><i data-lucide="blocks"></i> Docker</span>
+                            <span class="tech-badge"><i data-lucide="terminal-square"></i> Linux OS (Avançado)</span>
+                            <span class="tech-badge"><i data-lucide="server"></i> Shell Script</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Inteligência Artificial & APIs</h4>
+                        <div class="tech-badges">
+                            <span class="tech-badge"><i data-lucide="brain-circuit"></i> OpenAI API</span>
+                            <span class="tech-badge"><i data-lucide="sparkles"></i> Google Gemini API</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category mt-lg">
+                        <h4>Projetos Acadêmicos Destacados</h4>
+                        <ul class="cv-project-list">
+                            <li><i data-lucide="chevron-right"></i><div><strong><a href="https://github.com/DEEP-Dynamic-Emotion-Extraction-Process" target="_blank">D.E.E.P. (IA/Visão)</a>:</strong> Plataforma fullstack que monitora e extrai micro-expressões faciais em tempo real para análises. (Flask/AWS).</div></li>
+                            <li><i data-lucide="chevron-right"></i><div><strong><a href="https://github.com/Project-Horus-G9" target="_blank">Horus (IoT)</a>:</strong> Pipelines ETL massivos em Nuvem Híbrida para otimização de matrizes solares. (Java/Python).</div></li>
+                            <li><i data-lucide="chevron-right"></i><div><strong><a href="https://github.com/Harmon-yo" target="_blank">Harmonyo</a>:</strong> Marketplace Peer-to-Peer que liga alunos e professores de música num ambiente elástico na AWS.</div></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category mt-lg">
+                        <h4>Idiomas</h4>
+                        <ul class="cv-language-list">
+                            <li><i data-lucide="languages"></i> <strong>Inglês Profissional Técnico:</strong> Escrita e documentação impecável com excelente proficiência em argumentação técnica; Capacidade validada de atuar em reuniões em idioma estrangeiro.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <i data-lucide="terminal"></i>
+                <span>Victor Rubinec</span>
+            </div>
+            <p>© 2026. Victor Zanin Rubinec </p>
+            <div class="footer-links">
+                <a href="https://github.com/VictorRubinec" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
+                <a href="https://www.linkedin.com/in/victor-zanin-rubinec-8a69931a2" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAIS DE SOLICITAÇÃO (Motor de Conversão) -->
+    <div id="modal-container" class="modal-overlay">
+        
+        <!-- MODAL: Criação de Sites -->
+        <div id="modal-sites" class="modal-content">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <i data-lucide="monitor-smartphone" class="purple-icon"></i>
+                <h2>Proposta de Site</h2>
+                <p>Sua vitrine online rápida e sem assinaturas.</p>
+            </div>
+            <!-- Substitua ACTION_KEY pela sua do formspree -->
+            <form action="https://formspree.io/f/xjgjklpo" method="POST" class="contact-form">
+                <input type="hidden" name="Tipo_Servico" value="Sites">
+                
+                <div class="form-group">
+                    <label for="site-nome">Seu Nome / Empresa</label>
+                    <input type="text" id="site-nome" name="nome" required placeholder="Digite aqui...">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="site-email">Melhor E-mail</label>
+                        <input type="email" id="site-email" name="email" required placeholder="email@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="site-whatsapp">WhatsApp (com DDD)</label>
+                        <input type="tel" id="site-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-dominio">Você já possui um domínio registrado? (ex: seusite.com.br)</label>
+                    <select id="site-dominio" name="tem_dominio">
+                        <option value="Ainda não tenho">Não, preciso de ajuda com isso</option>
+                        <option value="Já possuo domínio">Sim, já possuo o domínio</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="site-ideia">Como posso te ajudar com seu site novo?</label>
+                    <textarea id="site-ideia" name="sobre_o_projeto" rows="3" required placeholder="Ex: Quero um site para minha corretora focado em captar leads do google ads..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full submit-btn">Enviar Pedido para Avaliação</button>
+                <p class="privacy-note"><i data-lucide="shield-check"></i> Receberei seu e-mail e entrarei em contato em até 24h úteis.</p>
+            </form>
+        </div>
+
+        <!-- MODAL: Sistemas Web -->
+        <div id="modal-sistemas" class="modal-content">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <i data-lucide="server" class="cyan-icon"></i>
+                <h2>Proposta de Sistema Web</h2>
+                <p>Estruture uma plataforma dinâmica e segura.</p>
+            </div>
+            <form action="https://formspree.io/f/maqanvlp" method="POST" class="contact-form">
+                <input type="hidden" name="Tipo_Servico" value="Sistemas_Web">
+                
+                <div class="form-group">
+                    <label for="sys-nome">Seu Nome / Empresa</label>
+                    <input type="text" id="sys-nome" name="nome" required placeholder="Digite aqui...">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sys-email">Melhor E-mail</label>
+                        <input type="email" id="sys-email" name="email" required placeholder="email@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="sys-whatsapp">WhatsApp (com DDD)</label>
+                        <input type="tel" id="sys-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sys-tipo">Que tipo de sistema web você precisa?</label>
+                    <select id="sys-tipo" name="tipo_de_sistema">
+                        <option value="Painel Administrativo Interno">Painel Administrativo Interno (Estilo ERP/CRM)</option>
+                        <option value="Portal para Clientes SaaS">Portal para Clientes / Software SaaS</option>
+                        <option value="Plataforma de Relatorios">Plataforma de Relatórios e Dashboards (Analytics)</option>
+                        <option value="Ferramenta Personalizada">Ferramenta Web Totalmente Customizada</option>
+                        <option value="Ainda Nao Sei">Outro modelo / Ainda não sei definir</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sys-ideia">Qual o objetivo do sistema e quais dados vai gerenciar?</label>
+                    <textarea id="sys-ideia" name="sobre_o_projeto" rows="3" required placeholder="Ex: Preciso de um portal onde o cliente faça login para acessar os relatórios do banco de dados..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full submit-btn">Avaliar Arquitetura Web</button>
+            </form>
+        </div>
+
+        <!-- MODAL: RPA -->
+        <div id="modal-rpa" class="modal-content">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <i data-lucide="cpu" class="green-icon"></i>
+                <h2>Diagnóstico para Robôs RPA</h2>
+                <p>Descubra como delegar sistemas chatos para nossas automações.</p>
+            </div>
+            <form action="https://formspree.io/f/xlgadzoa" method="POST" class="contact-form">
+                <input type="hidden" name="Tipo_Servico" value="Automação_RPA">
+                
+                <div class="form-group">
+                    <label for="rpa-nome">Seu Nome / Empresa</label>
+                    <input type="text" id="rpa-nome" name="nome" required placeholder="Digite aqui...">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="rpa-email">Melhor E-mail</label>
+                        <input type="email" id="rpa-email" name="email" required placeholder="email@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="rpa-whatsapp">WhatsApp (com DDD)</label>
+                        <input type="tel" id="rpa-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rpa-tempo">Quanto tempo esse trabalho rouba da sua equipe (por semana)?</label>
+                    <select id="rpa-tempo" name="horas_perdidas_semana">
+                        <option value="Menos de 5h">Menos de 5h por semana</option>
+                        <option value="Entre 5h e 15h">Entre 5h e 15h por semana</option>
+                        <option value="Mais de 20h">O dia inteiro (Mais de 20h por semana)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rpa-dor">Descreva o processo repetitivo ou a rotina:</label>
+                    <textarea id="rpa-dor" name="sobre_o_projeto" rows="3" required placeholder="Ex: Baixar o relatório X, colocar no excel Y, e enviar mensagem pros clientes..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full submit-btn">Enviar Diagnóstico para Análise</button>
+            </form>
+        </div>
+
+        <!-- MODAL: Integração API -->
+        <div id="modal-api" class="modal-content">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <i data-lucide="network" class="cyan-icon"></i>
+                <h2>Projeto de Integração e API</h2>
+                <p>Faça seus sistemas conversarem.</p>
+            </div>
+            <form action="https://formspree.io/f/xyklzobo" method="POST" class="contact-form">
+                <input type="hidden" name="Tipo_Servico" value="Integracao_API">
+                
+                <div class="form-group">
+                    <label for="api-nome">Seu Nome / Empresa</label>
+                    <input type="text" id="api-nome" name="nome" required placeholder="Digite aqui...">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="api-email">E-mail</label>
+                        <input type="email" id="api-email" name="email" required placeholder="email@empresa.com">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="api-dor">Quais sistemas você quer integrar?</label>
+                    <textarea id="api-dor" name="quais_sistemas" rows="3" required placeholder="Ex: Quero que o formulário do meu site envie os dados pro Pipedrive, e se o cliente fechar, mande um WhatsApp pelo chatpro..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full submit-btn">Analisar Viabilidade Técnica</button>
+            </form>
+        </div>
+
+        <!-- MODAL: Bots -->
+        <div id="modal-bots" class="modal-content">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <i data-lucide="bot" class="purple-icon"></i>
+                <h2>Bot de Atendimento (Mensageria)</h2>
+                <p>Automatize o atendimento e os grupos da sua empresa.</p>
+            </div>
+            <form action="https://formspree.io/f/xzdyzokw" method="POST" class="contact-form">
+                <input type="hidden" name="Tipo_Servico" value="Bots_Mensageria">
+                
+                <div class="form-group">
+                    <label for="bots-nome">Seu Nome / Empresa</label>
+                    <input type="text" id="bots-nome" name="nome" required placeholder="Digite aqui...">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bots-email">E-mail</label>
+                        <input type="email" id="bots-email" name="email" required placeholder="email@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="bots-whatsapp">WhatsApp (com DDD)</label>
+                        <input type="tel" id="bots-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bots-plataforma">Qual aplicativo você foca hoje?</label>
+                    <select id="bots-plataforma" name="plataforma_bot">
+                        <option value="WhatsApp">Principalmente WhatsApp</option>
+                        <option value="Telegram">Principalmente Telegram</option>
+                        <option value="Discord">Discord (Comunidades/Grupos)</option>
+                        <option value="Multiplus">Mais de um / Outros</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bots-dor">O que esse bot precisa fazer?</label>
+                    <textarea id="bots-dor" name="sobre_o_projeto" rows="3" required placeholder="Ex: Preciso que o cliente peça o cardápio e o bot mande o PDF no WhatsApp..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full submit-btn">Receber Orçamento</button>
+            </form>
+        </div>
+
+        <!-- MODAL: Custom -->
+        <div id="modal-custom" class="modal-content">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <i data-lucide="code-2" class="green-icon"></i>
+                <h2>Projeto Exclusivo (Tech Partner)</h2>
+                <p>Toda ideia é possível. Me conte qual o seu desafio.</p>
+            </div>
+            <form action="https://formspree.io/f/xpqkwbka" method="POST" class="contact-form">
+                <input type="hidden" name="Tipo_Servico" value="Projeto_Customizavel">
+                
+                <div class="form-group">
+                    <label for="custom-nome">Seu Nome / Empresa</label>
+                    <input type="text" id="custom-nome" name="nome" required placeholder="Digite aqui...">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="custom-email">E-mail</label>
+                        <input type="email" id="custom-email" name="email" required placeholder="email@empresa.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="custom-whatsapp">WhatsApp (com DDD)</label>
+                        <input type="tel" id="custom-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="custom-dor">Descreva sua ideia e onde quer chegar:</label>
+                    <textarea id="custom-dor" name="sobre_o_projeto" rows="4" required placeholder="Fique à vontade para escrever detalhadamente a sua visão e a lógica do seu projeto..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full submit-btn">Enviar Requisição de Projeto</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Scripts da Vitrine -->
+    <script src="./js/main.js"></script>
+    <script src="./js/animations.js"></script>
+    <script src="./js/utils/form.js"></script>
+
+    <!-- Inicializa Icones da base Lucide -->
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
