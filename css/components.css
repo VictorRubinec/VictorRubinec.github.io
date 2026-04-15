@@ -111,6 +111,34 @@
     margin-bottom: var(--spacing-sm);
 }
 
+/* --- Stack Badges (Cases) --- */
+.case-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.stack-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    background-color: rgba(0, 212, 255, 0.07);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--secondary-cyan);
+    letter-spacing: 0.3px;
+}
+
+.stack-badge svg {
+    width: 13px;
+    height: 13px;
+}
+
+
 /* --- Cards da Vitrine --- */
 .service-card {
     background-color: var(--bg-surface);
