@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post LinkedIn - Victor Rubinec</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Estilos globais do portfólio -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+
+    <style>
+        /* Estilos específicos para o Print (Formato Quadrado 1080x1080 para Feed do LinkedIn) */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a1a1a; /* Fundo escuro para destacar o print */
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .linkedin-post-wrapper {
+            width: 1080px;
+            height: 1080px;
+            background-color: var(--bg-color);
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Gradientes de fundo para um visual premium */
+        .linkedin-post-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .linkedin-post-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .post-content {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .post-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .post-header h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-header p {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Reutilizando a malha de serviços, mas ajustada para o post */
+        .post-services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-perks li {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon i {
+            width: 32px;
+            height: 32px;
+        }
+
+        .post-footer {
+            margin-top: 3rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .post-footer .badge {
+            background: rgba(168, 85, 247, 0.1);
+            color: var(--purple-accent);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .post-footer .website {
+            color: var(--cyan-accent);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container quadrado 1080x1080 ideal para print no LinkedIn -->
+    <div class="linkedin-post-wrapper">
+        <div class="post-content">
+            
+            <header class="post-header">
+                <h1>Tecnologia que trabalha<br>pelo <span class="highlight">seu negócio.</span></h1>
+                <p>Soluções práticas para empresas que querem vender mais, atender melhor e focar no que realmente importa: crescer.</p>
+            </header>
+
+            <div class="post-services">
+                
+                <!-- Card 1 -->
+                <article class="service-card">
+                    <div class="card-icon purple-glow">
+                        <i data-lucide="monitor-smartphone"></i>
+                    </div>
+                    <h3>Criação de Sites</h3>
+                    <p>Sua empresa de portas abertas 24h. Sites rápidos que atraem mais clientes.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> <div><strong>A partir de R$ 1.200</strong></div></li>
+                        <li><i data-lucide="check"></i> <div>Site base com <strong>3 páginas</strong></div></li>
+                        <li><i data-lucide="check"></i> <div><strong>Sem mensalidades</strong></div></li>
+                    </ul>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="service-card">
+                    <div class="card-icon green-glow">
+                        <i data-lucide="cpu"></i>
+                    </div>
+                    <h3>Automação de Tarefas</h3>
+                    <p>Chega de trabalhos manuais. Sistemas que fazem o trabalho chato por você.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> <div>Roda <strong>24 horas</strong> por dia</div></li>
+                        <li><i data-lucide="check"></i> <div>Projetos sob medida</div></li>
+                        <li><i data-lucide="check"></i> <div>Elimina erros manuais</div></li>
+                    </ul>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="service-card">
+                    <div class="card-icon cyan-glow">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <h3>Atendimento no WhatsApp</h3>
+                    <p>Bots inteligentes que respondem e agendam clientes automaticamente.</p>
+                    <ul class="service-perks">
+                        <li><i data-lucide="check"></i> <div>Atendimento sem parar</div></li>
+                        <li><i data-lucide="check"></i> <div>Com Inteligência Artificial</div></li>
+                        <li><i data-lucide="check"></i> <div>Não perca mais vendas</div></li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <footer class="post-footer" style="margin: 0; padding: 0; align-items: center; justify-content: center;">
+                <div class="badge">
+                    <i data-lucide="terminal"></i> Victor Rubinec
+                    <span>•</span>
+                    <span class="website">victorrubinec.github.io/</span>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Inicializa Icones da base Lucide -->
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>
