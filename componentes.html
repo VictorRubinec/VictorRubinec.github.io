@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Componentes | Victor Rubinec Design System</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+
+    <style>
+        .catalog-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 6rem;
+        }
+
+        .catalog-header {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .catalog-tag {
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-purple);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .catalog-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .catalog-header p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0;
+        }
+
+        .component-section {
+            margin-bottom: 4.5rem;
+        }
+
+        .component-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .component-section-header h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .component-section-header span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Grade de 4 ou 3 Variações */
+        .variants-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .variants-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .variants-grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .variants-grid-3, .variants-grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .variant-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .variant-label {
+            font-size: 0.78rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .variant-badge {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background: var(--bg-surface-subtle);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .variant-badge.purple {
+            background: var(--accent-purple-bg);
+            color: var(--accent-purple);
+            border-color: var(--accent-purple-border);
+        }
+
+        /* Swatches de Cores */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .swatch-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .swatch-color {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .swatch-info h4 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .swatch-info span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Visualização de Botões */
+        .buttons-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1.75rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+        }
+
+        .code-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.73rem;
+            background: var(--bg-surface-subtle);
+            border: 1px solid var(--border-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+    </style>
+
+    <!-- Prevenção de FOUC -->
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div class="catalog-container">
+        
+        <!-- Header do Catálogo -->
+        <header class="catalog-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;">
+            <div>
+                <div class="catalog-tag">LIVING STYLEGUIDE // IDENTIDADE COM ACENTO ROXO</div>
+                <h1>Catálogo de Componentes & Variações</h1>
+                <p>
+                    Sistema de design com o <strong>Roxo Violeta Nobre</strong> como cor secundária de personalidade, harmonizado com preto carvão, neutros claros e o verde funcional do WhatsApp.
+                </p>
+            </div>
+            <button id="theme-toggle-btn" class="btn-theme-toggle" aria-label="Alternar modo noturno" title="Alternar modo noturno" style="flex-shrink: 0; width: 44px; height: 44px;">
+                <i data-lucide="moon"></i>
+            </button>
+        </header>
+
+        <!-- SEÇÃO 0: PALETA DE CORES (COM ACENTO ROXO) -->
+        <section class="component-section">
+            <div class="component-section-header">
+                <h2>Identidade Cromática (Base + Acento Roxo)</h2>
+                <span>VARIÁVEIS DE SISTEMA</span>
+            </div>
+
+            <div class="palette-grid">
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background: var(--accent-purple);"></div>
+                    <div class="swatch-info">
+                        <h4>Roxo Nobre (Secundária)</h4>
+                        <span>var(--accent-purple)</span>
+                    </div>
+                </div>
+
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background: var(--primary-action);"></div>
+                    <div class="swatch-info">
+                        <h4>Ação Primária</h4>
+                        <span>var(--primary-action)</span>
+                    </div>
+                </div>
+
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background: var(--accent-green);"></div>
+                    <div class="swatch-info">
+                        <h4>Verde WhatsApp</h4>
+                        <span>var(--accent-green)</span>
+                    </div>
+                </div>
+
+                <div class="swatch-card">
+                    <div class="swatch-color" style="background: var(--bg-surface);"></div>
+                    <div class="swatch-info">
+                        <h4>Superfície Card</h4>
+                        <span>var(--bg-surface)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 1: CARDS DE SERVIÇOS & OFERTAS (4 VERSÕES) -->
+        <section class="component-section">
+            <div class="component-section-header">
+                <h2>1. Cards de Serviços e Soluções</h2>
+                <span>4 VARIAÇÕES PARA ESCOLHA</span>
+            </div>
+
+            <div class="variants-grid-4">
+                
+                <!-- Versão 1: Editorial Monocromática -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>1. Editorial Puro</span>
+                        <span class="variant-badge">Neutro</span>
+                    </div>
+                    <article class="service-card card-variant-editorial">
+                        <div>
+                            <div class="card-icon" style="border-radius: 4px;">
+                                <i data-lucide="monitor-smartphone"></i>
+                            </div>
+                            <h3 style="font-size: 1.1rem;">Ativação Rápida</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Estrutura enxuta focada em velocidade e presença limpa no celular.</p>
+                            <ul class="service-perks" style="font-size: 0.82rem;">
+                                <li><i data-lucide="check" style="color: var(--text-main);"></i> <div>A partir de <strong>R$ 650</strong></div></li>
+                                <li><i data-lucide="check" style="color: var(--text-main);"></i> <div>Entrega em <strong>48h</strong></div></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary btn-full" style="height: 40px; font-size: 0.82rem;">Contratar</button>
+                    </article>
+                    <span class="code-pill">.card-variant-editorial</span>
+                </div>
+
+                <!-- Versão 2: Acento Roxo Nobre (RECOMENDADA) -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>2. Acento Roxo</span>
+                        <span class="variant-badge purple">Destaque</span>
+                    </div>
+                    <article class="service-card card-variant-purple">
+                        <div>
+                            <div class="card-icon" style="background: var(--accent-purple-bg); color: var(--accent-purple); border-color: var(--accent-purple-border);">
+                                <i data-lucide="sparkles"></i>
+                            </div>
+                            <h3 style="font-size: 1.1rem; color: var(--text-main);">Ativação Rápida</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Estrutura com elegância visual, acabamento premium e alta conversão.</p>
+                            <ul class="service-perks" style="font-size: 0.82rem;">
+                                <li><i data-lucide="check" style="color: var(--accent-purple);"></i> <div>A partir de <strong>R$ 650</strong></div></li>
+                                <li><i data-lucide="check" style="color: var(--accent-purple);"></i> <div>Entrega em <strong>48h</strong></div></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-purple btn-full" style="height: 40px; font-size: 0.82rem;">Contratar</button>
+                    </article>
+                    <span class="code-pill">.card-variant-purple</span>
+                </div>
+
+                <!-- Versão 3: Acento Verde Funcional -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>3. Acento Verde</span>
+                        <span class="variant-badge">WhatsApp</span>
+                    </div>
+                    <article class="service-card card-variant-accent">
+                        <div>
+                            <div class="card-icon" style="background: var(--accent-green-bg); color: var(--accent-green); border-color: var(--accent-green-border);">
+                                <i data-lucide="bot"></i>
+                            </div>
+                            <h3 style="font-size: 1.1rem;">Atendimento 24h</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Assistente no WhatsApp para responder dúvidas e agendar clientes.</p>
+                            <ul class="service-perks" style="font-size: 0.82rem;">
+                                <li><i data-lucide="check" style="color: var(--accent-green);"></i> <div>A partir de <strong>R$ 1.250</strong></div></li>
+                                <li><i data-lucide="check" style="color: var(--accent-green);"></i> <div>Entrega em <strong>72h</strong></div></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-whatsapp btn-full" style="height: 40px; font-size: 0.82rem;">Contratar</button>
+                    </article>
+                    <span class="code-pill">.card-variant-accent</span>
+                </div>
+
+                <!-- Versão 4: Neo-Brutalismo Suave -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>4. Neo-Brutalista</span>
+                        <span class="variant-badge">Offset</span>
+                    </div>
+                    <article class="service-card card-variant-brutalist">
+                        <div>
+                            <div class="card-icon" style="background: var(--bg-surface); border: 1.5px solid var(--text-main); color: var(--text-main);">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <h3 style="font-size: 1.1rem;">Automação</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Elimine horas manuais repetitivas com rotinas programadas.</p>
+                            <ul class="service-perks" style="font-size: 0.82rem;">
+                                <li><i data-lucide="check" style="color: var(--text-main);"></i> <div><strong>Sob Medida</strong></div></li>
+                                <li><i data-lucide="check" style="color: var(--text-main);"></i> <div>Sem compromisso</div></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary btn-full" style="border: 1.5px solid var(--text-main); color: var(--text-main); font-weight: 600; height: 40px; font-size: 0.82rem;">Diagnóstico</button>
+                    </article>
+                    <span class="code-pill">.card-variant-brutalist</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: BOTÕES DE AÇÃO (COM ROXO NOBRE) -->
+        <section class="component-section">
+            <div class="component-section-header">
+                <h2>2. Botões de Chamada para Ação</h2>
+                <span>CORES & COMPORTAMENTOS</span>
+            </div>
+
+            <div class="variants-grid-4">
+                
+                <!-- Botão 1: Roxo Nobre -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Roxo Nobre</span>
+                        <span class="variant-badge purple">Identidade</span>
+                    </div>
+                    <div class="buttons-showcase">
+                        <button class="btn btn-purple btn-full">
+                            <i data-lucide="sparkles"></i> Solicitar Proposta
+                        </button>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0; text-align: center;">Ação nobre de alta identidade.</p>
+                    </div>
+                    <span class="code-pill">.btn-purple</span>
+                </div>
+
+                <!-- Botão 2: Preto Carvão Sólido -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Preto Carvão</span>
+                        <span class="variant-badge">Sóbrio</span>
+                    </div>
+                    <div class="buttons-showcase">
+                        <button class="btn btn-primary btn-full">
+                            <i data-lucide="arrow-right"></i> Ver Serviços
+                        </button>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0; text-align: center;">Contraste primário neutro.</p>
+                    </div>
+                    <span class="code-pill">.btn-primary</span>
+                </div>
+
+                <!-- Botão 3: Verde WhatsApp -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Verde WhatsApp</span>
+                        <span class="variant-badge">Conversão</span>
+                    </div>
+                    <div class="buttons-showcase">
+                        <a href="https://wa.me/5511975958383" target="_blank" class="btn btn-whatsapp btn-full">
+                            <i data-lucide="message-circle"></i> Falar no WhatsApp
+                        </a>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0; text-align: center;">Reconhecimento do app.</p>
+                    </div>
+                    <span class="code-pill">.btn-whatsapp</span>
+                </div>
+
+                <!-- Botão 4: Outline Editorial -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Outline Neutro</span>
+                        <span class="variant-badge">Secundário</span>
+                    </div>
+                    <div class="buttons-showcase">
+                        <button class="btn btn-secondary btn-full">
+                            <i data-lucide="file-text"></i> Ver Detalhes
+                        </button>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0; text-align: center;">Ação de suporte discreta.</p>
+                    </div>
+                    <span class="code-pill">.btn-secondary</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: BADGES & INDICADORES (COM ROXO) -->
+        <section class="component-section">
+            <div class="component-section-header">
+                <h2>3. Badges e Indicadores de Status</h2>
+                <span>OPÇÕES DE ETIQUETAS</span>
+            </div>
+
+            <div class="variants-grid-4">
+                
+                <!-- Badge Roxo Nobre -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Badge Roxo</span>
+                        <span class="variant-badge purple">Novo</span>
+                    </div>
+                    <div class="buttons-showcase" style="align-items: center; justify-content: center; min-height: 110px;">
+                        <span class="badge badge-purple" style="gap: 6px;">
+                            <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent-purple);"></span>
+                            Solução Premium
+                        </span>
+                        <span class="badge badge-purple">Consultoria Técnica</span>
+                    </div>
+                    <span class="code-pill">.badge-purple</span>
+                </div>
+
+                <!-- Badge Verde -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Badge Verde</span>
+                        <span class="variant-badge">Operacional</span>
+                    </div>
+                    <div class="buttons-showcase" style="align-items: center; justify-content: center; min-height: 110px;">
+                        <span class="badge badge-green" style="gap: 6px;">
+                            <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent-green);"></span>
+                            Em Operação
+                        </span>
+                        <span class="badge badge-green">4h Poupadas/Dia</span>
+                    </div>
+                    <span class="code-pill">.badge-green</span>
+                </div>
+
+                <!-- Badge Azul -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Badge Azul</span>
+                        <span class="variant-badge">Informativo</span>
+                    </div>
+                    <div class="buttons-showcase" style="align-items: center; justify-content: center; min-height: 110px;">
+                        <span class="badge badge-blue">Processos & RPA</span>
+                        <span class="badge badge-blue">Entrega 48h</span>
+                    </div>
+                    <span class="code-pill">.badge-blue</span>
+                </div>
+
+                <!-- Badge Neutro -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Badge Neutro</span>
+                        <span class="variant-badge">Discreto</span>
+                    </div>
+                    <div class="buttons-showcase" style="align-items: center; justify-content: center; min-height: 110px;">
+                        <span class="badge">Captação & Vendas</span>
+                        <span class="badge">Nota Fiscal PJ</span>
+                    </div>
+                    <span class="code-pill">.badge</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: BANNERS E CALLOUTS COM ACENTO ROXO -->
+        <section class="component-section">
+            <div class="component-section-header">
+                <h2>4. Banners de Destaque e Chamadas de Impacto</h2>
+                <span>ESTILOS DE CALLOUT</span>
+            </div>
+
+            <div class="variants-grid-3">
+                
+                <!-- Callout 1: Roxo Sofisticado -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Callout Roxo Nobre</span>
+                        <span class="variant-badge purple">Destaque</span>
+                    </div>
+                    <div style="background: var(--accent-purple-bg); border: 1px solid var(--accent-purple-border); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px;">
+                        <div>
+                            <span class="badge badge-purple" style="margin-bottom: 0.75rem;">Atendimento Personalizado</span>
+                            <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem;">Estruturas Sob Medida</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Projetos com rigor corporativo e entrega expressa.</p>
+                        </div>
+                        <button class="btn btn-purple" style="height: 38px; font-size: 0.82rem; margin-top: 1rem;">Solicitar Diagnóstico</button>
+                    </div>
+                </div>
+
+                <!-- Callout 2: Editorial Neutro -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Callout Neutro</span>
+                        <span class="variant-badge">Sóbrio</span>
+                    </div>
+                    <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 200px;">
+                        <div>
+                            <span class="badge" style="margin-bottom: 0.75rem;">Garantia de Qualidade</span>
+                            <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem;">Sem Mensalidades</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Você paga pela criação e a estrutura é 100% sua.</p>
+                        </div>
+                        <button class="btn btn-secondary" style="height: 38px; font-size: 0.82rem; margin-top: 1rem;">Saber Mais</button>
+                    </div>
+                </div>
+
+                <!-- Callout 3: Neo-Brutalista -->
+                <div class="variant-column">
+                    <div class="variant-label">
+                        <span>Callout Brutalista</span>
+                        <span class="variant-badge">Offset</span>
+                    </div>
+                    <div style="background: var(--bg-surface); border: 1.5px solid var(--text-main); border-radius: 6px; padding: 1.5rem; box-shadow: 3px 3px 0px var(--border-strong); display: flex; flex-direction: column; justify-content: space-between; min-height: 200px;">
+                        <div>
+                            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700; color: var(--accent-purple);">[SEGURANÇA JURÍDICA]</span>
+                            <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin: 0.5rem 0 0.25rem 0;">Emissão de Nota Fiscal</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Contrato PJ formal para empresas e negócios.</p>
+                        </div>
+                        <button class="btn btn-primary" style="height: 38px; font-size: 0.82rem; margin-top: 1rem;">Falar Comigo</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Navegação de Retorno -->
+        <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <a href="./index.html" class="btn btn-secondary" style="height: 40px; font-size: 0.85rem;">
+                <i data-lucide="arrow-left"></i> Voltar ao Portfólio Principal
+            </a>
+            <span style="font-size: 0.82rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace;">
+                Design System • Victor Rubinec (Violet Edition)
+            </span>
+        </footer>
+
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const htmlElement = document.documentElement;
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.setAttribute('data-theme', 'dark');
+                if (themeToggleBtn) {
+                    themeToggleBtn.innerHTML = '<i data-lucide="sun"></i>';
+                }
+            } else {
+                htmlElement.removeAttribute('data-theme');
+                if (themeToggleBtn) {
+                    themeToggleBtn.innerHTML = '<i data-lucide="moon"></i>';
+                }
+            }
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            applyTheme('dark');
+        }
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                localStorage.setItem('theme', nextTheme);
+                applyTheme(nextTheme);
+            });
+        }
+    </script>
+</body>
+</html>

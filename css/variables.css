@@ -1,43 +1,89 @@
-/* variables.css */
+/* variables.css — Design Editorial Minimalista & Neutro (Light + Dark) */
 :root {
-    /* Paleta de Cores (Dark Mode Premium) */
-    --bg-primary: #0B0F19; /* Azul noturno muito profundo */
-    --bg-surface: #1A2235; /* Superfícies/Cards */
-    --bg-surface-hover: #222c45;
+    /* ================= LIGHT MODE (Padrão Diurno) ================= */
+    --bg-primary: #FBFBFA;         /* Fundo marfim / papel quente */
+    --bg-surface: #FFFFFF;         /* Superfícies e cartões brancos */
+    --bg-surface-subtle: #F4F4F1;  /* Fundos neutros secundários */
+    --bg-surface-hover: #EFEFEA;   /* Estados de hover */
     
-    --text-main: #FFFFFF;
-    --text-muted: #A0ABC0; /* Cinza azulado */
+    --text-main: #18181B;          /* Preto carvão profundo */
+    --text-secondary: #52525B;     /* Cinza médio de leitura */
+    --text-muted: #71717A;         /* Cinza suave para metadados */
 
-    /* Cores de Destaque */
-    --primary-purple: #A855F7; /* Roxo suave e moderno - Cor primária */
-    --primary-purple-glow: rgba(168, 85, 247, 0.2);
+    /* Acentos Funcionais */
+    --primary-action: #18181B;     /* Ação principal */
+    --primary-action-text: #FFFFFF;
+    --primary-action-hover: #27272A;
+    
+    --accent-green: #15803D;       /* Verde WhatsApp sóbrio */
+    --accent-green-bg: #F0FDF4;
+    --accent-green-border: #BBF7D0;
 
-    --accent-green: #00FF66; /* Verde Neon - Conversão/RPA */
-    --accent-green-glow: rgba(0, 255, 102, 0.2);
+    --accent-blue: #0284C7;        /* Azul informativo suave */
+    --accent-blue-bg: #F0F9FF;
 
-    --secondary-cyan: #00F0FF; /* Azul Elétrico - Relegado a secundário */
-    --secondary-cyan-glow: rgba(0, 240, 255, 0.2);
+    /* Acento Secundário Nobre: Roxo / Violeta Sofisticado */
+    --accent-purple: #7C3AED;
+    --accent-purple-hover: #6D28D9;
+    --accent-purple-bg: #F5F3FF;
+    --accent-purple-border: #DDD6FE;
 
-    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color: #E4E4E7;       /* Bordas ultrafinas de 1px */
+    --border-strong: #D4D4D8;
+    --nav-bg: rgba(251, 251, 250, 0.92);
+    --modal-bg: #FFFFFF;
 
     /* Tipografia */
-    --font-primary: 'Inter', sans-serif;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
     /* Espaçamentos e Layout */
-    --container-width: 1200px;
+    --container-width: 1080px;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 4rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4.5rem;
 
     /* Transições */
-    --transition-fast: 0.2s ease;
-    --transition-base: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
 
-    /* Border Radius */
+    /* Geometria */
     --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 16px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+}
+
+/* ================= DARK MODE (Modo Noturno Minimalista) ================= */
+[data-theme="dark"] {
+    --bg-primary: #090D14;         /* Grafite noturno fosco */
+    --bg-surface: #0E1420;         /* Superfícies dos cards */
+    --bg-surface-subtle: #141B2B;  /* Seções alternadas e inputs */
+    --bg-surface-hover: #1A2336;
+    
+    --text-main: #F8FAFC;          /* Branco nítido */
+    --text-secondary: #94A3B8;     /* Cinza suave de leitura */
+    --text-muted: #64748B;         /* Cinza discreto */
+
+    --primary-action: #F8FAFC;     /* Botão branco nítido no escuro */
+    --primary-action-text: #090D14;/* Texto contrastante */
+    --primary-action-hover: #E2E8F0;
+    
+    --accent-green: #22C55E;       /* Verde WhatsApp legível no escuro */
+    --accent-green-bg: rgba(34, 197, 94, 0.1);
+    --accent-green-border: rgba(34, 197, 94, 0.25);
+
+    --accent-blue: #38BDF8;
+    --accent-blue-bg: rgba(56, 189, 248, 0.1);
+
+    /* Acento Secundário Nobre: Roxo / Violeta no Dark */
+    --accent-purple: #A78BFA;
+    --accent-purple-hover: #C4B5FD;
+    --accent-purple-bg: rgba(167, 139, 250, 0.12);
+    --accent-purple-border: rgba(167, 139, 250, 0.28);
+
+    --border-color: rgba(255, 255, 255, 0.08); /* Bordas discretas */
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --nav-bg: rgba(9, 13, 20, 0.92);
+    --modal-bg: #0E1420;
 }

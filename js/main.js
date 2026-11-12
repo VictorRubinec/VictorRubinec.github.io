@@ -1,82 +1,67 @@
 // js/main.js
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Lógica de Modais ---
-    const modalOverlay = document.getElementById('modal-container');
-    const openModalButtons = document.querySelectorAll('.open-modal');
-    const closeButtons = document.querySelectorAll('.close-modal');
-    const modalContents = document.querySelectorAll('.modal-content');
+    // --- Alternância de Tema Noturno (Dark / Light) ---
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const htmlElement = document.documentElement;
 
-    function getScrollbarWidth() {
-        return window.innerWidth - document.documentElement.clientWidth;
-    }
-
-    function openModal(modalId) {
-        // Esconde todos os modais primeiro
-        modalContents.forEach(modal => modal.classList.remove('active'));
-        
-        // Se existir o modal alvo, mostra
-        const targetModal = document.getElementById(modalId);
-        if (targetModal) {
-            const scrollbarWidth = getScrollbarWidth();
-            
-            targetModal.classList.add('active');
-            modalOverlay.classList.add('active');
-            
-            // Evita scroll do fundo e previne pulo (shift) compensando a barra de rolagem
-            document.body.style.overflow = 'hidden';
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
-            
-            // Compensa a navbar também para não pular
-            const navbar = document.querySelector('.navbar');
-            if (navbar) {
-                navbar.style.paddingRight = `${scrollbarWidth}px`;
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            htmlElement.setAttribute('data-theme', 'dark');
+            if (themeToggleBtn) {
+                themeToggleBtn.innerHTML = '<i data-lucide="sun"></i>';
+                themeToggleBtn.setAttribute('aria-label', 'Ativar modo diurno');
+                themeToggleBtn.setAttribute('title', 'Ativar modo diurno');
             }
+        } else {
+            htmlElement.removeAttribute('data-theme');
+            if (themeToggleBtn) {
+                themeToggleBtn.innerHTML = '<i data-lucide="moon"></i>';
+                themeToggleBtn.setAttribute('aria-label', 'Ativar modo noturno');
+                themeToggleBtn.setAttribute('title', 'Ativar modo noturno');
+            }
+        }
+        if (window.lucide) {
+            window.lucide.createIcons();
         }
     }
 
-    function closeModal() {
-        modalOverlay.classList.remove('active');
-        // Espera a animação de fade pra esconder
-        setTimeout(() => {
-            modalContents.forEach(modal => modal.classList.remove('active'));
-            // Volta o scroll e remove a compensação de padding
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-            
-            const navbar = document.querySelector('.navbar');
-            if (navbar) {
-                navbar.style.paddingRight = '';
-            }
-        }, 300);
+    // Carregar tema salvo ou preferência do sistema
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        applyTheme('dark');
     }
 
-    // Eventos de clique para abrir
-    openModalButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            const modalId = button.getAttribute('data-modal');
-            openModal(modalId);
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', nextTheme);
+            applyTheme(nextTheme);
+        });
+    }
+
+    // Rolagem suave para links de âncora internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
-    // Eventos de clique para fechar
-    closeButtons.forEach(button => {
-        button.addEventListener('click', closeModal);
-    });
-
-    // Fechar ao clicar fora do modal
-    modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) {
-            closeModal();
-        }
-    });
-
-    // Fechar com tecla ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-            closeModal();
-        }
-    });
+    // --- Suporte a ícones e interações gerais ---
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
 
 });

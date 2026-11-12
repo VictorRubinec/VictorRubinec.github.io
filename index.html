@@ -3,22 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Rubinec | Sites, Automações e Atendimento no WhatsApp para Pequenas Empresas</title>
-    <!-- SEO e Meta -->
-    <meta name="description" content="Ajudo comércios, clínicas e empresas locais a venderem mais e ganharem tempo com sites profissionais, automação de tarefas e bots de atendimento no WhatsApp.">
+    <title>Victor Rubinec | Sites Rápidos, Automações e Atendimento Comercial</title>
     
+    <!-- SEO e Meta Primária -->
+    <meta name="description" content="Desenvolvimento de páginas ultra-rápidas, automação de rotinas operacionais e assistentes de atendimento 24h no WhatsApp para empresas. Sem mensalidades forçadas e com entrega ágil.">
+    <meta name="author" content="Victor Zanin Rubinec">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Victor Rubinec | Sites Rápidos, Automações e Atendimento Comercial">
+    <meta property="og:description" content="Páginas que abrem em menos de 1 segundo, assistentes inteligentes no WhatsApp e automação de rotinas para empresas com entrega ágil.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="./assets/profile-picture-2.png">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Victor Rubinec | Sites Rápidos, Automações e Atendimento Comercial">
+    <meta name="twitter:description" content="Páginas comerciais de alta velocidade, automação de rotinas e robôs no WhatsApp para comércios e empresas.">
+    <meta name="twitter:image" content="./assets/profile-picture-2.png">
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Three.js (Motor 3D Paramétrico Minimalista) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Font Awesome (Marcas / Redes Sociais) -->
+    <!-- Font Awesome (Ícones Sociais) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Estilos -->
+    <!-- Estilos Estruturais e Temas -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/variables.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -26,205 +45,531 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+    <!-- Prevenção de FOUC de Tema Noturno -->
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 <body>
 
-    <!-- Header Simples -->
+    <!-- Header / Navbar Minimalista -->
     <header class="navbar">
-        <div class="container nav-content">
+        <div class="container nav-content nav-container">
             <div class="logo">
                 <i data-lucide="terminal" class="logo-icon"></i>
                 <span>Victor Rubinec.</span>
             </div>
             <nav class="nav-links">
                 <a href="#solucoes">Soluções</a>
-                <a href="#cases">Casos de Sucesso</a>
-                <a href="#sobre">Sobre Mim</a>
+                <a href="#cases">Projetos</a>
+                <a href="#knowledge-os">Knowledge OS</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#experiencia">Trajetória</a>
+                <a href="#faq">Dúvidas</a>
+                <a href="#contato">Contato</a>
             </nav>
-            <a href="https://wa.me/5511975958383" class="btn btn-ghost open-whatsapp" target="_blank" rel="noopener">Falar Direto</a>
+            <div class="nav-actions">
+                <div class="status-badge" title="Disponível para novos projetos e entregas rápidas">
+                    <span class="status-dot"></span>
+                    <span>Disponível</span>
+                </div>
+                <button id="theme-toggle-btn" class="btn-theme-toggle" aria-label="Alternar modo noturno" title="Alternar modo noturno">
+                    <i data-lucide="moon"></i>
+                </button>
+                <a href="https://wa.me/5511975958383" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section com Design Split Moderno -->
     <section id="hero" class="hero fade-in">
-        <div class="container hero-content">
-            <h1 class="hero-title">Tecnologia que trabalha por você: Sites, Automações e <span class="highlight">Atendimento Inteligente.</span></h1>
-            <p class="hero-subtitle">Ajudo diversas empresas a venderem mais e ganharem tempo. Deixe o trabalho manual com a tecnologia e foque no que realmente importa: <strong>crescer o seu negócio.</strong></p>
-            <div class="hero-actions">
-                <a href="https://wa.me/5511975958383" class="btn btn-primary" target="_blank" rel="noopener">
-                    <i data-lucide="message-circle"></i> Falar no WhatsApp
-                </a>
-                <a href="#solucoes" class="btn btn-secondary">
-                    <i data-lucide="layout-grid"></i> Ver Meus Serviços
-                </a>
+        <div class="container hero-grid">
+            
+            <!-- Coluna 1: Texto & Ação Comercial -->
+            <div class="hero-content">
+                <div class="badge badge-purple hero-badge">
+                    <i data-lucide="zap"></i> Páginas Ultra-rápidas & Automação Comercial
+                </div>
+                <h1 class="hero-title">Engenharia de Software, Interfaces Rápidas e <span class="highlight">Automação Comercial.</span></h1>
+                <p class="hero-subtitle">Ajudo empresas e negócios a aumentarem suas vendas e economizarem tempo com páginas que abrem instantaneamente e automações no WhatsApp que atendem sem espera.</p>
+                
+                <div class="hero-actions">
+                    <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20tenho%20interesse%20em%20uma%20Ativa%C3%A7%C3%A3o%20R%C3%A1pida%20em%2048h%20para%20minha%20empresa." class="btn btn-whatsapp" target="_blank" rel="noopener">
+                        <i data-lucide="message-circle"></i> Solicitar Ativação em 48h
+                    </a>
+                    <a href="#cases" class="btn btn-secondary">
+                        <i data-lucide="arrow-down"></i> Ver Projetos
+                    </a>
+                </div>
+
+                <!-- Diferenciais de Serviço Reais -->
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i data-lucide="zap"></i> <span><strong>&lt; 1s</strong> Abertura Instantânea</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="clock"></i> <span><strong>48h</strong> Entrega Expressa</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="shield-check"></i> <span><strong>100%</strong> Sem Mensalidades</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="bot"></i> <span><strong>24h</strong> Atendimento no WhatsApp</span>
+                    </div>
+                </div>
             </div>
-            <!-- Features (Diferenciais) -->
-            <div class="hero-features">
-                <div class="feature-item">
-                    <i data-lucide="zap" class="feature-icon cyan-icon"></i> <span>Sites Rápidos e Modernos</span>
+
+            <!-- Coluna 2: Esfera 3D Dedicada, Limpa e Interativa -->
+            <div class="hero-visual">
+                <div id="hero-canvas-container" class="hero-canvas-container" title="Clique e arraste para girar a geometria 3D" aria-label="Geometria paramétrica 3D interativa"></div>
+                
+                <!-- Seletor de Formas Geométricas 3D -->
+                <div class="hero-shape-controls" role="group" aria-label="Seletor de forma geométrica 3D">
+                    <button class="shape-btn active" data-shape="sphere" type="button" aria-label="Geometria Esfera">
+                        <i data-lucide="circle"></i> <span>Esfera</span>
+                    </button>
+                    <button class="shape-btn" data-shape="torus" type="button" aria-label="Geometria Anel">
+                        <i data-lucide="disc"></i> <span>Anel</span>
+                    </button>
+                    <button class="shape-btn" data-shape="cube" type="button" aria-label="Geometria Cubo">
+                        <i data-lucide="box"></i> <span>Cubo</span>
+                    </button>
                 </div>
-                <div class="feature-item">
-                    <i data-lucide="badge-dollar-sign" class="feature-icon green-icon"></i> <span>Zero Custo Mensal (Sites)</span>
-                </div>
-                <div class="feature-item">
-                    <i data-lucide="bot" class="feature-icon purple-icon"></i> <span>Atendimento 24/7 no WhatsApp</span>
-                </div>
-                <div class="feature-item">
-                    <i data-lucide="file-check" class="feature-icon cyan-icon"></i> <span>Emito Nota Fiscal (CNPJ)</span>
+
+                <div class="hero-visual-hint">
+                    <i data-lucide="mouse-pointer-click"></i> <span>Clique e arraste para interagir</span>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Solucoes -->
+    <!-- Soluções / Esteira Comercial em 1 Clique -->
     <section id="solucoes" class="vitrine fade-in">
         <div class="container">
             <div class="section-header">
-                <h2>O Que Posso Fazer pelo Seu Negócio</h2>
-                <p>Soluções práticas para você vender mais, atender melhor e parar de perder tempo com tarefas que um sistema pode fazer por você.</p>
+                <h2>Soluções para o Seu Negócio</h2>
+                <p>Estruturas práticas para vender mais, atender clientes sem atraso e eliminar tarefas manuais repetitivas.</p>
             </div>
 
             <div class="services-grid">
-                <!-- Card Serviço 1: Sites -->
-                <article class="service-card reveal-card">
-                    <div class="card-icon purple-glow">
-                        <i data-lucide="monitor-smartphone"></i>
+                <!-- Card Serviço 1: Páginas Comerciais Rápidas -->
+                <article class="service-card">
+                    <div>
+                        <span class="service-badge">Entrega Expressa • 48h</span>
+                        <div class="service-icon-box">
+                            <i data-lucide="monitor-smartphone"></i>
+                        </div>
+                        <h3>Páginas Comerciais Rápidas</h3>
+                        <p>Sua empresa aberta com página mobile ultra-rápida, design moderno e conectada diretamente ao seu WhatsApp comercial.</p>
+                        <ul class="service-perks">
+                            <li><i data-lucide="check"></i> <span>Abertura instantânea em menos de 1 segundo</span></li>
+                            <li><i data-lucide="check"></i> <span>Sem mensalidades, estrutura 100% sua</span></li>
+                            <li><i data-lucide="check"></i> <span>Entrega expressa configurada em até 48 horas</span></li>
+                        </ul>
                     </div>
-                    <h3>Criação de Sites Profissionais</h3>
-                    <p>Sua empresa de portas abertas 24h na internet. Crio sites rápidos e modernos. Mostre credibilidade e atraia novos clientes todos os dias.</p>
-                    <ul class="service-perks">
-                        <li><i data-lucide="check"></i> <div><strong>A partir de R$ 1.200</strong></div></li>
-                        <li><i data-lucide="check"></i> <div>Site base com <strong>3 páginas</strong></div></li>
-                        <li><i data-lucide="check"></i> <div><strong>Sem mensalidades</strong>, o site é <strong>100%</strong> seu</div></li>
-                    </ul>
-                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-sites">Quero Meu Site Profissional</button>
+                    <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20gostaria%20de%20uma%20proposta%20para%20uma%20p%C3%A1gina%20r%C3%A1pida%20para%20o%20meu%20neg%C3%B3cio." class="btn btn-purple btn-full" target="_blank" rel="noopener">
+                        <i data-lucide="message-circle"></i> Solicitar Proposta
+                    </a>
                 </article>
 
-                <!-- Card Serviço 2: Automações -->
-                <article class="service-card reveal-card">
-                    <div class="card-icon green-glow">
-                        <i data-lucide="cpu"></i>
+                <!-- Card Serviço 2: Assistente 24h no WhatsApp (Destaque) -->
+                <article class="service-card card-featured">
+                    <div>
+                        <span class="service-badge badge-featured"><i data-lucide="star"></i> Mais Solicitado</span>
+                        <div class="service-icon-box">
+                            <i data-lucide="bot"></i>
+                        </div>
+                        <h3>Assistente 24h no WhatsApp</h3>
+                        <p>Atendimento inteligente que qualifica clientes, responde dúvidas frequentes e envia tabelas de preços na hora, sem deixar o lead esfriar.</p>
+                        <ul class="service-perks">
+                            <li><i data-lucide="check"></i> <span>Respostas automáticas a qualquer horário (24/7)</span></li>
+                            <li><i data-lucide="check"></i> <span>Qualifica o cliente antes de passar para você</span></li>
+                            <li><i data-lucide="check"></i> <span>Entrega configurada em até 72 horas</span></li>
+                        </ul>
                     </div>
-                    <h3>Automação de Tarefas e Processos</h3>
-                    <p>Chega de perder horas com planilhas e tarefas repetitivas. Desenvolvo sistemas que fazem o trabalho chato por você, reduzindo custos e eliminando erros.</p>
-                    <ul class="service-perks">
-                        <li><i data-lucide="check"></i> <div>Projetos mediante diagnóstico sem compromisso</div></li>
-                        <li><i data-lucide="check"></i> <div>Funciona <strong>24 horas</strong>, sem precisar de funcionário</div></li>
-                        <li><i data-lucide="check"></i> <div>Elimina erros manuais e retrabalho</div></li>
-                    </ul>
-                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-rpa">Quero Automatizar Meu Negócio</button>
+                    <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20gostaria%20de%20entender%20como%20funciona%20o%20Assistente%20de%20WhatsApp%20para%20minha%20empresa." class="btn btn-purple btn-full" target="_blank" rel="noopener">
+                        <i data-lucide="message-circle"></i> Quero um Assistente 24h
+                    </a>
                 </article>
 
-                <!-- Card Serviço 3: Bots -->
-                <article class="service-card reveal-card">
-                    <div class="card-icon cyan-glow">
-                        <i data-lucide="bot"></i>
+                <!-- Card Serviço 3: Automação de Processos -->
+                <article class="service-card">
+                    <div>
+                        <span class="service-badge">Engenharia Sob Medida</span>
+                        <div class="service-icon-box">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <h3>Automação de Processos</h3>
+                        <p>Robôs sob medida que eliminam horas diárias copiando dados, preenchendo planilhas e gerando relatórios manuais para sua equipe.</p>
+                        <ul class="service-perks">
+                            <li><i data-lucide="check"></i> <span>Diagnóstico gratuito do seu fluxo operacional</span></li>
+                            <li><i data-lucide="check"></i> <span>Integração direta entre sistemas e planilhas</span></li>
+                            <li><i data-lucide="check"></i> <span>Elimina erros operacionais e retrabalho</span></li>
+                        </ul>
                     </div>
-                    <h3>Bots de Atendimento Automático</h3>
-                    <p>Não perca vendas por demorar a responder. Configuro assistentes virtuais no WhatsApp que tiram dúvidas e agendam clientes de forma automática, 24 horas por dia.</p>
-                    <ul class="service-perks">
-                        <li><i data-lucide="check"></i> <div>Atendimento no WhatsApp sem parar</div></li>
-                        <li><i data-lucide="check"></i> <div>Agendamentos e respostas automáticas</div></li>
-                        <li><i data-lucide="check"></i> <div>Integração com Inteligência Artificial</div></li>
-                    </ul>
-                    <button class="btn btn-primary-outline btn-full open-modal" data-modal="modal-bots">Quero um Assistente Virtual</button>
+                    <a href="#contato" class="btn btn-purple btn-full">
+                        <i data-lucide="arrow-down"></i> Agendar Diagnóstico
+                    </a>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Prova Social (Cases) -->
+    <!-- Casos Reais de Sucesso (Otimizados com lazy loading) -->
     <section id="cases" class="cases fade-in">
         <div class="container">
             <div class="section-header">
-                <h2>Software em Ação: Resultados Reais</h2>
-                <p>Veja o que já entreguei, projetos reais que geram valor para quem usa.</p>
+                <h2>Projetos Entregues</h2>
+                <p>Resultados práticos de páginas de conversão e rotinas operacionais em funcionamento.</p>
             </div>
 
             <div class="cases-list">
-                <!-- Case 1 -->
+                <!-- Case 1: AMG Consulting Group -->
                 <div class="case-item">
                     <div class="case-media">
-                        <img src="./assets/rubinec-seguros.gif" alt="Demonstração do Fluxo Automatizado da Rubinec Seguros" class="case-gif">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+                                <div class="browser-address">amgcg.com.br</div>
+                            </div>
+                            <div class="browser-body">
+                                <img src="./assets/amgcg.gif" alt="Demonstração da plataforma AMG Consulting Group" class="case-gif" loading="lazy" width="600" height="380">
+                            </div>
+                        </div>
                     </div>
                     <div class="case-info">
-                        <span class="badge">Landing Page & Captação de Leads</span>
-                        <h3>Rubinec Seguros</h3>
-                        <p>Landing page para captação de novos clientes, com formulário integrado a um fluxo automatizado de envio de cotação via WhatsApp.</p>
-                        <div class="case-stack">
-                            <span class="stack-badge"><i data-lucide="code"></i> HTML</span>
-                            <span class="stack-badge"><i data-lucide="palette"></i> CSS</span>
-                            <span class="stack-badge"><i data-lucide="file-json-2"></i> JavaScript</span>
+                        <span class="badge badge-purple">Wealth Management & Consultoria</span>
+                        <h3>AMG Consulting Group</h3>
+                        <p>Plataforma institucional de alto padrão desenvolvida para consultoria internacional em gestão de patrimônio, estruturas offshore e Family Office. Design executivo focado em sofisticação, confidencialidade e captação de clientes de alta renda.</p>
+                        
+                        <div class="case-tags">
+                            <span class="case-tag"><i data-lucide="globe"></i> Gestão Internacional</span>
+                            <span class="case-tag"><i data-lucide="shield"></i> Segurança & Discrição</span>
+                            <span class="case-tag"><i data-lucide="zap"></i> Performance & SEO</span>
                         </div>
-                        <div class="case-actions" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 1rem;">
-                            <a href="https://rubinecseguros.com.br/" target="_blank" rel="noopener" class="btn btn-primary-outline"><i data-lucide="external-link"></i> Ver o Site</a>
-                            <button class="btn btn-text open-modal" data-modal="modal-sites">Quero algo assim <i data-lucide="arrow-right"></i></button>
+
+                        <div class="case-actions">
+                            <a href="https://www.amgcg.com.br/" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <i data-lucide="external-link"></i> Ver o Site
+                            </a>
+                            <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20vi%20o%20case%20da%20AMG%20Consulting%20Group%20e%20gostaria%20de%20um%20projeto%20institucional%20de%20alto%20padr%C3%A3o." target="_blank" rel="noopener" class="btn btn-purple">
+                                <i data-lucide="message-circle"></i> Quero um Projeto Assim
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2: Rubinec Seguros -->
+                <div class="case-item">
+                    <div class="case-media">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+                                <div class="browser-address">rubinecseguros.com.br</div>
+                            </div>
+                            <div class="browser-body">
+                                <img src="./assets/rubinec-seguros.gif" alt="Página comercial de alta velocidade Rubinec Seguros" class="case-gif" loading="lazy" width="600" height="380">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-info">
+                        <span class="badge badge-purple">Captação & Vendas</span>
+                        <h3>Rubinec Seguros</h3>
+                        <p>Página comercial de alta velocidade para captação de clientes locais, com carregamento instantâneo e formulário integrado diretamente ao fluxo de WhatsApp.</p>
+                        
+                        <div class="case-tags">
+                            <span class="case-tag"><i data-lucide="zap"></i> Carregamento &lt; 1s</span>
+                            <span class="case-tag"><i data-lucide="smartphone"></i> Mobile-First</span>
+                            <span class="case-tag"><i data-lucide="message-circle"></i> Conversão WhatsApp</span>
+                        </div>
+
+                        <div class="case-actions">
+                            <a href="https://rubinecseguros.com.br/" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <i data-lucide="external-link"></i> Ver o Site
+                            </a>
+                            <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20vi%20o%20case%20da%20Rubinec%20Seguros%20e%20gostaria%20de%20uma%20p%C3%A1gina%20nesse%20formato%20para%20minha%20empresa." target="_blank" rel="noopener" class="btn btn-purple">
+                                <i data-lucide="message-circle"></i> Quero Algo Assim
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Case 2 -->
-                <div class="case-item reverse">
+                <!-- Case 3: Auto Checklist Operacional -->
+                <div class="case-item">
                     <div class="case-media">
-                        <img src="./assets/chat-tutor.gif" alt="Demonstração do Chat Tutor v2 com transcrição de áudio" class="case-gif">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+                                <div class="browser-address">rpa.autochecklist.internal</div>
+                            </div>
+                            <div class="browser-body">
+                                <div class="automation-dashboard">
+                                    <div class="dash-status">
+                                        <span class="status-indicator-live"></span>
+                                        <span>Rotina Agendada • Execução Ativa</span>
+                                    </div>
+                                    <div class="dash-metrics">
+                                        <div class="dash-metric-box">
+                                            <div class="dash-metric-val">4 <span>Horas</span>/dia</div>
+                                            <div class="dash-metric-label">Economia da Equipe</div>
+                                        </div>
+                                        <div class="dash-metric-box">
+                                            <div class="dash-metric-val">100%</div>
+                                            <div class="dash-metric-label">Automação de Relatórios</div>
+                                        </div>
+                                    </div>
+                                    <div class="dash-logs">
+                                        <div class="log-line">
+                                            <span>[07:00:02] Conexão com sistemas...</span>
+                                            <span class="log-ok">OK</span>
+                                        </div>
+                                        <div class="log-line">
+                                            <span>[07:01:15] Cruzamento de planilhas...</span>
+                                            <span class="log-ok">OK</span>
+                                        </div>
+                                        <div class="log-line">
+                                            <span>[07:02:04] Relatório enviado à diretoria...</span>
+                                            <span class="log-ok">OK</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="case-info">
-                        <span class="badge">Inteligência Artificial & Chat</span>
-                        <h3>Chat Tutor</h3>
-                        <p>Exemplo prático de uso de IA: um chat que conversa com diferentes modelos de linguagem, transcrevendo áudio e respondendo de forma inteligente em tempo real.</p>
-                        <div class="case-stack">
-                            <span class="stack-badge"><i data-lucide="server"></i> Node.js</span>
-                            <span class="stack-badge"><i data-lucide="code"></i> HTML</span>
-                            <span class="stack-badge"><i data-lucide="palette"></i> CSS</span>
-                            <span class="stack-badge"><i data-lucide="file-json-2"></i> JavaScript</span>
-                            <span class="stack-badge"><i data-lucide="brain-circuit"></i> IA (LLMs)</span>
+                        <span class="badge badge-purple">Automação de Processos</span>
+                        <h3>Auto Checklist Operacional</h3>
+                        <p>Rotinas administrativas que consumiam cerca de 4 horas diárias da equipe operacional foram substituídas por um robô agendado que acessa sistemas, compila dados e envia relatórios executivos prontos para a diretoria.</p>
+                        
+                        <div class="case-tags">
+                            <span class="case-tag"><i data-lucide="cpu"></i> Python & RPA</span>
+                            <span class="case-tag"><i data-lucide="clock"></i> -4h/dia de Retrabalho</span>
+                            <span class="case-tag"><i data-lucide="file-check"></i> Relatórios Automáticos</span>
                         </div>
-                        <div class="case-actions" style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 1rem;">
-                            <a href="https://victorrubinec.github.io/Chatbot-Tutor" target="_blank" rel="noopener" class="btn btn-primary-outline"><i data-lucide="external-link"></i> Testar ao Vivo</a>
-                            <button class="btn btn-text open-modal" data-modal="modal-custom">Quero IA no meu negócio <i data-lucide="arrow-right"></i></button>
+
+                        <div class="case-actions">
+                            <a href="#contato" class="btn btn-secondary">
+                                <i data-lucide="arrow-down"></i> Automatizar Meus Processos
+                            </a>
+                            <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20tenho%20tarefas%20manuais%20na%20minha%20empresa%20e%20gostaria%20de%20automatizar%20com%20um%20rob%C3%B4." target="_blank" rel="noopener" class="btn btn-purple">
+                                <i data-lucide="message-circle"></i> Falar no WhatsApp
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- <div class="case-item reverse">
+                <!-- Case 4: Chat Tutor -->
+                <div class="case-item">
                     <div class="case-media">
-                        <div class="video-placeholder rpa-placeholder">
-                            <i data-lucide="terminal-square"></i>
-                            <p>Automação em Execução</p>
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+                                <div class="browser-address">chat-tutor.demo</div>
+                            </div>
+                            <div class="browser-body">
+                                <img src="./assets/chat-tutor.gif" alt="Aplicação interativa Chat Tutor com transcrição de áudio" class="case-gif" loading="lazy" width="600" height="380">
+                            </div>
                         </div>
                     </div>
                     <div class="case-info">
-                        <span class="badge">Robô RPA Python</span>
-                        <h3>Escalabilidade com Auto Checklist</h3>
-                        <p>Rotinas administrativas tomavam quase 4 horas diárias da equipe operacional. Desenhamos um robô (RPA) Python rodando agendado que acessa portais, avalia checklists técnicos e envia relatórios executivos para diretoria sem nenhuma intervenção humana.</p>
-                        <button class="btn btn-text open-modal" data-modal="modal-rpa">Eu quero automatizar meus relatórios <i data-lucide="arrow-right"></i></button>
+                        <span class="badge badge-purple">Assistente Inteligente</span>
+                        <h3>Chat Tutor Interativo</h3>
+                        <p>Aplicação conversacional com inteligência artificial, processamento de linguagem natural e transcrição de áudio em tempo real para atendimento e suporte dinâmico.</p>
+                        
+                        <div class="case-tags">
+                            <span class="case-tag"><i data-lucide="bot"></i> IA Conversacional</span>
+                            <span class="case-tag"><i data-lucide="mic"></i> Transcrição de Áudio</span>
+                            <span class="case-tag"><i data-lucide="zap"></i> Respostas Instantâneas</span>
+                        </div>
+
+                        <div class="case-actions">
+                            <a href="https://victorrubinec.github.io/Chatbot-Tutor" target="_blank" rel="noopener" class="btn btn-secondary">
+                                <i data-lucide="external-link"></i> Testar Demonstração
+                            </a>
+                            <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20gostaria%20de%20criar%20um%20assistente%20inteligente%20para%20o%20meu%20atendimento." target="_blank" rel="noopener" class="btn btn-purple">
+                                <i data-lucide="message-circle"></i> Quero um Assistente
+                            </a>
+                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Mim Section -->
+    <!-- Knowledge OS: Sistema Operacional de Conhecimento Aberto -->
+    <section id="knowledge-os" class="kos-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-purple" style="margin-bottom: 0.75rem;">
+                    <i class="fa-brands fa-github"></i> Projeto Pessoal Open Source
+                </span>
+                <h2>Agentic Knowledge OS — Sistema Operacional de Conhecimento Aberto</h2>
+                <p>Meu projeto autoral de código aberto desenvolvido para gerenciar conhecimento de alta densidade, gerar especificações técnicas canônicas e integrar agentes de IA autônomos.</p>
+            </div>
+
+            <div class="kos-showcase-grid">
+                <!-- Coluna Visual: Mídias Empilhadas (Uma em cima e a outra embaixo) -->
+                <div class="kos-media-col">
+                    <!-- Bloco Superior: Documentação Canônica SSOT -->
+                    <div class="kos-media-card">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+                                <div class="browser-address">knowledge-os.template/doc</div>
+                            </div>
+                            <div class="browser-body">
+                                <img src="./assets/knowledge-os.gif" alt="Demonstração da Documentação Canônica Knowledge OS" class="case-gif" loading="lazy" width="700" height="438">
+                            </div>
+                        </div>
+                        <div class="kos-live-badge">
+                            <span class="status-indicator-live"></span>
+                            <span>Documentação Canônica SSOT • Mermaid & KaTeX</span>
+                        </div>
+                    </div>
+
+                    <!-- Bloco Inferior: Orquestração no Antigravity -->
+                    <div class="kos-media-card">
+                        <div class="browser-frame">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                    <span class="browser-dot"></span>
+                                </div>
+                                <div class="browser-address">antigravity.ide/agentic-knowledge-os</div>
+                            </div>
+                            <div class="browser-body">
+                                <img src="./assets/antigravity-interaction.gif" alt="Interação do Antigravity com o repositório Knowledge OS" class="case-gif" loading="lazy" width="700" height="438">
+                            </div>
+                        </div>
+                        <div class="kos-live-badge">
+                            <span class="status-indicator-live"></span>
+                            <span>Orquestração no Antigravity • Gemini 3.8 Flash & MCP Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna de Engenharia & Pilares -->
+                <div class="kos-details-col">
+                    <h3>Engenharia de Conhecimento para Humanos & Agentes</h3>
+                    <p class="kos-intro-text">Criei e mantenho o <strong>Agentic Knowledge OS</strong> como um ecossistema <em>open source</em> sob licença MIT. Ele atua como Single Source of Truth (SSOT), transformando anotações complexas e especificações técnicas em documentos canônicos de alto padrão editorial, perfeitamente consumíveis tanto por engenheiros quanto por agentes autônomos de IA.</p>
+                    
+                    <div class="kos-feature-cards">
+                        <!-- Pilar 1 -->
+                        <div class="kos-feature-item">
+                            <div class="kos-feature-icon">
+                                <i data-lucide="workflow"></i>
+                            </div>
+                            <div>
+                                <h4>Arquitetura Viva & Diagramas Mermaid</h4>
+                                <p>Fluxogramas, sequências lógicas e topologias de arquitetura renderizados dinamicamente no navegador e versionados via Git sem imagens estáticas pesadas.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pilar 2 -->
+                        <div class="kos-feature-item">
+                            <div class="kos-feature-icon">
+                                <i data-lucide="bot"></i>
+                            </div>
+                            <div>
+                                <h4>Protocolo Orientado a Agentes Autônomos</h4>
+                                <p>Estrutura padronizada de metadados e diretórios que permite que agentes de IA recuperem contexto, analisem decisões e documentem novas implementações sem alucinações.</p>
+                            </div>
+                        </div>
+
+                        <!-- Pilar 3 -->
+                        <div class="kos-feature-item">
+                            <div class="kos-feature-icon">
+                                <i data-lucide="file-check"></i>
+                            </div>
+                            <div>
+                                <h4>Tipografia Editorial & KaTeX Math</h4>
+                                <p>Padrão canônico com Inter, JetBrains Mono e fórmulas KaTeX, pronto para compilação em relatórios executivos PDF impecáveis sem ruídos decorativos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas / Badges Técnicos -->
+                    <div class="kos-metrics-row">
+                        <span class="kos-pill"><i class="fa-brands fa-github"></i> MIT License</span>
+                        <span class="kos-pill"><i data-lucide="bot"></i> Agentic Ready</span>
+                        <span class="kos-pill"><i data-lucide="check"></i> Mermaid.js Nativo</span>
+                        <span class="kos-pill"><i data-lucide="shield"></i> KaTeX Math</span>
+                        <span class="kos-pill"><i data-lucide="terminal"></i> JetBrains Mono</span>
+                    </div>
+
+                    <!-- Ações -->
+                    <div class="kos-actions">
+                        <a href="https://github.com/VictorRubinec/agentic-knowledge-os" target="_blank" rel="noopener" class="btn btn-purple">
+                            <i class="fa-brands fa-github"></i> Ver Código no GitHub
+                        </a>
+                        <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20vi%20o%20Agentic%20Knowledge%20OS%20no%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20o%20projeto." target="_blank" rel="noopener" class="btn btn-secondary">
+                            <i data-lucide="message-circle"></i> Conversar sobre o Projeto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
     <section id="sobre" class="sobre fade-in">
         <div class="container sobre-content">
             <div class="sobre-grid">
                 <div class="sobre-imagem">
-                    <img src="./assets/profile-picture-2.png" alt="Victor Zanin Rubinec" class="profile-img">
+                    <img src="./assets/profile-picture-2.png" alt="Foto profissional de Victor Zanin Rubinec" class="profile-img" loading="lazy" width="400" height="400">
                 </div>
                 <div class="sobre-texto">
-                    <h2>Quem é Victor Zanin Rubinec?</h2>
-                    <h3 class="sobre-cargo">Especialista em Tecnologia e Automação para Negócios</h3>
-                    <p>Minha paixão por tecnologia começou cedo, desmontando computadores e criando estratégias em jogos de RPG de mesa. Foi ali que aprendi a resolver problemas complexos com criatividade.</p>
-                    <p>Ao longo da minha carreira, desenvolvi sistemas inteligentes e automações para grandes empresas no mundo corporativo. Hoje, pego toda essa bagagem técnica e traduzo em soluções simples e acessíveis para negócios locais.</p>
-                    <p>Meu objetivo é ser seu parceiro de tecnologia: usar a programação para tirar a dor de cabeça da sua operação diária.</p>
-                    <p><i data-lucide="file-check" style="width:14px;height:14px;vertical-align:middle;"></i> <strong>Emito Nota Fiscal</strong> para todos os serviços. Trabalho como pessoa jurídica (CNPJ), garantindo total segurança e formalidade na sua contratação.</p>
+                    <span class="sobre-cargo">Desenvolvedor Full Stack & Produto</span>
+                    <h2>Victor Zanin Rubinec</h2>
+                    
+                    <div class="sobre-skills-pills">
+                        <span class="skill-pill"><i data-lucide="layers"></i> Full Stack Web</span>
+                        <span class="skill-pill"><i data-lucide="sparkles"></i> Engenharia de Produto</span>
+                        <span class="skill-pill"><i data-lucide="cpu"></i> Automação & RPA</span>
+                        <span class="skill-pill"><i data-lucide="zap"></i> Interfaces Rápidas</span>
+                    </div>
+
+                    <p>Atuo como <strong>Desenvolvedor Full Stack na área de Produto</strong>, unindo engenharia de software sólida à visão de negócio para construir aplicações web modernas, interfaces velozes e automações eficientes. Minha trajetória corporativa foi consolidada em empresas como <strong>Join4</strong> e <strong>Hewlett Packard Enterprise (HPE)</strong>, onde desenvolvi o rigor técnico que hoje aplico em soluções leves, rápidas e sem atrito para empresas e negócios.</p>
+                    <p>Minha abordagem é orientada a produto: foco em eliminar gargalos manuais, acelerar o carregamento e garantir que cada cliente tenha uma experiência fluida desde o primeiro clique até o atendimento final.</p>
+                    <p class="sobre-highlight"><i data-lucide="shield-check"></i> <span><strong>Código Próprio & Independente:</strong> estruturas modernas sem dependência de construtores pesados ou mensalidades forçadas, garantindo autonomia total para o seu negócio.</span></p>
                     
                     <div class="sobre-redes">
-                        <a href="https://www.linkedin.com/in/victor-zanin-rubinec-8a69931a2" class="btn btn-primary" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-linkedin"></i> Meu LinkedIn
+                        <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor%2C%20vi%20seu%20perfil%20e%20gostaria%20de%20conversar." class="btn btn-purple" target="_blank" rel="noopener">
+                            <i data-lucide="message-circle"></i> Conversar no WhatsApp
                         </a>
-                        <a href="https://github.com/VictorRubinec" class="btn btn-primary" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-github"></i> Meu GitHub
+                        <a href="https://www.linkedin.com/in/victor-zanin-rubinec-8a69931a2" class="btn btn-secondary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/VictorRubinec" class="btn btn-secondary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i> GitHub
                         </a>
                     </div>
                 </div>
@@ -232,113 +577,164 @@
         </div>
     </section>
 
-    <!-- Trajetória e Perfil Técnico Section -->
+    <!-- Trajetória e Perfil Técnico -->
     <section id="experiencia" class="experiencia fade-in">
         <div class="container">
             <div class="section-header">
-                <h2>Trajetória Tecnológica & Skills</h2>
-                <p>Background ágil que une visão consultiva de negócios com alta capacidade de engenharia backend.</p>
+                <h2>Trajetória Profissional</h2>
+                <p>Experiência prática unindo visão de processos e engenharia de software corporativo.</p>
             </div>
             
             <div class="cv-grid">
-                <!-- Coluna 1: Experiência e Formação -->
+                <!-- Coluna 1: Experiência -->
                 <div class="cv-timeline-col">
-                    <h3 class="cv-title"><i data-lucide="briefcase"></i> Experiência Profissional</h3>
+                    <h3 class="cv-title"><i data-lucide="briefcase"></i> Atuação Profissional</h3>
                     
                     <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot purple-glow"></div>
-                            <h4>Consultor em Automação de Processos</h4>
-                            <h5>Join4 <span>• Abr/2025 – Atual</span></h5>
-                            <p>Gestão de ciclo de vida completo na otimização operacional de clientes corporativos. Desenho e implementação de soluções agressivas de RPA misturando o melhor de plataformas parceiras com códigos nativos complexos. Utilização de <strong>Automações Web e Web Scraping</strong> profundo para mapear dados, pipelines de <strong>Python</strong> para retaguarda e <strong>Java</strong> escalável garantindo a integridade e funcionamento 24/7 para robôs de missão crítica.</p>
+                        <div class="timeline-item current-position">
+                            <div class="timeline-dot"></div>
+                            <h4>Desenvolvedor Full Stack Júnior (Produto)</h4>
+                            <h5>Join4 <span>• Out/2025 – Atual</span></h5>
+                            <p>Desenvolvimento e evolução de produtos digitais, arquitetura web moderna (front-end e back-end), interfaces reativas de alta velocidade, APIs e integrações para escala de produto.</p>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-dot green-glow"></div>
+                            <div class="timeline-dot"></div>
+                            <h4>Consultor em Automação de Processos</h4>
+                            <h5>Join4 <span>• Abr/2025 – Out/2025</span></h5>
+                            <p>Mapeamento e automação de fluxos operacionais, integrações de dados e desenvolvimento de rotinas de eficiência para clientes corporativos.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
                             <h4>Desenvolvedor RPA (Estágio)</h4>
                             <h5>Hewlett Packard Enterprise (HPE) <span>• Abr/2024 – Mar/2025</span></h5>
-                            <p>Desenvolvimento focado em eficiência operacional e mitigação de erros operacionais. Implementação de códigos usando ambientes virtuais Python, Dockerização de aplicações e coberturas sólidas de testes unitários.</p>
+                            <p>Desenvolvimento focado em eficiência operacional, padronização de rotinas automatizadas e cobertura de testes de qualidade de software.</p>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-dot cyan-glow"></div>
+                            <div class="timeline-dot"></div>
                             <h4>Pre-Sales Techub (Estágio)</h4>
                             <h5>Hewlett Packard Enterprise (HPE) <span>• Mar/2023 – Abr/2024</span></h5>
-                            <p>Colaboração com o braço de Vendas para arquitetar topologia de infraestrutura. Esforço vital para traduzir requisitos complexos de negócio em soluções de Hardware/Software viáveis.</p>
+                            <p>Análise de requisitos técnicos de negócios e suporte na elaboração de propostas de infraestrutura e software corporativo.</p>
                         </div>
                     </div>
+                </div>
 
-                    <h3 class="cv-title mt-lg"><i data-lucide="graduation-cap"></i> Formação Acadêmica</h3>
+                <!-- Coluna 2: Formação e Competências -->
+                <div class="cv-skills-col">
+                    <h3 class="cv-title"><i data-lucide="graduation-cap"></i> Formação Acadêmica</h3>
                     <div class="timeline">
                         <div class="timeline-item">
-                            <div class="timeline-dot purple-glow"></div>
+                            <div class="timeline-dot"></div>
                             <h4>Bacharelado em Ciência da Computação</h4>
                             <h5>SPTech School <span>• Conclusão: Dez/2025</span></h5>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-dot cyan-glow"></div>
+                            <div class="timeline-dot"></div>
                             <h4>Técnico em Desenvolvimento de Sistemas</h4>
                             <h5>ETEC Jorge Street <span>• Concluído: Nov/2021</span></h5>
                         </div>
                     </div>
+
+                    <h3 class="cv-title mt-lg"><i data-lucide="check-circle"></i> Princípios de Entrega</h3>
+                    <ul class="cv-project-list">
+                        <li><i data-lucide="check"></i><div><strong>Velocidade Máxima:</strong> Páginas que carregam em menos de 1 segundo sem travamentos no 4G.</div></li>
+                        <li><i data-lucide="check"></i><div><strong>Sem Travamento em Plataformas:</strong> Código limpo e independente de mensalidades de construtores pesados.</div></li>
+                        <li><i data-lucide="check"></i><div><strong>Compromisso e Transparência:</strong> Escopo claro, prazos garantidos de entrega e homologação antes do pagamento final.</div></li>
+                    </ul>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Coluna 2: Habilidades Técnicas -->
-                <div class="cv-skills-col">
-                    <h3 class="cv-title"><i data-lucide="cpu"></i> Hard Skills & Capacidades</h3>
+    <!-- Seção de Perguntas Frequentes (FAQ Nativo com <details>) -->
+    <section id="faq" class="faq-section fade-in">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perguntas Frequentes</h2>
+                <p>Respostas diretas e transparentes sobre prazos, custos e metodologia de entrega.</p>
+            </div>
+
+            <div class="faq-list">
+                <!-- FAQ 1 -->
+                <details class="faq-item" open>
+                    <summary class="faq-summary">
+                        <span>Preciso pagar mensalidade depois que a página estiver pronta?</span>
+                        <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="faq-content">
+                        <p><strong>Não.</strong> Diferente de ferramentas que cobram assinaturas mensais caras para manter seu site no ar, entrego o código limpo e estruturado. A infraestrutura recomendada (como GitHub Pages, Vercel ou Cloudflare) possui camada gratuita vitalícia e de alta estabilidade para páginas institucionais. O único custo anual opcional é o seu domínio próprio (ex: suaempresa.com.br, registrado diretamente no Registro.br).</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>Qual é o prazo de entrega da Ativação Rápida?</span>
+                        <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>O prazo padrão é de até <strong>48 horas úteis</strong> após o recebimento das informações do seu negócio (fotos, textos, serviços e dados de contato). O processo é ágil e direto, focado em colocar seu negócio para rodar sem semanas de enrolação.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>E se eu precisar de suporte ou alterações futuras?</span>
+                        <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Você terá suporte garantido nos primeiros dias após a publicação para qualquer ajuste fino. Para alterações futuras (troca de fotos, alteração de tabelas de preços ou novas seções), ofereço suporte sob demanda com valores combinados previamente, sem compromisso de mensalidade.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>Como funciona o pagamento e as etapas do projeto?</span>
+                        <span class="faq-icon"><i data-lucide="chevron-down"></i></span>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Trabalho com total transparência e segurança: <strong>50% de entrada</strong> na aprovação da proposta e <strong>50% na homologação e entrega</strong> final. O pagamento pode ser feito via Pix ou transferência bancária.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato Inline (Formulário Direto com Envio AJAX) -->
+    <section id="contato" class="contato-section fade-in">
+        <div class="container contact-container">
+            <div class="section-header">
+                <h2>Iniciar Atendimento ou Diagnóstico</h2>
+                <p>Preencha os dados abaixo para receber uma análise direta da sua necessidade, ou se preferir, chame diretamente no WhatsApp.</p>
+            </div>
+
+            <div class="contact-card">
+                <form id="contato-form" action="https://formspree.io/f/xbdqddkp" method="POST" class="contact-form">
+                    <input type="hidden" name="Origem" value="Formulario_Inline_Portfolio">
                     
-                    <div class="skill-category">
-                        <h4>Linguagens Mainstream</h4>
-                        <div class="tech-badges">
-                            <span class="tech-badge"><i data-lucide="code"></i> Python (Avançado)</span>
-                            <span class="tech-badge"><i data-lucide="coffee"></i> Java (Avançado)</span>
-                            <span class="tech-badge"><i data-lucide="file-json-2"></i> JavaScript / Node.js</span>
-                            <span class="tech-badge"><i data-lucide="database"></i> SQL (Supabase / MS SQL)</span>
-                        </div>
+                    <div class="form-group">
+                        <label for="contato-nome">Seu Nome / Nome da Empresa *</label>
+                        <input type="text" id="contato-nome" name="nome" required placeholder="Ex: Roberto Silva (Clínica Silva)">
                     </div>
 
-                    <div class="skill-category">
-                        <h4>Frameworks Web & Backend</h4>
-                        <div class="tech-badges">
-                            <span class="tech-badge">Spring Boot</span>
-                            <span class="tech-badge">Django</span>
-                            <span class="tech-badge">React.js / Router</span>
-                            <span class="tech-badge">JPA</span>
-                        </div>
+                    <div class="form-group">
+                        <label for="contato-whatsapp">WhatsApp com DDD (para retorno) *</label>
+                        <input type="tel" id="contato-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
                     </div>
 
-                    <div class="skill-category">
-                        <h4>DevOps, Cloud & Infra</h4>
-                        <div class="tech-badges">
-                            <span class="tech-badge"><i data-lucide="cloud"></i> AWS (EC2/Lambda/S3)</span>
-                            <span class="tech-badge"><i data-lucide="blocks"></i> Docker</span>
-                            <span class="tech-badge"><i data-lucide="terminal-square"></i> Linux OS (Avançado)</span>
-                            <span class="tech-badge"><i data-lucide="server"></i> Shell Script</span>
-                        </div>
+                    <div class="form-group">
+                        <label for="contato-necessidade">Qual é a necessidade do seu negócio? *</label>
+                        <textarea id="contato-necessidade" name="necessidade" rows="4" required placeholder="Ex: Preciso de uma página rápida para receber clientes do Google / Quero um robô no WhatsApp que envie tabela de preços / Quero automatizar relatórios em planilhas..."></textarea>
                     </div>
 
-                    <div class="skill-category">
-                        <h4>Inteligência Artificial & APIs</h4>
-                        <div class="tech-badges">
-                            <span class="tech-badge"><i data-lucide="brain-circuit"></i> OpenAI API</span>
-                            <span class="tech-badge"><i data-lucide="sparkles"></i> Google Gemini API</span>
-                        </div>
-                    </div>
+                    <button type="submit" class="btn btn-purple btn-full submit-btn">
+                        <i data-lucide="send"></i> Enviar Solicitação para Victor Rubinec
+                    </button>
+                </form>
 
-                    <div class="skill-category mt-lg">
-                        <h4>Projetos Acadêmicos Destacados</h4>
-                        <ul class="cv-project-list">
-                            <li><i data-lucide="chevron-right"></i><div><strong><a href="https://github.com/DEEP-Dynamic-Emotion-Extraction-Process" target="_blank">D.E.E.P. (IA/Visão)</a>:</strong> Plataforma fullstack que monitora e extrai micro-expressões faciais em tempo real para análises. (Flask/AWS).</div></li>
-                            <li><i data-lucide="chevron-right"></i><div><strong><a href="https://github.com/Project-Horus-G9" target="_blank">Horus (IoT)</a>:</strong> Pipelines ETL massivos em Nuvem Híbrida para otimização de matrizes solares. (Java/Python).</div></li>
-                            <li><i data-lucide="chevron-right"></i><div><strong><a href="https://github.com/Harmon-yo" target="_blank">Harmonyo</a>:</strong> Marketplace Peer-to-Peer que liga alunos e professores de música num ambiente elástico na AWS.</div></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category mt-lg">
-                        <h4>Idiomas</h4>
-                        <ul class="cv-language-list">
-                            <li><i data-lucide="languages"></i> <strong>Inglês Profissional Técnico:</strong> Escrita e documentação impecável com excelente proficiência em argumentação técnica; Capacidade validada de atuar em reuniões em idioma estrangeiro.</li>
-                        </ul>
-                    </div>
-                </div>
+                <!-- Feedback Inline de Envio (AJAX) -->
+                <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
             </div>
         </div>
     </section>
@@ -347,172 +743,28 @@
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer-brand">
-                <i data-lucide="terminal"></i>
+                <i data-lucide="terminal" style="width: 16px; height: 16px; color: var(--accent-purple);"></i>
                 <span>Victor Rubinec</span>
             </div>
-            <p>© 2026. Victor Zanin Rubinec </p>
+            <p>© 2026. Todos os direitos reservados. Interfaces de alta velocidade e automações comerciais.</p>
             <div class="footer-links">
-                <a href="https://github.com/VictorRubinec" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
-                <a href="https://www.linkedin.com/in/victor-zanin-rubinec-8a69931a2" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                <a href="https://wa.me/5511975958383" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="https://github.com/VictorRubinec" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/victor-zanin-rubinec-8a69931a2" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
     </footer>
 
-    <!-- MODAIS DE SOLICITAÇÃO (Motor de Conversão) -->
-    <div id="modal-container" class="modal-overlay">
-        
-        <!-- MODAL: Criação de Sites -->
-        <div id="modal-sites" class="modal-content">
-            <button class="close-modal"><i data-lucide="x"></i></button>
-            <div class="modal-header">
-                <i data-lucide="monitor-smartphone" class="purple-icon"></i>
-                <h2>Quero Meu Site Profissional</h2>
-                <p>Preencha abaixo e entrarei em contato para conversarmos sobre o seu projeto.</p>
-            </div>
-            <form action="https://formspree.io/f/xbdqddkp" method="POST" class="contact-form">
-                <input type="hidden" name="Tipo_Servico" value="Sites">
-                
-                <div class="form-group">
-                    <label for="site-nome">Seu Nome / Empresa</label>
-                    <input type="text" id="site-nome" name="nome" required placeholder="Digite aqui...">
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="site-email">Melhor E-mail</label>
-                        <input type="email" id="site-email" name="email" required placeholder="email@empresa.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="site-whatsapp">WhatsApp (com DDD)</label>
-                        <input type="tel" id="site-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="site-dominio">Você já possui um domínio registrado? (ex: seusite.com.br)</label>
-                    <select id="site-dominio" name="tem_dominio">
-                        <option value="Ainda não tenho">Não, preciso de ajuda com isso</option>
-                        <option value="Já possuo domínio">Sim, já possuo o domínio</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="site-ideia">Conte um pouco sobre o seu negócio e o que você espera do site:</label>
-                    <textarea id="site-ideia" name="sobre_o_projeto" rows="3" required placeholder="Ex: Tenho uma clínica e quero um site para que os clientes possam me encontrar no Google e agendar consultas..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-full submit-btn">Enviar Pedido para Avaliação</button>
-                <p class="privacy-note"><i data-lucide="shield-check"></i> Receberei seu e-mail e entrarei em contato em até 24h úteis.</p>
-            </form>
-        </div>
-
-
-
-        <!-- MODAL: RPA -->
-        <div id="modal-rpa" class="modal-content">
-            <button class="close-modal"><i data-lucide="x"></i></button>
-            <div class="modal-header">
-                <i data-lucide="cpu" class="green-icon"></i>
-                <h2>Quero Automatizar Meu Negócio</h2>
-                <p>Me conte qual tarefa repetitiva toma o seu tempo e eu te mostro como resolver.</p>
-            </div>
-            <form action="https://formspree.io/f/xbdqddkp" method="POST" class="contact-form">
-                <input type="hidden" name="Tipo_Servico" value="Automação_RPA">
-                
-                <div class="form-group">
-                    <label for="rpa-nome">Seu Nome / Empresa</label>
-                    <input type="text" id="rpa-nome" name="nome" required placeholder="Digite aqui...">
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="rpa-email">Melhor E-mail</label>
-                        <input type="email" id="rpa-email" name="email" required placeholder="email@empresa.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="rpa-whatsapp">WhatsApp (com DDD)</label>
-                        <input type="tel" id="rpa-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="rpa-tempo">Quanto tempo essa tarefa toma por semana?</label>
-                    <select id="rpa-tempo" name="horas_perdidas_semana">
-                        <option value="Menos de 5h">Menos de 5h por semana</option>
-                        <option value="Entre 5h e 15h">Entre 5h e 15h (algumas horas por dia)</option>
-                        <option value="Mais de 20h">Mais de 20h (o dia todo praticamente)</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="rpa-dor">Descreva a tarefa que quer automatizar:</label>
-                    <textarea id="rpa-dor" name="sobre_o_projeto" rows="3" required placeholder="Ex: Todo dia preciso copiar dados de um aplicativo para uma planilha e mandar mensagem para os clientes..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-full submit-btn">Enviar Diagnóstico para Análise</button>
-            </form>
-        </div>
-
-
-
-        <!-- MODAL: Bots -->
-        <div id="modal-bots" class="modal-content">
-            <button class="close-modal"><i data-lucide="x"></i></button>
-            <div class="modal-header">
-                <i data-lucide="bot" class="purple-icon"></i>
-                <h2>Quero um Assistente Virtual no WhatsApp</h2>
-                <p>Me conte como funciona seu atendimento hoje e como posso te ajudar a não perder nenhuma venda.</p>
-            </div>
-            <form action="https://formspree.io/f/xbdqddkp" method="POST" class="contact-form">
-                <input type="hidden" name="Tipo_Servico" value="Bots_Mensageria">
-                
-                <div class="form-group">
-                    <label for="bots-nome">Seu Nome / Empresa</label>
-                    <input type="text" id="bots-nome" name="nome" required placeholder="Digite aqui...">
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="bots-email">E-mail</label>
-                        <input type="email" id="bots-email" name="email" required placeholder="email@empresa.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="bots-whatsapp">WhatsApp (com DDD)</label>
-                        <input type="tel" id="bots-whatsapp" name="whatsapp" required placeholder="(11) 90000-0000">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="bots-plataforma">Onde seus clientes te chamam hoje?</label>
-                    <select id="bots-plataforma" name="plataforma_bot">
-                        <option value="WhatsApp">WhatsApp (principal)</option>
-                        <option value="Telegram">Telegram</option>
-                        <option value="Discord">Discord</option>
-                        <option value="Multiplus">Mais de um aplicativo</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="bots-dor">O que você quer que o assistente faça?</label>
-                    <textarea id="bots-dor" name="sobre_o_projeto" rows="3" required placeholder="Ex: Quero que o bot responda perguntas sobre preços, mande o cardápio e avise quando fechamos..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-full submit-btn">Receber Orçamento</button>
-            </form>
-        </div>
-
-
-
-    </div>
-
-    <!-- Scripts da Vitrine -->
+    <!-- Scripts da Aplicação -->
+    <script src="./js/three-hero.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/animations.js"></script>
     <script src="./js/utils/form.js"></script>
-
-    <!-- Inicializa Icones da base Lucide -->
     <script>
-      lucide.createIcons();
+        // Inicialização de Ícones Lucide
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victor Rubinec — Soluções Comerciais & Atendimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ================= MINIMALISMO EDITORIAL & CLARO ================= */
+    :root {
+      --bg: #FBFBFA;
+      --surface: #FFFFFF;
+      --surface-subtle: #F4F4F2;
+      --border: #E8E8E5;
+      --border-dark: #D4D4D0;
+      
+      --text-main: #18181B;
+      --text-secondary: #52525B;
+      --text-muted: #71717A;
+      
+      --brand-green: #15803D;
+      --brand-green-bg: #F0FDF4;
+      --brand-green-border: #BBF7D0;
+      
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.25rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+    }
+
+    /* Cabeçalho Editorial */
+    .hero {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-tag span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand-green);
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+
+    /* Navegação de Abas Minimalista */
+    .nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
+      transition: color 0.15s ease;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--text-main);
+    }
+
+    /* Painéis de Conteúdo */
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* ================= ABA 1: SIMULADOR DE IMPACTO ================= */
+    .sim-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .sim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 680px) {
+      .sim-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+    }
+
+    .sim-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .input-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .input-label strong {
+      color: var(--text-main);
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--text-main);
+      cursor: pointer;
+    }
+
+    /* Resultados */
+    .results-box {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .result-item {
+      margin-bottom: 1rem;
+    }
+
+    .result-item:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .result-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .result-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .result-value.highlight {
+      color: var(--brand-green);
+    }
+
+    .result-sub {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    /* Botão de Ação Claro */
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--text-main);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 0.85rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      transition: background-color 0.15s ease;
+      width: 100%;
+    }
+
+    .btn-action:hover {
+      background: #27272A;
+    }
+
+    /* ================= ABA 2: COMPARATIVO ================= */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .compare-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+
+    .compare-card.positive {
+      border-color: var(--brand-green-border);
+      background: #FAFCFA;
+    }
+
+    .compare-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .compare-badge.negative {
+      color: #DC2626;
+    }
+
+    .compare-badge.positive {
+      color: var(--brand-green);
+    }
+
+    .compare-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    /* ================= ABA 3: SERVIÇOS E PREÇOS ================= */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pkg-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pkg-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .pkg-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      min-height: 40px;
+    }
+
+    .pkg-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .pkg-time {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Rodapé Limpo */
+    .site-footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Hero Editorial Direto -->
+    <header class="hero">
+      <div class="hero-tag">
+        <span></span>
+        Atendimento & Vendas Locais
+      </div>
+      <h1>Sites rápidos e atendimento automático no WhatsApp.</h1>
+      <p>
+        Ajudo comércios, clínicas e prestadores de serviços do ABC e São Paulo a pararem de perder clientes no Google Maps e no celular.
+      </p>
+    </header>
+
+    <!-- Navegação em Abas -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="tab-btn active" onclick="setTab('simulador')">Simulador de Perdas</button>
+      <button class="tab-btn" onclick="setTab('comparativo')">O Que Muda na Prática</button>
+      <button class="tab-btn" onclick="setTab('planos')">Pacotes e Prazos</button>
+    </nav>
+
+    <!-- ABA 1: SIMULADOR DE PERDAS (Com foco em dinheiro e tempo) -->
+    <section class="tab-pane active" id="tab-simulador">
+      <div class="sim-card">
+        <div class="sim-grid">
+          
+          <div class="sim-inputs">
+            <div>
+              <h2 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 0.25rem;">
+                Quanto a demora de resposta custa ao seu negócio?
+              </h2>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Ajuste os valores abaixo para calcular quantos clientes vão para o concorrente enquanto aguardam resposta manual.
+              </p>
+            </div>
+
+            <div class="input-row">
+              <div class="input-label">
+                <span>Contatos recebidos por dia:</span>
+                <strong id="labelLeads">20 contatos</strong>
+              </div>
+              <input type="range" min="5" max="80" value="20" class="slider" id="sliderLeads" oninput="calculate()">
+            </div>
+
+            <div class="input-row">
+              <div class="input-label">
+                <span>Tempo médio para responder no balcão:</span>
+                <strong id="labelWait">30 minutos</strong>
+              </div>
+              <input type="range" min="2" max="90" value="30" class="slider" id="sliderWait" oninput="calculate()">
+            </div>
+
+            <div class="input-row">
+              <div class="input-label">
+                <span>Valor médio de cada venda ou serviço:</span>
+                <strong id="labelTicket">R$ 150</strong>
+              </div>
+              <input type="range" min="30" max="1000" step="10" value="150" class="slider" id="sliderTicket" oninput="calculate()">
+            </div>
+          </div>
+
+          <div class="results-box">
+            <div>
+              <div class="result-item">
+                <div class="result-title">Clientes perdidos todo mês</div>
+                <div class="result-value" id="resClients">168 clientes</div>
+                <div class="result-sub">Desistiram pela espera e fecharam com outro local.</div>
+              </div>
+
+              <div class="result-item" style="margin-top: 1.25rem;">
+                <div class="result-title">Faturamento recuperável</div>
+                <div class="result-value highlight" id="resMoney">R$ 25.200 / mês</div>
+                <div class="result-sub">Potencial resgatado com triagem em menos de 5 segundos.</div>
+              </div>
+
+              <div class="result-item" style="margin-top: 1.25rem;">
+                <div class="result-title">Tempo de equipe poupado</div>
+                <div class="result-value" id="resHours">40 horas / mês</div>
+                <div class="result-sub">Sem funcionários respondendo sempre as mesmas dúvidas.</div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor,%20gostaria%20de%20implementar%20a%20triagem%20autom%C3%A1tica%20no%20meu%20WhatsApp." target="_blank" rel="noopener" class="btn-action">
+              <span>Evitar Perdas no WhatsApp</span>
+              <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA 2: O QUE MUDA NA PRÁTICA (Comparativo de Valor) -->
+    <section class="tab-pane" id="tab-comparativo">
+      <div class="compare-grid">
+        
+        <div class="compare-card">
+          <span class="compare-badge negative">Como funciona a maioria</span>
+          <h3>O formato que perde vendas</h3>
+          <ul class="compare-list">
+            <li><i data-lucide="x" style="width: 15px; height: 15px; color: #DC2626; flex-shrink: 0; margin-top: 2px;"></i> <span>Site antigo que demora 8 segundos para abrir no 4G.</span></li>
+            <li><i data-lucide="x" style="width: 15px; height: 15px; color: #DC2626; flex-shrink: 0; margin-top: 2px;"></i> <span>Link no Google Maps cai num formulário longo que ninguém preenche.</span></li>
+            <li><i data-lucide="x" style="width: 15px; height: 15px; color: #DC2626; flex-shrink: 0; margin-top: 2px;"></i> <span>Cliente manda mensagem às 20h e só é respondido no dia seguinte.</span></li>
+            <li><i data-lucide="x" style="width: 15px; height: 15px; color: #DC2626; flex-shrink: 0; margin-top: 2px;"></i> <span>Mensalidades caras de agência sem garantia de entrega rápida.</span></li>
+          </ul>
+        </div>
+
+        <div class="compare-card positive">
+          <span class="compare-badge positive">Com a nossa estrutura</span>
+          <h3>Focado em fechamento direto</h3>
+          <ul class="compare-list">
+            <li><i data-lucide="check" style="width: 15px; height: 15px; color: var(--brand-green); flex-shrink: 0; margin-top: 2px;"></i> <span>Página limpa que carrega em menos de 1 segundo no celular.</span></li>
+            <li><i data-lucide="check" style="width: 15px; height: 15px; color: var(--brand-green); flex-shrink: 0; margin-top: 2px;"></i> <span>Botão único de WhatsApp com mensagem pronta do serviço que o cliente quer.</span></li>
+            <li><i data-lucide="check" style="width: 15px; height: 15px; color: var(--brand-green); flex-shrink: 0; margin-top: 2px;"></i> <span>Atendimento 24 horas tirando dúvidas, enviando tabela e agendando.</span></li>
+            <li><i data-lucide="check" style="width: 15px; height: 15px; color: var(--brand-green); flex-shrink: 0; margin-top: 2px;"></i> <span>Entrega pontual em até 72 horas com nota fiscal e sem mensalidades forçadas.</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABA 3: PACOTES E VALORES OBJETIVOS -->
+    <section class="tab-pane" id="tab-planos">
+      <div class="packages-grid">
+        
+        <div class="pkg-card">
+          <div>
+            <h3 class="pkg-title">Ativação Rápida</h3>
+            <p class="pkg-desc">Página moderna de alta velocidade + Perfil do Google Maps organizado para o bairro.</p>
+            <div class="pkg-price">R$ 650</div>
+            <div class="pkg-time">Entrega em até 48 horas</div>
+          </div>
+          <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor,%20gostaria%20do%20pacote%20de%20Ativa%C3%A7%C3%A3o%20R%C3%A1pida." target="_blank" rel="noopener" class="btn-action">
+            Contratar Ativação
+          </a>
+        </div>
+
+        <div class="pkg-card" style="border-color: var(--border-dark); background: #FAFBF9;">
+          <div>
+            <h3 class="pkg-title">Atendimento 24h</h3>
+            <p class="pkg-desc">Site completo + Assistente no WhatsApp para triar pedidos e agendar clientes sem espera.</p>
+            <div class="pkg-price">R$ 1.250</div>
+            <div class="pkg-time">Entrega em até 72 horas</div>
+          </div>
+          <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor,%20gostaria%20do%20pacote%20de%20Atendimento%2024h%20no%20WhatsApp." target="_blank" rel="noopener" class="btn-action" style="background: var(--brand-green);">
+            Escolher Atendimento
+          </a>
+        </div>
+
+        <div class="pkg-card">
+          <div>
+            <h3 class="pkg-title">Automação de Rotinas</h3>
+            <p class="pkg-desc">Eliminação de planilhas manuais, relatórios automáticos e rotinas de controle interno.</p>
+            <div class="pkg-price">Sob Medida</div>
+            <div class="pkg-time">Avaliação sem compromisso</div>
+          </div>
+          <a href="https://wa.me/5511975958383?text=Ol%C3%A1%20Victor,%20gostaria%20de%20um%20diagn%C3%B3stico%20de%20automa%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-action">
+            Solicitar Análise
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+      <div>Victor Zanin Rubinec • São Caetano do Sul e Santo André, SP</div>
+      <div class="footer-links">
+        <a href="https://wa.me/5511975958383" target="_blank" rel="noopener">WhatsApp Direto</a>
+        <a href="https://www.linkedin.com/in/victor-zanin-rubinec-8a69931a2" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function setTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      event.target.classList.add('active');
+      document.getElementById('tab-' + name).classList.add('active');
+    }
+
+    function calculate() {
+      const leads = parseInt(document.getElementById('sliderLeads').value);
+      const wait = parseInt(document.getElementById('sliderWait').value);
+      const ticket = parseInt(document.getElementById('sliderTicket').value);
+
+      document.getElementById('labelLeads').innerText = `${leads} contatos`;
+      document.getElementById('labelWait').innerText = `${wait} minutos`;
+      document.getElementById('labelTicket').innerText = `R$ ${ticket}`;
+
+      // Cálculo de perda proporcional ao tempo de espera
+      let lossRate = 0.08 + (wait / 90) * 0.45;
+      if (lossRate > 0.60) lossRate = 0.60;
+
+      const monthlyLeads = leads * 30;
+      const lostClients = Math.round(monthlyLeads * lossRate);
+      const recoveredRevenue = Math.round(lostClients * ticket);
+      const savedHours = Math.round((monthlyLeads * 3.5) / 60);
+
+      document.getElementById('resClients').innerText = `${lostClients} clientes`;
+      document.getElementById('resMoney').innerText = `R$ ${recoveredRevenue.toLocaleString('pt-BR')} / mês`;
+      document.getElementById('resHours').innerText = `${savedHours} horas / mês`;
+    }
+
+    calculate();
+  </script>
+</body>
+</html>
