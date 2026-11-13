@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animalândia Pet Shop &amp; Clínica Veterinária | Agendamento Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="agendador.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg-main, #FBFBFA);
+      color: var(--text-main, #18181B);
+      line-height: 1.6;
+    }
+    .demo-bar {
+      background: #15803D;
+      color: #FFFFFF;
+      padding: 0.5rem 1rem;
+      font-size: 0.825rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-bar a {
+      color: #FFFFFF;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (max-width: 820px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+    .badge-clinica {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(21, 128, 61, 0.1);
+      color: #15803D;
+      border: 1px solid rgba(21, 128, 61, 0.25);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .hero-content h1 {
+      font-size: 2.35rem;
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 0 0 1rem 0;
+      letter-spacing: -0.02em;
+    }
+    .hero-content p.lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+    .info-card {
+      background: var(--bg-surface, #FFFFFF);
+      border: 1px solid var(--border-soft, #E4E4E7);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-card h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .info-card p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+    .features-list li {
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .check-icon {
+      color: #15803D;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    <span>🐾 Demonstração Exclusiva para a Animalândia Vila Alpina (Evandro &amp; Equipe)</span>
+    <a href="../../index.html">Voltar ao Portfólio</a>
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="badge-clinica">Clínica Veterinária &amp; Pet Shop</span>
+        <h1>Cuidado Veterinário Completo na Vila Alpina</h1>
+        <p class="lead">Agende consultas clínicas, vacinas e cuidados para o seu pet sem burocracia. Envie os dados direto para o nosso atendimento com confirmação rápida.</p>
+
+        <div class="info-card">
+          <h4>📍 Localização &amp; Horários</h4>
+          <p>Rua José Macedo, 815 – Vila Macedópolis / Vila Alpina (SP)<br>
+          Segunda a Sexta: 08:30 às 19:30 | Sábados: 08:30 às 18:00</p>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check-icon">✓</span> Atendimento Particular e Rede Credenciada <strong>Petlove Saúde</strong></li>
+          <li><span class="check-icon">✓</span> Consultas gerais para cães e gatos</li>
+          <li><span class="check-icon">✓</span> Vacinação completa (V4, V8, V10 e Antirrábica) e controle de pulgas</li>
+          <li><span class="check-icon">✓</span> Sem filas e sem esperar atendimento de balcão</li>
+        </ul>
+      </div>
+
+      <div class="hero-widget">
+        <!-- Injeção do Widget Veterinário -->
+        <div id="agendador-vet-root"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="agendador-vet.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new VetScheduler({
+        containerId: 'agendador-vet-root',
+        businessName: 'Animalândia Vila Alpina Clínica',
+        whatsappNumber: '5511989508651', // WhatsApp real da Animalândia
+        services: [
+          { id: '1', name: 'Consulta Clínica Geral (Gato/Cão)', duration: '40 min' },
+          { id: '2', name: 'Vacinação (V4 Felina / V8 ou V10 Canina)', duration: '20 min' },
+          { id: '3', name: 'Vacina Antirrábica', duration: '20 min' },
+          { id: '4', name: 'Aplicação de Antipulgas / Vermífugo', duration: '15 min' },
+          { id: '5', name: 'Banho & Tosa Especializada', duration: '60 min' }
+        ],
+        slots: ['08:30', '09:00', '10:00', '11:00', '14:00', '15:30', '16:30', '17:30']
+      });
+    });
+  </script>
+</body>
+</html>
