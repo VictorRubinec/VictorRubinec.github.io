@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Médico Veterinário &amp; Pet Care | Agendamento Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="agendador.css?v=2">
+  <style>
+    :root {
+      --vet-teal: #0D9488;
+      --vet-teal-dark: #0F766E;
+      --vet-teal-subtle: #F0FDFA;
+      --vet-teal-border: #CCFBF1;
+      --vet-text-main: #0F172A;
+      --vet-text-muted: #475569;
+      --vet-bg-page: #F8FAFC;
+      --vet-bg-card: #FFFFFF;
+      --vet-border: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--vet-bg-page);
+      color: var(--vet-text-main);
+      line-height: 1.6;
+    }
+
+    /* Barra Superior Neutra de Demonstração */
+    .demo-bar {
+      background: #042F2E;
+      color: #CCFBF1;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.825rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .demo-bar a {
+      color: #5EEAD4;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .demo-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container Principal */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .container {
+        padding: 2rem 1.25rem;
+      }
+    }
+
+    .badge-clinica {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.85rem;
+      background: var(--vet-teal-subtle);
+      color: var(--vet-teal-dark);
+      border: 1px solid var(--vet-teal-border);
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-content h1 {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: 2.5rem;
+      line-height: 1.18;
+      font-weight: 700;
+      margin: 0 0 1.15rem 0;
+      color: var(--vet-text-main);
+      letter-spacing: -0.025em;
+    }
+
+    .hero-content p.lead {
+      font-size: 1.075rem;
+      color: var(--vet-text-muted);
+      margin-bottom: 1.75rem;
+      line-height: 1.65;
+    }
+
+    .info-card {
+      background: var(--vet-bg-card);
+      border: 1px solid var(--vet-border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .info-card h4 {
+      margin: 0 0 0.4rem 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--vet-text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-card p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: var(--vet-text-muted);
+      line-height: 1.5;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .features-list li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.925rem;
+      color: var(--vet-text-main);
+    }
+
+    .check-icon {
+      color: var(--vet-teal);
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    <span>🐾 Modelo de Demonstração Interativo — Sistema de Agendamento Veterinário</span>
+    <a href="../../index.html">← Portfólio de Soluções</a>
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="badge-clinica">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          Clínica Veterinária &amp; Pet Shop
+        </span>
+        <h1>Cuidado dedicado e ágil para o seu Pet</h1>
+        <p class="lead">Agendamento prático para consultas clínicas, vacinas e procedimentos veterinários. O tutor seleciona o serviço e horário em menos de um minuto, com envio direto para o atendimento.</p>
+
+        <div class="info-card">
+          <h4>📍 Atendimento com Hora Marcada</h4>
+          <p>Estrutura completa e equipe veterinária especializada.<br>
+          <strong>Horários:</strong> Segunda a Sexta das 08h30 às 19h30 | Sábados das 08h30 às 18h00</p>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check-icon">✓</span> Atendimento Particular e Convênios Pet (Petlove Saúde)</li>
+          <li><span class="check-icon">✓</span> Consultas especializadas para felinos (gatos) e caninos (cães)</li>
+          <li><span class="check-icon">✓</span> Vacinas essenciais com controle de carteirinha (V4, V8, V10 e Antirrábica)</li>
+          <li><span class="check-icon">✓</span> Confirmação rápida direto na recepção via WhatsApp</li>
+        </ul>
+      </div>
+
+      <div class="hero-widget">
+        <!-- Injeção do Widget Veterinário Neutro -->
+        <div id="agendador-vet-root"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="agendador-vet.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new VetScheduler({
+        containerId: 'agendador-vet-root',
+        businessName: 'Clínica Veterinária & Pet Care',
+        whatsappNumber: '5511999999999', // Neutro para modelo demo
+        services: [
+          { id: '1', name: 'Consulta Clínica Geral (Gato/Cão)', duration: '40 min' },
+          { id: '2', name: 'Vacinação (V4 Felina / V8 ou V10 Canina)', duration: '20 min' },
+          { id: '3', name: 'Vacina Antirrábica', duration: '20 min' },
+          { id: '4', name: 'Aplicação de Antipulgas / Vermífugo', duration: '15 min' },
+          { id: '5', name: 'Banho & Tosa Especializada', duration: '60 min' }
+        ],
+        slots: ['08:30', '09:00', '10:00', '11:00', '14:00', '15:30', '16:30', '17:30']
+      });
+    });
+  </script>
+</body>
+</html>
