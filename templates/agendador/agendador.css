@@ -1,0 +1,175 @@
+/* agendador.css - Sistema de Agendamento Genérico Reutilizável */
+:root {
+  --ag-primary: #7C3AED;
+  --ag-primary-hover: #6D28D9;
+  --ag-primary-light: #EDE9FE;
+  --ag-bg-card: #FFFFFF;
+  --ag-text-main: #18181B;
+  --ag-text-muted: #71717A;
+  --ag-border: #E4E4E7;
+  --ag-radius: 12px;
+  --ag-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --ag-whatsapp: #15803D;
+  --ag-whatsapp-hover: #166534;
+}
+
+[data-theme="dark"] {
+  --ag-primary: #A78BFA;
+  --ag-primary-hover: #C4B5FD;
+  --ag-primary-light: rgba(167, 139, 250, 0.12);
+  --ag-bg-card: #18181B;
+  --ag-text-main: #F4F4F5;
+  --ag-text-muted: #A1A1AA;
+  --ag-border: #27272A;
+}
+
+.agendador-card {
+  font-family: var(--ag-font);
+  background: var(--ag-bg-card);
+  color: var(--ag-text-main);
+  border: 1px solid var(--ag-border);
+  border-radius: var(--ag-radius);
+  padding: 1.5rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.agendador-header {
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--ag-border);
+  padding-bottom: 1rem;
+}
+
+.agendador-header h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agendador-header p {
+  font-size: 0.85rem;
+  color: var(--ag-text-muted);
+  margin: 0;
+}
+
+.ag-badge-secure {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--ag-primary-light);
+  color: var(--ag-primary);
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.ag-step {
+  margin-bottom: 1.25rem;
+}
+
+.ag-step-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ag-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.ag-select,
+.ag-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--ag-border);
+  background: transparent;
+  color: var(--ag-text-main);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.ag-select:focus,
+.ag-input:focus {
+  border-color: var(--ag-primary);
+}
+
+.ag-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.ag-slot-btn {
+  padding: 0.5rem 0.25rem;
+  background: transparent;
+  border: 1px solid var(--ag-border);
+  color: var(--ag-text-main);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.ag-slot-btn:hover {
+  border-color: var(--ag-primary);
+  color: var(--ag-primary);
+}
+
+.ag-slot-btn.active {
+  background: var(--ag-primary);
+  border-color: var(--ag-primary);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .ag-slot-btn.active {
+  color: #18181B;
+  font-weight: 600;
+}
+
+.ag-summary {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px dashed var(--ag-border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.825rem;
+  color: var(--ag-text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+.ag-btn-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  background: var(--ag-whatsapp);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  text-decoration: none;
+}
+
+.ag-btn-submit:hover {
+  background: var(--ag-whatsapp-hover);
+}
+
+.ag-btn-submit svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}

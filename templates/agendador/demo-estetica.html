@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Estética & Barbearia - Exemplo de Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="agendador.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg-main, #FBFBFA);
+      color: var(--text-main, #18181B);
+      line-height: 1.6;
+    }
+    .demo-bar {
+      background: var(--accent-purple, #7C3AED);
+      color: #FFFFFF;
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-bar a {
+      color: #FFFFFF;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+    .hero-content h1 {
+      font-size: 2.25rem;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+    .hero-content p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+    .benefits-list li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .badge-check {
+      color: var(--accent-purple, #7C3AED);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">
+    <span>💡 Template Demo: Modelo de Alta Conversão para Prestadores de Serviço</span>
+    <a href="../../componentes.html">Ver no Catálogo de Componentes</a>
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="badge-purple">Atendimento com Hora Marcada</span>
+        <h1>Studio Bella &amp; Barba Premium</h1>
+        <p>Especialistas em corte, barba terapêutica e tratamentos estéticos. Escolha seu serviço e agende em menos de 1 minuto sem esperar no balcão.</p>
+        
+        <ul class="benefits-list">
+          <li><span class="badge-check">✓</span> Confirmação imediata via WhatsApp</li>
+          <li><span class="badge-check">✓</span> Pontualidade rigorosa e atendimento exclusivo</li>
+          <li><span class="badge-check">✓</span> Sem necessidade de criar login ou baixar aplicativo</li>
+        </ul>
+      </div>
+
+      <div class="hero-widget">
+        <!-- Ponto de Injeção do Agendador Genérico -->
+        <div id="agendador-root"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="agendador.js"></script>
+  <script>
+    // Inicialização da Instância para este Cliente/Nicho
+    document.addEventListener('DOMContentLoaded', () => {
+      new GenericScheduler({
+        containerId: 'agendador-root',
+        businessName: 'Studio Bella & Barba Premium',
+        whatsappNumber: '5511999999999', // Substituir pelo número real do cliente
+        services: [
+          { id: '1', name: 'Corte de Cabelo + Lavagem', duration: '40 min', price: 'R$ 65' },
+          { id: '2', name: 'Barba Terapêutica c/ Toalha Quente', duration: '35 min', price: 'R$ 55' },
+          { id: '3', name: 'Combo Completo (Cabelo + Barba)', duration: '60 min', price: 'R$ 100' },
+          { id: '4', name: 'Limpeza de Pele Express', duration: '45 min', price: 'R$ 120' }
+        ],
+        slots: ['09:00', '10:30', '11:45', '14:00', '15:15', '16:30', '18:00']
+      });
+    });
+  </script>
+</body>
+</html>
