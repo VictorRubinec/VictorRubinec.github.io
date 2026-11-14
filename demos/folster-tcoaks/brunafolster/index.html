@@ -1,0 +1,2370 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="default">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bruna Folster — Caderno de Escrita, Histórias e Memória</title>
+  <meta name="description" content="Contos, crônicas, memórias e ensaios literários de Bruna Folster. Um espaço de desaceleração e observação além do óbvio.">
+  <meta name="theme-color" content="#1c2438">
+  <link rel="canonical" href="https://brunafolster.com.br/">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brunafolster.com.br/">
+  <meta property="og:title" content="Bruna Folster — Caderno Literário">
+  <meta property="og:description" content="Contos, crônicas e ensaios sobre memória, silêncio e o que existe além do véu.">
+  <meta property="og:image" content="images/bruna-capa.webp">
+
+  <!-- Favicon / Ícone de Aba do Navegador -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="128x128" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       VARIÁVEIS DE TEMA GLOBAL (CLARO / SÉPIA / NOTURNO)
+       ========================================================= */
+    :root, html[data-theme="default"] {
+      --bg: #faf7f2;
+      --surface: #ffffff;
+      --surface-hover: #f5f0e6;
+      --ink: #1a202c;
+      --ink-muted: #57606a;
+      --royal: #162947;
+      --royal-deep: #162947;
+      --terracotta: #b85444;
+      --parchment: #f0ebe1;
+      --line: #e1dcd3;
+      --header-bg: rgba(255, 255, 255, 0.94);
+      --header-text: #162238;
+      --header-muted: #5e6677;
+      --header-line: #e6e0d5;
+      --hero-bg: #f2ece0;
+      --hero-line: #ded6c6;
+      --btn-primary-bg: #162947;
+      --btn-primary-text: #faf7f2;
+      --progress-bar: #b85444;
+      --scrollbar-thumb: rgba(22, 41, 71, 0.18);
+      --scrollbar-thumb-hover: rgba(22, 41, 71, 0.35);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    /* TEMA SÉPIA (PAPEL LIVRO ENVELHECIDO / TONALIDADE QUENTE) */
+    html[data-theme="sepia"] {
+      --bg: #f4ece1;
+      --surface: #faf5eb;
+      --surface-hover: #eee3d0;
+      --ink: #2c1e14;
+      --ink-muted: #6e5c4e;
+      --royal: #5c3c1e;
+      --royal-deep: #2c1e14;
+      --terracotta: #a04a38;
+      --parchment: #ebe0c8;
+      --line: #dfcdb8;
+      --header-bg: rgba(250, 245, 235, 0.95);
+      --header-text: #2c1e14;
+      --header-muted: #6e5c4e;
+      --header-line: #dfcdb8;
+      --hero-bg: #ebe0c8;
+      --hero-line: #d8caa9;
+      --btn-primary-bg: #2c1e14;
+      --btn-primary-text: #faf5eb;
+      --progress-bar: #a04a38;
+      --scrollbar-thumb: #cfc3ab;
+      --scrollbar-thumb-hover: #b8aa8f;
+    }
+
+    /* TEMA NOTURNO (ARDÓSIA PROFUNDO / CONTRASTE IMPECÁVEL) */
+    html[data-theme="night"] {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-hover: #21262d;
+      --ink: #e6edf3;
+      --ink-muted: #8b949e;
+      --royal: #e07a5f;
+      --royal-deep: #e6edf3;
+      --terracotta: #e07a5f;
+      --parchment: #1c222b;
+      --line: #30363d;
+      --header-bg: rgba(20, 28, 40, 0.95);
+      --header-text: #f0f4f8;
+      --header-muted: #8b949e;
+      --header-line: #263447;
+      --hero-bg: #090d14;
+      --hero-line: #1c2738;
+      --btn-primary-bg: #e6edf3;
+      --btn-primary-text: #0d1117;
+      --progress-bar: #e07a5f;
+      --scrollbar-thumb: #28303d;
+      --scrollbar-thumb-hover: #3b4657;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* CUSTOM SCROLLBAR GLOBAL */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-thumb-hover);
+    }
+    ::-webkit-scrollbar-button {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb) transparent;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: transparent; }
+
+    .container-editorial { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* HEADER */
+    header {
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--header-line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.15rem 0;
+    }
+
+    /* MASTHEAD COM LOGO NO HEADER */
+    .masthead-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .masthead-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .masthead-brand:hover .masthead-logo {
+      transform: scale(1.06);
+    }
+    .masthead-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--header-text);
+      line-height: 1;
+      display: block;
+    }
+    .masthead-sub {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--header-muted);
+      margin-top: 0.3rem;
+    }
+
+    .nav-right-cluster {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--header-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terracotta); }
+    .nav-exec {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--header-line);
+      background: var(--surface);
+      font-size: 0.8rem !important;
+      font-weight: 600 !important;
+      color: var(--header-text) !important;
+      transition: all 0.2s ease;
+    }
+    .nav-exec:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta) !important;
+      background: var(--surface-hover);
+    }
+
+    /* READING PROGRESS BAR NO HEADER */
+    .reading-progress-track {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: transparent;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .reading-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--progress-bar);
+      transition: width 0.08s linear;
+    }
+
+    /* AVATAR NO EXTREMO DIREITO */
+    .user-profile-wrap {
+      position: relative;
+    }
+    .avatar-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 30px;
+      border: 1px solid var(--header-line);
+      background: var(--surface);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .avatar-btn:hover {
+      border-color: var(--terracotta);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .avatar-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--parchment);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: var(--header-muted);
+    }
+    .avatar-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    body.is-author .avatar-circle img { display: block; }
+    body.is-author .avatar-circle svg { display: none; }
+    .online-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border: 1.5px solid var(--header-bg);
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: none;
+    }
+    body.is-author .online-dot { display: block; }
+    .avatar-text {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--header-text);
+    }
+    .avatar-arrow {
+      font-size: 0.65rem;
+      color: var(--header-muted);
+      transition: transform 0.2s;
+    }
+    .user-profile-wrap.open .avatar-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* DROPDOWN MENU */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      width: 280px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+      z-index: 120;
+      overflow: hidden;
+      animation: dropFade 0.2s ease;
+    }
+    .user-profile-wrap.open .dropdown-menu { display: block; }
+    @keyframes dropFade {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CABEÇALHO DO DROPDOWN: APENAS CASO LOGADO */
+    .dropdown-user-header {
+      display: none;
+      padding: 0.85rem 1.15rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      gap: 0.75rem;
+      align-items: center;
+    }
+    body.is-author .dropdown-user-header {
+      display: flex;
+    }
+    .dropdown-user-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+    .dropdown-user-details h4 {
+      margin: 0;
+      padding: 0;
+      font-size: 0.92rem;
+      color: var(--royal-deep);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .dropdown-user-details p {
+      margin: 0;
+      padding: 0;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      line-height: 1.2;
+    }
+
+    /* AÇÕES RESTRITAS A QUEM ESTÁ LOGADO */
+    .author-only {
+      display: none !important;
+    }
+    body.is-author .author-only {
+      display: flex !important;
+    }
+
+    .dropdown-content {
+      padding: 0.35rem 0;
+      background: var(--surface);
+    }
+    .dropdown-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1.15rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink);
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      transition: background 0.15s;
+    }
+    .dropdown-nav-btn:hover {
+      background: var(--surface-hover);
+      color: var(--royal);
+    }
+    .dropdown-nav-btn svg {
+      stroke: var(--ink-muted);
+      flex-shrink: 0;
+      transition: stroke 0.2s;
+    }
+    .dropdown-nav-btn:hover svg {
+      stroke: var(--royal);
+    }
+
+    /* SEÇÕES DE PREFERÊNCIAS NO DROPDOWN (SELECT IDIOMA & ÍCONES TEMA) */
+    .dropdown-pref-block {
+      padding: 0.75rem 1.15rem;
+      border-top: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .pref-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .pref-label svg { stroke: var(--ink-muted); }
+
+    .dropdown-select {
+      width: 100%;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.82rem;
+      font-family: inherit;
+      font-weight: 600;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .dropdown-select:focus {
+      border-color: var(--royal);
+    }
+
+    .pref-row {
+      display: flex;
+      gap: 0.35rem;
+    }
+    .pill-opt {
+      flex: 1;
+      height: 34px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .pill-opt svg {
+      stroke: var(--ink-muted);
+      transition: stroke 0.15s;
+    }
+    .pill-opt.active, .pill-opt:hover {
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      border-color: var(--btn-primary-bg);
+    }
+    .pill-opt.active svg, .pill-opt:hover svg {
+      stroke: var(--btn-primary-text);
+    }
+
+    .dropdown-divider {
+      height: 1px;
+      background: var(--line);
+      margin: 0.35rem 0;
+    }
+
+    .menu-mobile-btn { display: none; font-size: 1.4rem; color: var(--header-text); }
+    .drawer-mobile {
+      display: none;
+      position: fixed;
+      top: 65px; left: 0; width: 100%; height: calc(100vh - 65px);
+      background: var(--bg);
+      padding: 2rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      z-index: 99;
+      border-bottom: 1px solid var(--line);
+    }
+    .drawer-mobile.open { display: flex; }
+
+    /* HERO (BANNER PRINCIPAL COM COR EXCLUSIVA) */
+    .hero {
+      background: var(--hero-bg);
+      padding: 5rem 0 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--hero-line);
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+    .hero-pre {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--terracotta);
+      margin-bottom: 1.25rem;
+      display: block;
+      font-weight: 600;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--royal-deep);
+      max-width: 820px;
+      margin: 0 auto 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-prose {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--ink-muted);
+      max-width: 680px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .btn-read {
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      padding: 0.8rem 1.8rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-read:hover { opacity: 0.92; }
+    .btn-secondary {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      padding: 0.8rem 1.8rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--ink);
+      background: var(--surface-hover);
+    }
+
+    /* SEÇÃO DE TEXTOS */
+    section { padding: 4.5rem 0; border-bottom: 1px solid var(--line); }
+
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .btn-cat {
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .btn-cat.active, .btn-cat:hover {
+      background: var(--surface);
+      color: var(--royal-deep);
+      border-color: var(--line);
+    }
+
+    /* GRID DE HISTÓRIAS */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+    }
+    .card-story {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s, background 0.25s;
+      cursor: pointer;
+    }
+    .card-story:hover {
+      border-color: var(--royal);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
+    }
+    .card-cover {
+      height: 200px;
+      background: var(--parchment);
+      overflow: hidden;
+      position: relative;
+    }
+    .card-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+      display: block;
+    }
+    .card-story:hover .card-cover img {
+      transform: scale(1.04);
+    }
+    .card-cover-empty {
+      height: 140px;
+      background: var(--parchment);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--ink-muted);
+      font-size: 1.1rem;
+    }
+    .card-content {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .story-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+    }
+    .story-tags {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+    .story-genre {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--terracotta);
+      white-space: nowrap;
+    }
+    .story-time {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    .card-story h3 {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      color: var(--royal-deep);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .card-story p {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      margin-bottom: 1.4rem;
+    }
+    .story-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .story-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--royal-deep);
+    }
+    .card-admin-btns {
+      display: none;
+      gap: 0.4rem;
+    }
+    body.is-author .card-admin-btns { display: flex; }
+    .btn-admin-del {
+      font-size: 0.72rem;
+      color: #b91c1c;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      border: 1px solid #fecaca;
+      background: #fef2f2;
+    }
+
+    /* SOBRE A AUTORA */
+    .author-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (min-width: 850px) {
+      .author-box { grid-template-columns: 0.75fr 1.25fr; }
+    }
+    .author-frame {
+      border: 1px solid var(--line);
+      padding: 0.75rem;
+      background: var(--surface);
+      border-radius: 6px;
+    }
+    .author-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+    }
+    .author-bio h2 {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      color: var(--royal-deep);
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+    .author-bio p {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+
+    /* NEWSLETTER CARTAS */
+    .newsletter-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .newsletter-card h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--royal-deep);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    .newsletter-card p {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      max-width: 500px;
+      margin: 0 auto 1.8rem;
+    }
+    .newsletter-row {
+      display: flex;
+      gap: 0.6rem;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .newsletter-row input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: var(--bg);
+      color: var(--ink);
+      outline: none;
+    }
+    .newsletter-row button {
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      padding: 0.8rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: opacity 0.2s;
+    }
+    .newsletter-row button:hover { opacity: 0.92; }
+    .news-feedback {
+      display: none;
+      font-size: 0.85rem;
+      color: #10b981;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    /* MODAL DE LEITURA (COM SCROLLBAR E CONTRASTE) */
+    .reader-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 14, 22, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .reader-backdrop.open { display: flex; }
+    .reader-sheet {
+      background: var(--surface);
+      border-radius: 8px;
+      max-width: 760px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 3rem;
+      position: relative;
+      border: 1px solid var(--line);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      color: var(--ink);
+    }
+    .reader-sheet .reader-headline { color: var(--royal-deep); }
+    .reader-sheet .reader-meta { color: var(--ink-muted); }
+    .reader-sheet .reader-text-body,
+    .reader-sheet .reader-text-body p { color: var(--ink) !important; }
+    .reader-sheet .btn-tool { background: var(--bg); color: var(--ink); border: 1px solid var(--line); }
+    .reader-sheet .close-reader-btn { color: var(--ink-muted); }
+
+    .reader-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+    .reader-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-tool {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+    }
+    .btn-tool.active {
+      font-weight: 800;
+      border-color: var(--terracotta);
+      background: var(--surface);
+    }
+    .close-reader-btn {
+      font-size: 1.3rem;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reader-cover-wrap {
+      margin-bottom: 2rem;
+      border-radius: 6px;
+      overflow: hidden;
+      max-height: 380px;
+      background: #000;
+    }
+    .reader-cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .reader-headline {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .reader-meta {
+      font-size: 0.8rem;
+      margin-bottom: 2rem;
+    }
+    .reader-text-body {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      line-height: 1.85;
+    }
+    .reader-text-body p { margin-bottom: 1.5rem; text-indent: 1.5rem; }
+
+    /* MODAL DE LOGIN */
+    .modal-auth-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 14, 22, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 250;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-auth-bg.open { display: flex; }
+    .auth-card {
+      background: var(--surface);
+      border-radius: 12px;
+      max-width: 380px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2rem;
+      position: relative;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+    }
+    .auth-close-btn {
+      position: absolute;
+      top: 1.15rem;
+      right: 1.15rem;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      color: var(--ink-muted);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .auth-close-btn:hover {
+      background: var(--surface-hover);
+      color: var(--ink);
+    }
+    .auth-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--royal-deep);
+      margin: 0 0 0.35rem 0;
+      letter-spacing: -0.02em;
+    }
+    .auth-card p {
+      font-size: 0.84rem;
+      color: var(--ink-muted);
+      line-height: 1.45;
+      margin: 0 0 1.4rem 0;
+    }
+    .auth-field {
+      margin-bottom: 1.1rem;
+    }
+    .auth-field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+    .auth-field input {
+      width: 100%;
+      box-sizing: border-box;
+      height: 42px;
+      padding: 0 0.9rem;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+      background: #f1f5f9;
+      color: var(--ink);
+      transition: all 0.2s ease;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+    .auth-field input:focus {
+      background: #ffffff;
+      border-color: var(--royal);
+      box-shadow: 0 0 0 3px rgba(43, 76, 126, 0.12);
+    }
+    html[data-theme="sepia"] .auth-field input {
+      background: #eee6d8;
+      border-color: #dfcdb8;
+      color: var(--ink);
+    }
+    html[data-theme="sepia"] .auth-field input:focus {
+      background: #faf5eb;
+    }
+    html[data-theme="night"] .auth-field input {
+      background: #0d1117;
+      border-color: #30363d;
+      color: #e6edf3;
+    }
+    html[data-theme="night"] .auth-field input:focus {
+      background: #161b22;
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.2);
+    }
+    .btn-submit-auth {
+      width: 100%;
+      box-sizing: border-box;
+      height: 44px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--royal-deep);
+      color: #ffffff;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-top: 0.85rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(28, 36, 56, 0.16);
+      transition: all 0.2s ease;
+    }
+    .btn-submit-auth:hover {
+      background: var(--royal);
+      box-shadow: 0 4px 12px rgba(28, 36, 56, 0.24);
+      transform: translateY(-1px);
+    }
+    .btn-submit-auth:active {
+      transform: translateY(0);
+    }
+
+    /* MODAL DO ATELIER DE ESCRITA */
+    .studio-modal-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 14, 22, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 240;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .studio-modal-bg.open { display: flex; }
+    .studio-sheet {
+      background: var(--surface);
+      border-radius: 8px;
+      max-width: 820px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 3rem;
+      position: relative;
+      border: 1px solid var(--line);
+    }
+    .studio-sheet h2 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--royal-deep);
+      margin-bottom: 0.3rem;
+    }
+    .studio-sheet p.studio-sub {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 2rem;
+    }
+    .studio-form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 700px) {
+      .studio-form-grid { grid-template-columns: 1.2fr 0.8fr; }
+      .studio-form-grid .full { grid-column: span 2; }
+    }
+    .studio-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .studio-field input, .studio-field select, .studio-field textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    .studio-field textarea {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .studio-field input:focus, .studio-field select:focus, .studio-field textarea:focus {
+      border-color: var(--royal);
+    }
+    .studio-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* MODAL DE GERENCIAMENTO DE CONTOS */
+    .manager-modal-bg {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(10, 14, 22, 0.8);
+      backdrop-filter: blur(5px);
+      z-index: 240;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .manager-modal-bg.open { display: flex; }
+    .manager-sheet {
+      background: var(--surface);
+      border-radius: 8px;
+      max-width: 860px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      border: 1px solid var(--line);
+    }
+    .manager-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .manager-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .manager-table th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      background: var(--bg);
+      font-weight: 700;
+      color: var(--royal-deep);
+      border-bottom: 1px solid var(--line);
+    }
+    .manager-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+    }
+    .manager-table tr:hover td {
+      background: var(--surface-hover);
+    }
+
+    /* BARRA DE BUSCA EDITORIAL */
+    .search-container {
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+    .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      display: flex;
+      align-items: center;
+    }
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      color: var(--muted);
+      pointer-events: none;
+      transition: color 0.2s ease;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 2.6rem 0.75rem 2.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 9999px;
+      outline: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .search-input:focus {
+      border-color: var(--royal-light);
+      box-shadow: 0 0 0 3px rgba(43, 76, 126, 0.12);
+      background: var(--bg);
+    }
+    .search-input:focus ~ .search-icon {
+      color: var(--royal-deep);
+    }
+    .search-clear-btn {
+      position: absolute;
+      right: 0.85rem;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 50%;
+      line-height: 1;
+      display: none;
+    }
+    .search-clear-btn:hover {
+      color: var(--ink);
+      background: var(--line);
+    }
+    .empty-search-state {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+      font-size: 1rem;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px dashed var(--line);
+      margin: 1.5rem 0;
+    }
+
+    /* GALERIA DE IMAGENS NO LEITOR */
+    .reader-gallery-section {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+    .reader-gallery-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--royal-deep);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    .reader-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .reader-gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .reader-gallery-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    }
+    .reader-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .reader-gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    /* SELO DE RASCUNHO PRIVADO */
+    .badge-draft {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.15rem 0.45rem;
+      background: rgba(184, 84, 68, 0.1);
+      color: var(--terracotta);
+      border: 1px solid rgba(184, 84, 68, 0.28);
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+
+    /* MANIFESTO POÉTICO NA BIOGRAFIA */
+    .author-manifesto {
+      margin-bottom: 1.25rem;
+      padding: 1.25rem;
+      background: var(--bg);
+      border-left: 3px solid var(--terracotta);
+      border-radius: 0 8px 8px 0;
+    }
+    .manifesto-quote {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--royal-deep);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .manifesto-verses {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.6;
+      white-space: pre-line;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-mobile-btn { display: block; }
+      .reader-sheet, .studio-sheet, .manager-sheet { padding: 1.8rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bruna Folster",
+    "url": "https://brunafolster.com.br",
+    "image": "https://brunafolster.com.br/images/bruna-perfil.webp",
+    "description": "Escritora brasileira. Ensaios, crônicas e contos literários.",
+    "sameAs": [
+      "https://brfolster.com.br",
+      "https://www.linkedin.com/in/bruna-folster/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER COM AVATAR NO EXTREMO DIREITO E DROPDOWN -->
+  <header>
+    <div class="container-editorial header-flex">
+      <!-- MASTHEAD À ESQUERDA COM LOGO OFICIAL -->
+      <div class="masthead-brand">
+        <img src="images/logo.svg" alt="Bruna Folster Logo" class="masthead-logo" width="40" height="40">
+        <div>
+          <a href="#inicio" class="masthead-title">Bruna Folster</a>
+          <div class="masthead-sub" id="mastheadSub">Escritas, histórias e outras ideias</div>
+        </div>
+      </div>
+
+      <!-- NAVEGAÇÃO & AVATAR À DIREITA -->
+      <div class="nav-right-cluster">
+        <nav class="nav-links">
+          <a href="#textos" id="navTextos">Acervo</a>
+          <a href="#sobre" id="navSobre">Sobre a Autora</a>
+          <a href="#cartas" id="navCartas">Cartas</a>
+          <a href="https://brfolster.com.br" target="_blank" class="nav-exec" id="navExecutivo">Consultoria ESG ↗</a>
+        </nav>
+
+        <!-- AVATAR NO EXTREMO DIREITO -->
+        <div class="user-profile-wrap" id="userProfileWrap">
+          <button class="avatar-btn" id="avatarBtn" onclick="toggleDropdown()" aria-label="Menu de Usuário">
+            <div class="avatar-circle">
+              <!-- Ícone neutro de visitante quando deslogado -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <!-- Foto de Bruna exibida apenas quando logada como autora -->
+              <img src="images/bruna-perfil.webp" alt="Avatar Bruna Folster">
+              <span class="online-dot"></span>
+            </div>
+            <span class="avatar-text" id="avatarText">Entrar</span>
+            <span class="avatar-arrow">▼</span>
+          </button>
+
+          <!-- MENU DROPDOWN ELEGANTE COM ÍCONES VETORIAIS (SEM EMOJIS E SEM PERFIL) -->
+          <div class="dropdown-menu" id="dropdownMenu">
+            <!-- CABEÇALHO DO DROPDOWN (VISÍVEL APENAS QUANDO LOGADO) -->
+            <div class="dropdown-user-header" id="dropdownUserHeader">
+              <div class="avatar-circle" style="width: 38px; height: 38px;">
+                <img src="images/bruna-perfil.webp" alt="Bruna" style="display: block;">
+              </div>
+              <div class="dropdown-user-details">
+                <h4 id="dropUserName">Bruna Folster</h4>
+                <p id="dropUserEmail">bruna@folster.com.br</p>
+              </div>
+            </div>
+
+            <div class="dropdown-content">
+              <!-- AÇÕES DA AUTORA (RESTRITAS A QUEM ESTÁ LOGADO) -->
+              <button class="dropdown-nav-btn author-only" onclick="handleMenuAction('write')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                  <path d="m15 5 4 4"/>
+                </svg>
+                <span>Escrever Novo Conto</span>
+              </button>
+
+              <button class="dropdown-nav-btn author-only" onclick="handleMenuAction('manage')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+                  <path d="M6 6h10"/>
+                  <path d="M6 10h10"/>
+                </svg>
+                <span>Gerenciar Acervo</span>
+              </button>
+
+              <!-- LOCALIZAÇÃO / IDIOMAS EM CAIXA SELECT -->
+              <div class="dropdown-pref-block">
+                <div class="pref-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                    <path d="M2 12h20"/>
+                  </svg>
+                  <span id="lblIdioma">Idioma</span>
+                </div>
+                <select class="dropdown-select" id="langSelect" onchange="setLang(this.value)" aria-label="Idioma do Site">
+                  <option value="pt" selected>Português</option>
+                  <option value="en">English</option>
+                  <option value="es">Español</option>
+                </select>
+              </div>
+
+              <!-- TEMA GLOBAL DO SITE EM ÍCONES -->
+              <div class="dropdown-pref-block">
+                <div class="pref-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                  </svg>
+                  <span id="lblTema">Tema</span>
+                </div>
+                <div class="pref-row">
+                  <button class="pill-opt active" id="themePillLight" onclick="setSiteTheme('default')" title="Tema Claro" aria-label="Tema Claro">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="4"/>
+                      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    </svg>
+                  </button>
+                  <button class="pill-opt" id="themePillSepia" onclick="setSiteTheme('sepia')" title="Tema Sépia (Leitura)" aria-label="Tema Sépia">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                  </button>
+                  <button class="pill-opt" id="themePillNight" onclick="setSiteTheme('night')" title="Tema Noturno" aria-label="Tema Noturno">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="dropdown-divider"></div>
+
+              <!-- BOTÃO DE LOGIN / LOGOUT -->
+              <button class="dropdown-nav-btn" id="btnLogInOut" onclick="handleLogToggle()" style="color: var(--terracotta);">
+                <svg id="svgLogIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                  <polyline points="10 17 15 12 10 7"/>
+                  <line x1="15" x2="3" y1="12" y2="12"/>
+                </svg>
+                <span id="txtLogInOut">Login</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="menu-mobile-btn" onclick="toggleDrawer()">☰</button>
+      </div>
+    </div>
+
+    <!-- DRAWER MOBILE -->
+    <div class="drawer-mobile" id="drawerMobile">
+      <a href="#textos" onclick="toggleDrawer()">Acervo de Textos</a>
+      <a href="#sobre" onclick="toggleDrawer()">Sobre a Autora</a>
+      <a href="#cartas" onclick="toggleDrawer()">Cartas</a>
+      <a href="https://brfolster.com.br" target="_blank">Consultoria ESG ↗</a>
+      <button class="avatar-btn" onclick="toggleDrawer(); toggleDropdown();" style="width: fit-content;">
+        <span class="avatar-text">Menu da Autora & Preferências</span>
+      </button>
+    </div>
+    <!-- LINHA DE PROGRESSO DE LEITURA EDITORIAL -->
+    <div class="reading-progress-track">
+      <div class="reading-progress-bar" id="readingProgressBar"></div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container-editorial">
+      <span class="hero-pre" id="heroPre">Caderno Literário & Ensaios</span>
+      <h1 class="hero-title" id="heroTitle">Algumas pessoas olham.<br>Eu observo.</h1>
+      <p class="hero-prose" id="heroProse">
+        “Aqui não há cargos nem personagens: só meu olhar sobre o mundo, entre livros, memórias, silêncios e uma mente sempre inquieta.”
+      </p>
+      <div class="hero-actions">
+        <a href="#textos" class="btn-read" id="btnExplore">Explorar Textos</a>
+        <a href="#cartas" class="btn-secondary" id="btnLetters">Receber Cartas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACERVO DE TEXTOS -->
+  <section id="textos">
+    <div class="container-editorial">
+      <!-- BARRA DE BUSCA EDITORIAL -->
+      <div class="search-container">
+        <div class="search-box">
+          <input type="search" id="searchInput" class="search-input" placeholder="Buscar por título, categoria ou trecho..." oninput="handleSearch(this.value)" autocomplete="off">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <button id="clearSearchBtn" class="search-clear-btn" onclick="clearSearch()" aria-label="Limpar busca">✕</button>
+        </div>
+      </div>
+
+      <!-- BARRA DE FILTROS -->
+      <div class="filter-bar">
+        <button class="btn-cat active" onclick="filterCategory('todos', this)">Todos os Textos (<span id="totalStoriesCount">8</span>)</button>
+        <button class="btn-cat" onclick="filterCategory('Contos', this)">Contos</button>
+        <button class="btn-cat" onclick="filterCategory('Crônicas', this)">Crônicas</button>
+        <button class="btn-cat" onclick="filterCategory('Memórias', this)">Memórias</button>
+        <button class="btn-cat" onclick="filterCategory('Ensaios', this)">Ensaios</button>
+        <button class="btn-cat" onclick="filterCategory('Fragmentos', this)">Fragmentos</button>
+        <button class="btn-cat" onclick="filterCategory('Poesia', this)">Poesia</button>
+      </div>
+
+      <!-- ESTADO VAZIO DE BUSCA -->
+      <div id="emptySearchState" class="empty-search-state" style="display: none;">
+        Nenhum texto encontrado para "<span id="emptyQueryText" style="font-weight: 600;"></span>".<br>
+        <button class="btn-secondary" style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.85rem;" onclick="clearSearch()">Limpar busca e ver todos</button>
+      </div>
+
+      <!-- GRID DINÂMICO DE HISTÓRIAS -->
+      <div class="stories-grid" id="storiesGrid">
+        <!-- Renderizado dinamicamente -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE A AUTORA -->
+  <section id="sobre" style="background: var(--surface);">
+    <div class="container-editorial">
+      <div class="author-box">
+        <div class="author-frame">
+          <img src="images/bruna-perfil.webp" alt="Bruna Folster — Escritora" width="500" height="600" loading="lazy">
+        </div>
+
+        <div class="author-bio">
+          <h2 id="aboutTitle">Sobre Bruna Folster</h2>
+          
+          <div class="author-manifesto">
+            <p class="manifesto-quote">“Aqui não há cargos nem personagens: só meu olhar sobre o mundo, entre livros, memórias, silêncios e uma mente sempre inquieta.”</p>
+            <div class="manifesto-verses">Este é o lugar onde eu não desempenho nenhum papel.
+Só existo. Além do filtro.
+Sem personagens. Sem versões.
+Só a forma como vejo o mundo: algumas pessoas olham, eu observo.
+Este é o lugar onde registro o que existe além do óbvio — fragmentos, livros, silêncios, memórias e tudo o que existe além do véu.</div>
+          </div>
+
+          <p id="aboutP1">
+            Escrever, para mim, nunca foi um exercício de vaidade — é uma necessidade biológica de desaceleração. Em meio à rotina corporativa como executiva internacional, este caderno é onde guardo aquilo que não cabe em atas ou planilhas.
+          </p>
+          <p id="aboutP2">
+            Aqui você encontra o registro de uma mente atenta aos detalhes periféricos: o rangido das janelas de madeira velha na praia, a luz oblíqua de fim de tarde e as perguntas essenciais que ninguém faz nas reuniões sérias.
+          </p>
+          <div style="margin-top: 1.5rem;">
+            <a href="https://brfolster.com.br" target="_blank" class="btn-secondary" id="aboutBtn">Conhecer Atuação Executiva & ESG ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER CARTAS -->
+  <section id="cartas">
+    <div class="container-editorial">
+      <div class="newsletter-card">
+        <h3 id="newsTitle">Uma carta quando houver uma nova história.</h3>
+        <p id="newsDesc">Sem algoritmos, sem rotinas comerciais. Você recebe um e-mail intimista diretamente da autora sempre que um novo conto for finalizado.</p>
+        
+        <form class="newsletter-row" onsubmit="handleNewsletter(event)">
+          <input type="email" id="newsEmail" required placeholder="Digite seu melhor e-mail">
+          <button type="submit" id="newsBtn">Inscrever-se</button>
+        </form>
+        <div class="news-feedback" id="newsFeedback">✔ Inscrição confirmada! Você receberá a próxima carta da autora.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container-editorial">
+      <p id="footerCopy">© 2026 Bruna Folster · Feito de palavras, memória e observação.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL DE LEITURA (COM CONTRASTE GARANTIDO) -->
+  <div class="reader-backdrop" id="readerBackdrop">
+    <div class="reader-sheet" id="readerSheet">
+      <!-- BARRA DE FERRAMENTAS -->
+      <div class="reader-toolbar">
+        <div class="reader-tools">
+          <span style="font-size: 0.75rem; margin-right: 0.3rem;">Tema:</span>
+          <button class="btn-tool active" id="btnToolLight" onclick="setSiteTheme('default')">Claro</button>
+          <button class="btn-tool" id="btnToolSepia" onclick="setSiteTheme('sepia')">Sépia</button>
+          <button class="btn-tool" id="btnToolNight" onclick="setSiteTheme('night')">Noturno</button>
+          <span style="border-left: 1px solid var(--line); margin: 0 0.4rem; height: 16px;"></span>
+          <button class="btn-tool" onclick="adjustFontSize(-1)">A-</button>
+          <button class="btn-tool" onclick="adjustFontSize(1)">A+</button>
+        </div>
+        <button class="close-reader-btn" onclick="closeStory()">✕</button>
+      </div>
+
+      <!-- CAPA NO LEITOR -->
+      <div class="reader-cover-wrap" id="mCoverWrap" style="display: none;">
+        <img id="mCoverImg" src="" alt="Capa da história">
+      </div>
+
+      <div class="reader-header">
+        <span style="font-size: 0.75rem; font-weight: 700; color: var(--terracotta); text-transform: uppercase;" id="mCat">Contos</span>
+        <h2 class="reader-headline" id="mHeadline">Título</h2>
+        <div class="reader-meta" id="mMeta">Bruna Folster · Leitura</div>
+      </div>
+
+      <div class="reader-text-body" id="mBodyText">
+        <!-- Texto da história -->
+      </div>
+
+      <!-- GALERIA DE MÚLTIPLAS IMAGENS DO TEXTO -->
+      <div class="reader-gallery-section" id="mGallerySection" style="display: none;">
+        <h4 class="reader-gallery-title">Imagens que acompanham o texto</h4>
+        <div class="reader-gallery-grid" id="mGalleryGrid">
+          <!-- Miniaturas renderizadas dinamicamente -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE LOGIN DA AUTORA -->
+  <div class="modal-auth-bg" id="modalAuth">
+    <div class="auth-card">
+      <button class="auth-close-btn" onclick="closeLoginModal()" aria-label="Fechar">✕</button>
+      <h3>Área da Autora</h3>
+      <p>Acesse seu atelier para redigir e gerenciar seus contos no site.</p>
+      
+      <form onsubmit="handleLogin(event)">
+        <div class="auth-field">
+          <label for="authEmail">E-mail</label>
+          <input type="email" id="authEmail" value="bruna@folster.com.br" required autocomplete="username">
+        </div>
+        <div class="auth-field">
+          <label for="authPass">Senha</label>
+          <input type="password" id="authPass" value="••••••••" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn-submit-auth">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL DO ATELIER DE ESCRITA -->
+  <div class="studio-modal-bg" id="modalStudio">
+    <div class="studio-sheet">
+      <button class="close-reader-btn" style="position: absolute; top: 1.5rem; right: 1.5rem;" onclick="closeAuthorStudio()">✕</button>
+      <h2>Escrever Nova História</h2>
+      <p class="studio-sub">Preencha o título, categoria, capa e texto para publicar imediatamente no acervo.</p>
+
+      <form onsubmit="handlePublishStory(event)" class="studio-form-grid">
+        <div class="studio-field full">
+          <label for="sTitle">Título da História *</label>
+          <input type="text" id="sTitle" required placeholder="Dê um nome ao texto">
+        </div>
+
+        <div class="studio-field">
+          <label for="sCategory">Categoria *</label>
+          <select id="sCategory">
+            <option>Contos</option>
+            <option>Crônicas</option>
+            <option>Memórias</option>
+            <option>Fragmentos</option>
+            <option>Ensaios</option>
+            <option>Poesia</option>
+          </select>
+        </div>
+
+        <div class="studio-field">
+          <label for="sImage">Imagem de Capa</label>
+          <select id="sImage">
+            <option value="images/casa-veraneio.webp">Casa de Veraneio (Praia)</option>
+            <option value="images/podre.webp">Luz da Manhã (Quarto)</option>
+            <option value="images/silencio-1.webp">Silêncio & Café</option>
+            <option value="images/fragmentos-estilhacos.webp">Fragmentos & Estilhaços</option>
+            <option value="images/caixa-caneta.webp">Caixa e Caneta</option>
+            <option value="images/rainha-palco.webp">Memória & Família</option>
+            <option value="images/bruna-capa.webp">Capa Editorial</option>
+          </select>
+        </div>
+
+        <div class="studio-field full">
+          <label for="sBody">Corpo do Texto * (Separe parágrafos com linha em branco)</label>
+          <textarea id="sBody" rows="9" required placeholder="Comece a escrever sua história aqui..."></textarea>
+        </div>
+
+        <div class="studio-actions full">
+          <button type="button" class="btn-secondary" onclick="closeAuthorStudio()">Cancelar</button>
+          <button type="submit" class="btn-read" style="background: var(--terracotta); color: #fff;">Publicar no Acervo ↗</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL DE GERENCIAMENTO DE CONTOS -->
+  <div class="manager-modal-bg" id="modalManager">
+    <div class="manager-sheet">
+      <button class="close-reader-btn" style="position: absolute; top: 1.5rem; right: 1.5rem;" onclick="closeManagerModal()">✕</button>
+      <div class="manager-header">
+        <div>
+          <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--royal-deep);">Gerenciamento do Acervo</h2>
+          <p style="font-size: 0.85rem; color: var(--ink-muted);">Controle de todas as publicações ativas no site.</p>
+        </div>
+        <button class="btn-read" style="background: var(--terracotta); color: #fff; font-size: 0.85rem; padding: 0.5rem 1rem;" onclick="closeManagerModal(); openAuthorStudio();">
+          + Novo Conto
+        </button>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="manager-table">
+          <thead>
+            <tr>
+              <th>Capa</th>
+              <th>Título</th>
+              <th>Categoria</th>
+              <th>Status</th>
+              <th>Tempo</th>
+              <th style="text-align: right;">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="managerTableBody">
+            <!-- Linhas dinâmicas -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // BASE DE DADOS DOS CONTOS
+    const defaultPosts = [
+  {
+    "id": "casa-veraneio",
+    "title": "Casa de veraneio",
+    "category": "Contos",
+    "image": "images/casa-veraneio.webp",
+    "gallery": ["images/hero-casa.webp"],
+    "state": "review",
+    "date": "",
+    "time": "7 min de leitura",
+    "excerpt": "Casa de Veraneio - Bruna Folster\r\nO choro é livre e escorre pelo meu rosto ao abrir o portão da casa da praia.\r\nNinguém mais vem aqui!\r\nO Guarujá tornou-se uma cidade fantasma e a ...",
+    "body": "<p>Casa de Veraneio - Bruna Folster\r\nO choro é livre e escorre pelo meu rosto ao abrir o portão da casa da praia.\r\nNinguém mais vem aqui!\r\nO Guarujá tornou-se uma cidade fantasma e a praia do Pernambuco, mais ainda, assim como a \r\nbela casa de veraneio. Não há famílias, tudo está à venda.\r\nCasas fechadas, a mata invadindo a calçada. Ruas de terra cheias de poças e aquelas asfaltadas, \r\nesburacadas. \r\nPara onde foi a alegria?\r\nPara onde foram todos?\r\nEntro com o carro na garagem. Desço. Respiro fundo, buscando forças para conter as lágrimas \r\ninsistentes.\r\nO que será de nós?\r\nCaminho em direção à porta principal, giro a chave com mãos tremulas. Fechando os olhos, \r\nabro a porta de uma vez.\r\nA casa jaz abandonada. O silêncio sufocante contamina o ambiente, os fantasmas habitam em \r\ncada brecha de um lugar que, um dia, fora acolhedor...\r\nA sala, antes de festas e bailes, hoje é demasiadamente espaçosa. A lareira continua repleta de \r\ncinzas de um inverno qualquer. Odor de uma maresia mofada. Algumas teias de aranha decoram as \r\nvigas enquanto livros espalham-se num dos cantos. As almofadas outrora alvas tingiram-se com bolor. O sol ilumina o jardim que pode ser visto através das janelas e portas de vidro.\r\nPor uma breve eternidade, caminho pelos cinco ambientes. Roço os dedos pelos sofás, acaricio a mesa de baralho, toco as cadeiras de balanço e enfim chego à parte lateral. Vou até a grande porta envidraçada. Destravo cada lado e empurro para abrir. Está enferrujada e o barulho me assusta; a brisa da \r\nmanhã, porém, me envolve. Respiro profundamente.\r\nAparentemente o único local que a tristeza não se apossou foi do jardim que mantemos bem cuidado e da maneira que os antepassados gostavam.\r\nA beleza das orquídeas abertas nas árvores, o canto dos pássaros, a grama recém-cortada com \r\ncheiro de infância bem vivida.\r\nPagamos o jardineiro todo mês, o único funcionário que restou.\r\nContinuo vagando o olhar pela piscina cristalina, que tem alguns azulejos rachados. A churrasqueira do outro lado me dá água na boca, só ao me lembrar da picanha ao alho. Receita de família.\r\nInspiro. Sinto-me oca, solitária e esquecida. Tento não pensar nisso, a manhã está apenas começando, preciso permanecer focada.\r\nNinguém teve coragem de descer, por isso vim só. Eu e minha mania estúpida de proteger aqueles \r\nque amo. Pessoas que nem ao menos se importam com minha dor. Acham que sou mais forte do que \r\nrealmente aparento.\r\nAcham-me fria e dura quando na realidade me sinto uma gelatina cheia de incertezas.\r\nMas neste exato momento o choro é livre e alto!\r\nDesabo na grama. Foram tantos anos de falas não ditas, abraços desinteressados, beijos insinceros. E \r\nagora somente os fantasmas me envolvem e tentam me consolar.\r\nUma infância verdadeira e entregue, uma juventude desapegada e um crescimento sem aceitação. \r\nMeus heróis imperfeitos se foram; deixando a casa, e a mim, vazias. \r\nCulpa, não sinto mais. Conheço a realidade das escolhas malfeitas; do orgulho da distância e das \r\ndatas comemorativas não convividas.\r\nA vida nos engole e isola-nos. A inocência se foi e deixou um sabor amargo.\r\nArranco a grama com as unhas, a raiva me abafa.\r\nGostaria que este lugar explodisse!\r\nNão sei por quanto tempo fiquei ali, mas me recompus.\r\nAh sim! Eu sempre me recomponho! Meus pesadelos são vividos dentro de mim.\r\nSou anestesiada pelo tempo, o sorriso político me defende, a insensibilidade me protege e a mulher \r\nque todos julgam ser de aço, mais uma vez, se levanta.\r\nHoje, tenho uma missão.\r\nGuardar as lembranças nas caixas, descartar o que não tem mais valor, cobrir com lençol os móveis \r\nmaciços e imêmores.\r\nTrancar a porta e nunca mais voltar.</p>"
+  },
+  {
+    "id": "podre",
+    "title": "Podre",
+    "category": "Contos",
+    "image": "images/podre.webp",
+    "gallery": ["images/podre-titulo.webp"],
+    "state": "review",
+    "date": "",
+    "time": "4 min de leitura",
+    "excerpt": "Abro os olhos. O sol ilumina o quarto. Tento me espreguiçar, mas o corpo continua pesado. Sinto um cheiro de ovo podre no ar. Está muito abafado por aqui.\n— Onde eu estou?\nOuço um ...",
+    "body": "<p>Abro os olhos. O sol ilumina o quarto. Tento me espreguiçar, mas o corpo continua pesado. Sinto um cheiro de ovo podre no ar. Está muito abafado por aqui.\n— Onde eu estou?\nOuço um bip eletrônico e o barulho de um ventilador enferrujado. Minha cabeça está presa em algo de ferro; apenas os meus olhos se mexem. O cheiro de podridão se intensifica. Sinto o suor escorrendo pelo meu rosto. A agonia do silêncio me incomoda.\nMeus olhos observam o ambiente. As paredes estão com a pintura amarelada e descascada. O ventilador é de teto. A porta de madeira arranhada está fechada. Olho de canto e vejo uma bacia no chão com fezes e urina. Aquilo me enoja ainda mais.\nAtento, percebo que minhas pernas estão engessadas. Só consigo ver os dedos para fora do gesso.\nPercebo que há um saquinho na minha barriga. Ele está drenando alguma coisa de dentro de mim. Parece uma urina grossa, misturada com pus. Meu coração acelera. Minha respiração fica mais ofegante.\nQue dia é hoje? Meu Deus, o que aconteceu?\nComeço a recordar.\nEra o dia mais importante da minha vida. Meu casamento!\nO caminhão... Puxa vida, o caminhão desgovernado...\nUma mosca me traz de volta à realidade. Ela está sobrevoando ao meu redor. Pousa no meu rosto e começa a caminhar por ele. Sinto suas pernas pequeninas e finas se locomoverem pela minha face.\nMeu rosto esquenta. Minha boca está seca.\nVejo outra mosca acompanhando-a. Elas andam em círculos perto da minha boca.\nMeu coração começa a bater muito rápido. Entro em pânico.\nO que vai ser da minha vida agora?\n— NÃO! — grito, desesperado.\nAs moscas se assustam e voltam a voar ao meu redor.\nSinto ânsia de vômito, mas apenas o gosto da bile vem à minha boca. Meu estômago está vazio. Ouço-o roncar de fome.\nO cheiro de podridão impregna o ambiente e percebo que está vindo de dentro de mim.\nO medo me domina e eu estou sozinho.\nOnde estão todos?\nQue lugar é esse?\nMeu corpo está muito pesado. Meus lábios estão secos. Eu grito por socorro, mas o silêncio enlouquece o quarto esquecido e abafado.\nPodre – BF 2016 - Revisado</p>"
+  },
+  {
+    "id": "silencio",
+    "title": "Silêncio que acolhe, presença que transforma",
+    "category": "Ensaios",
+    "image": "images/silencio-1.webp",
+    "gallery": ["images/silencio-2.webp", "images/silencio-3.webp", "images/silencio-4.webp", "images/silencio-5.webp", "images/silencio-6.webp", "images/silencio-7.webp", "images/silencio-8.webp", "images/silencio-9.webp"],
+    "state": "review",
+    "date": "",
+    "time": "2 min de leitura",
+    "excerpt": "O silêncio entre o despertar e o resto do dia.\nEu o protejo como quem fecha a porta de casa durante uma tempestade.\nAntes das reuniões, dos prazos, das mensagens e das decisões. An...",
+    "body": "<p>O silêncio entre o despertar e o resto do dia.\nEu o protejo como quem fecha a porta de casa durante uma tempestade.\nAntes das reuniões, dos prazos, das mensagens e das decisões. Antes da correria que grita ao meu redor.\nDependo desse território vazio para processar as vozes que lotam a minha agenda diária.\nÉ a âncora que me mantém em equilíbrio.\nÉ o encontro comigo mesma.\nAprendi que o silêncio não é ausência, nem fraqueza.\nÉ presença.\nÉ nele que organizo a bagunça invisível que ninguém vê.</p>"
+  },
+  {
+    "id": "fragmentos-estilhacos",
+    "title": "Fragmentos #2 — Estilhaços",
+    "category": "Poesia",
+    "image": "images/fragmentos-estilhacos.webp",
+    "gallery": [],
+    "state": "review",
+    "date": "",
+    "time": "2 min de leitura",
+    "excerpt": "Fragmentada.\nEm pedaços minha alma se encontra.\nEstilhaços.\nPedaços de sorrisos bem vividos misturados às lágrimas que não querem calar.\nTristeza profunda.\nDe onde?\nO que deixou o ...",
+    "body": "<p>Fragmentada.\nEm pedaços minha alma se encontra.\nEstilhaços.\nPedaços de sorrisos bem vividos misturados às lágrimas que não querem calar.\nTristeza profunda.\nDe onde?\nO que deixou o quadro em preto e branco?\nMas havia sol.\nEu vi o sol.\nComo desapareceu?\nComo tudo ficou cinza, perdido e diluído no vazio de uma alma sem cor?\nResgate de uma vida fragmentada.\nLargada.\nEsquecida pelo caminho.\nMigalhas de pérolas espalhadas pela estrada.\nFragmentada.\nPedaços de mim perdidos pelo caminho.</p>"
+  },
+  {
+    "id": "caixa-caneta",
+    "title": "Uma caixa e uma caneta",
+    "category": "Fragmentos",
+    "image": "images/caixa-caneta.webp",
+    "gallery": [],
+    "state": "review",
+    "date": "",
+    "time": "2 min de leitura",
+    "excerpt": "Há quem organize a vida por agendas. Eu organizo por páginas e compartimentos.\nEscrevo na linha e ainda mais nas entrelinhas\nEscrevo versos e devaneios\nEscrevo perguntas\nCopio fras...",
+    "body": "<p>Há quem organize a vida por agendas. Eu organizo por páginas e compartimentos.\nEscrevo na linha e ainda mais nas entrelinhas\nEscrevo versos e devaneios\nEscrevo perguntas\nCopio frases\nRespondo algumas delas meses depois...\n...ou não \nNem tudo precisa de uma conclusão\nAlgumas ideias só precisam de um lugar para permanecer\nDentro ou fora da caixa? \nDepende da confissão e da linha ou da entrelinha\nNos últimos dias, tenho alternado entre ficção, ensaios e leitura bíblica. É um caminho curioso: quanto mais leio, menos sinto necessidade de ter respostas rápidas.\nA memória não mora apenas no que aconteceu. Mora também no que decidimos guardar.\nO que mais gosto nos livros e nos cadernos é que eles nunca exigem pressa. Apenas presença...\ne uma caixa...</p>"
+  },
+  {
+    "id": "rainha-infancia",
+    "title": "A rainha da minha infância",
+    "category": "Memórias",
+    "image": "images/rainha-palco.webp",
+    "gallery": ["images/rainha-nave.webp"],
+    "state": "review",
+    "date": "",
+    "time": "13 min de leitura",
+    "excerpt": "A rainha da minha infância\nNo sábado, dia 25 de julho de 2026, sentei ao lado da minha mãe e chorei como há muito tempo, eu não chorava...\nChorei pela nostalgia, pelas músicas, pel...",
+    "body": "<p>A rainha da minha infância\nNo sábado, dia 25 de julho de 2026, sentei ao lado da minha mãe e chorei como há muito tempo, eu não chorava...\nChorei pela nostalgia, pelas músicas, pelas lembranças e pela baixinha que eu fui. Mas chorei, principalmente, porque entendi que a Xuxa nunca foi só uma apresentadora para mim...\nEnquanto a nave — gigantesca — surgia e sobrevoava o estádio, milhares de vozes de baixinhos de todas as idades e gerações cantavam juntas como uma única voz, uma única tribo! \nEu não estava vendo apenas a apresentação de uma artista, nem um show nostálgico: eu estava vendo A XUXA, o XOU DA XUXA!\nEra um reencontro com uma parte inteira da minha infância. Uma parte de mim que continua existindo, mesmo depois de tantos anos.\nHoje, olhando para trás, percebo que não era apenas um programa infantil. Não era só entretenimento: era um ritual! Um pedaço da minha vida.\nMinha mãe gravava o Xou da Xuxa todos os dias porque eu estudava de manhã. Enquanto eu estava na escola, a fita VHS girava dentro do videocassete para que, à tarde, eu pudesse me sentar no sofá e viver aquele planeta que, para mim, era encantado.\nA Xuxa fez parte de mim. Ela faz parte de quem eu sou hoje: Seu sorriso, sua alegria e sua maneira de enxergar a vida estão impregnados em mim. Ela moldou a forma como eu enxergo o mundo. Foi um reencontro com a baixinha que eu fui e um orgulho de quem ela se tornou por causa da Xuxa.\nA mesma menina cuja mãe se vestia de Papai Noel todos os anos para surpreender a mim e aos meus primos. Um por um, nós íamos crescendo e descobrindo o segredo, mas ela nunca deixou a fantasia morrer.\nE, junto com o Papai Noel, vinha sempre a música “Estrela-Guia”, o barulho do sino subindo a rua da padaria da minha avó e as balas que eram as primeiras coisas que minha mãe nos entrega, essa mistura até hoje carrega, para mim, o aroma do Natal, da família reunida e da certeza de que existe algo mágico no mundo. Mesmo depois de tantos anos o Natal continua sendo meu feriado favorito!\nOutra lembrança boa é o meu aniversário de 10 anos, minha abuela Henriqueta, espanhola e estilista como a mãe da Xuxa, fez especialmente para mim um vestido rosa, com a saia aramada foi inspirada nos figurinos dela, eu tenho, este vestido guardado até hoje — mais um pedaço daquele universo mágico transformado em memória pela minha própria família.\nAcho que quem cresceu nos anos 80 e 90 vai entender quando eu digo que o sonho de toda criança, independente do gênero, era ser Paquita. O meu também era, mesmo eu tendo consciência de que dançar e cantar nunca foram partes das minhas habilidades, já que sempre fui desengonçada e sem ritmo, mas independente disso, sempre sonhei em ser uma paquita da Xuxa.\nE posso dizer que realizei esse sonho e virei paquita no navio da Xuxa, em fevereiro de 2024, mandei fazer um chapéu de Paquita especialmente para viver aquele momento. Para a baixinha que eu fui, aquilo significava muito mais do que uma fantasia: era a materialização de um sonho guardado por décadas.\nNo navio, realizei mais um sonho, outra coisa que carregava comigo desde criança: tirei uma foto com ela. E, naquele instante, percebi algo que sempre admirei na Xuxa: o carinho genuíno com os fãs. A forma como ela olha para as pessoas, como acolhe histórias e como entende que fez parte da vida de milhões de crianças. O clima no navio era de nostalgia, os figurinos, os posters, as pessoas falando da Xuxa como se fala de uma amiga ou um familiar, foi maravilhoso.\nMuito do que sou hoje foi moldado por aquelas manhãs gravadas em VHS, pelos conselhos sobre amizade, bondade, respeito e esperança. Muito do meu caráter nasceu ali, entre músicas, Paquitas, fantasias e a certeza infantil de que o futuro podia ser melhor.\nE “Lua de Cristal” nunca foi apenas uma música. Querer é poder e é conseguir! E saber que o cara lá de cima sempre vai me dar coragem para lutar!\nPara mim, ela sempre foi uma forma de viver. Uma maneira de acreditar que os sonhos são possíveis, de continuar olhando para a frente e de guardar, mesmo depois de adulta, um pouco da esperança daquela menina sentada no sofá, esperando a Xuxa chegar na nave.\nA Xuxa é única. É especial. E continuará sendo, para sempre, a rainha da minha infância — ou melhor, da minha vida.\nPorque existem pessoas que passam pela nossa vida.\nE existem aquelas que ajudam a construir quem nós somos.\nMas existem aquelas que permanecem vivas dentro de nós! \nA Xuxa é uma dessas para mim.\nChorei mais do que imaginei. Por algumas horas, deixei de ser adulta. Voltei a ser aquela menina que cantava sem vergonha, que dançava desengonçada, que acreditava que o mundo podia ser um lugar gentil e que aprendia, sem perceber, valores como amizade, verdade, respeito e coragem.\nE, uma semana depois, eu ainda não parei de cantar e de me emocionar. No meio de toda essa lembrança viva, houve mais um gesto de amor que tornou tudo ainda mais especial: o Ti, meu marido, nos presenteou — a mim e à minha mãe — com ingressos para a nova data do XOU em São Paulo, no dia 27 de fevereiro de 2027.\nEstou como quem sonha, como quem sonhava em estar dentro da TV, pois nunca fui ao programa de televisão, que era gravado no Rio de Janeiro, mas agora vou ver duas vezes o último voo da nave!\nNão apenas pela nostalgia, mas porque percebi que a infância não desaparece. Ela fica escondida dentro da gente, esperando uma música, um cheiro ou uma lembrança para voltar à superfície.\nHouve um momento no Xou que olhei para a minha mãe e pensei em quantas fases da minha vida ela testemunhou. Em quantos dias a trilha sonora da nossa casa ou da casa dos meus avós foi a voz da Xuxa. Em quantas partes do meu caráter foram moldadas por aquelas letras simples, mas cheias de verdade.\nE, no final do xou de sábado, quando a nave começou a partir, eu sabia racionalmente que ela não estava lá dentro. Ela foi abduzida, diva demais! A mulher adulta sabia disso...\n...mas a baixinha que ainda mora em mim tinha certeza de que a Xuxa estava ali. \nNaquele momento, para a baixinha que eu era, parecia que alguém tinha ido embora. Porque a Xuxa não ocupava apenas um espaço na televisão: ela ocupava um espaço dentro da minha vida. Ela era o meu planeta particular.\nEntão eu dei tchau para a nave imensa, que voava de verdade!\nPorque, às vezes, a imaginação é a única forma que encontramos de agradecer às pessoas que nos ajudaram a construir quem nós somos.\nE, naquele instante, olhando a nave desaparecer, eu não estava me despedindo de um Xou.\nEu estava acenando para a minha infância, grata por toda a alegria que a Xuxa trouxe à minha vida.\nE, no fim, talvez o Xou não tenha sido apenas sobre a Xuxa.\nTalvez tenha sido sobre reencontrar a criança que eu fui e me reconectar com ela, que vive dentro de mim.\nE, por algumas horas, ela esteve ali, cantando ao lado da mãe, como se o tempo nunca tivesse passado.</p>"
+  },
+  {
+    "id": "rascunho-us",
+    "title": "US",
+    "category": "Memórias",
+    "image": "",
+    "gallery": [],
+    "state": "draft",
+    "date": "",
+    "time": "2 min de leitura",
+    "excerpt": "No fim, é isso que fica....",
+    "body": "<p>No fim, é isso que fica.</p><p>Nós. Ou Us, para os íntimos.</p><p>Nossa família do jeito que ela é: barulhenta, imperfeita, engraçada, geek, cheia de histórias, dogs, afetos e memórias que não cabem numa foto só.</p><p>Entre quem veio antes, quem caminha ao lado e quem faz de uma casa um lar.</p><p>O tempo passa, os lugares viram memórias cada vez mais borradas, a vida flui...</p><p>Muita coisa ganha um novo significado. E tantas outras simplesmente deixam de importar.</p><p>Mas algumas coisas não mudam.</p><p>As pessoas que permanecem ao nosso lado.\nAs memórias que fazemos questão de guardar.</p><p>E nós dois.</p><p>Always and Forever.</p><p>No meio de tudo o que passa, ainda sabemos exatamente onde pertencemos e o que permanece.\nJulho de 2026</p>"
+  },
+  {
+    "id": "rascunho-hipocrisia",
+    "title": "A hipocrisia de acharmos que somos extraordinários",
+    "category": "Ensaios",
+    "image": "",
+    "gallery": [],
+    "state": "draft",
+    "date": "",
+    "time": "2 min de leitura",
+    "excerpt": "A hipocrisia de acharmos que somos extraordinários a hipocrisia de acharmos que somos exclusivos nos trás da do egoísmo da filosofia desse mundo que nos  isola___ e nos acha__ _ __...",
+    "body": "<p>A hipocrisia de acharmos que somos extraordinários a hipocrisia de acharmos que somos exclusivos nos trás da do egoísmo da filosofia desse mundo que nos  isola___ e nos acha__ _ __ superior\nÉ uma disfunção cega que nos faz acreditar que pertencemos a algo que além e abaixo ao mesmo tempo.     No egoísmo ___ do vazio que te faz acreditar que você é brilhante no mundo de aplauso irrelevante\nA história narcisista do ser humano que se acha o centro da do centro das atenções o protagonista da sua própria história que não vale nada que após a sua morte vai desaparecer como do pó que viemos ____ __ _ _ __ e é pra onde vamos.    Nós tornamos claustrofóbicos __ ficus sufocantes pela nossa própria voz pra nossa própria garganta pela nossa própria própria ganância que nos busca uma realidade van de um futuro Miserável de aplausos e realizações e conquistas que nos levam Pra onde como pra quê o _ Onde se perdeu o caminho.     Escarneça boca que te beija uma das minhas poesias favoritas Escarra nessa boca que te beija Uma das minhas convicções mais claras Que demorou 30 anos pra que caia na realidade de uma__ _ máscara de uma Realidade da hipocrisia do ser humano que sorri mas cara a tua boca que te beija</p>"
+  }
+];
+
+    let storiesDB = [];
+    try {
+      const saved = localStorage.getItem('bruna_stories_v3');
+      if (saved) {
+        storiesDB = JSON.parse(saved);
+      } else {
+        storiesDB = defaultPosts;
+        localStorage.setItem('bruna_stories_v3', JSON.stringify(storiesDB));
+      }
+    } catch (e) {
+      storiesDB = defaultPosts;
+    }
+
+    let isAuthor = false;
+    let currentFilter = 'todos';
+    let searchQuery = '';
+
+    // BUSCA INSTANTÂNEA E FILTROS COMBINADOS
+    function handleSearch(val) {
+      searchQuery = val || '';
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (clearBtn) clearBtn.style.display = searchQuery.trim() ? 'block' : 'none';
+      renderStories();
+    }
+
+    function clearSearch() {
+      searchQuery = '';
+      const input = document.getElementById('searchInput');
+      if (input) input.value = '';
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (clearBtn) clearBtn.style.display = 'none';
+      renderStories();
+    }
+
+    // RENDERIZAÇÃO NO GRID
+    function renderStories() {
+      const grid = document.getElementById('storiesGrid');
+      const emptyState = document.getElementById('emptySearchState');
+      const emptyQueryText = document.getElementById('emptyQueryText');
+      grid.innerHTML = '';
+
+      let filtered = storiesDB;
+
+      // Filtro de rascunhos: ocultos para visitantes comuns
+      if (!isAuthor) {
+        filtered = filtered.filter(s => s.state !== 'draft');
+      }
+
+      // Filtro de categoria
+      if (currentFilter !== 'todos') {
+        filtered = filtered.filter(s => s.category.toLowerCase() === currentFilter.toLowerCase());
+      }
+
+      // Filtro de busca textual (título, categoria, trecho e corpo)
+      if (searchQuery.trim() !== '') {
+        const q = searchQuery.toLowerCase().trim();
+        filtered = filtered.filter(s => 
+          (s.title + ' ' + s.category + ' ' + (s.excerpt || '') + ' ' + (s.body || '')).toLowerCase().includes(q)
+        );
+      }
+
+      document.getElementById('totalStoriesCount').innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        if (emptyState) {
+          emptyState.style.display = 'block';
+          if (emptyQueryText) emptyQueryText.innerText = searchQuery || currentFilter;
+        }
+        return;
+      } else {
+        grid.style.display = 'grid';
+        if (emptyState) emptyState.style.display = 'none';
+      }
+
+      filtered.forEach(s => {
+        const card = document.createElement('article');
+        card.className = 'card-story';
+        card.setAttribute('data-id', s.id);
+
+        let coverHtml = '';
+        if (s.image) {
+          coverHtml = `<div class="card-cover"><img src="${s.image}" alt="${s.title}" loading="lazy"></div>`;
+        } else {
+          coverHtml = `<div class="card-cover-empty">${s.category} · Caderno de Escrita</div>`;
+        }
+
+        const draftBadge = s.state === 'draft' ? `<span class="badge-draft">Rascunho Privado</span>` : '';
+
+        card.innerHTML = `
+          ${coverHtml}
+          <div class="card-content">
+            <div>
+              <div class="story-top">
+                <div class="story-tags">
+                  <span class="story-genre">${s.category}</span>
+                  ${draftBadge}
+                </div>
+                <span class="story-time">${s.time || '4 min de leitura'}</span>
+              </div>
+              <h3>${s.title}</h3>
+              <p>${s.excerpt}</p>
+            </div>
+            <div class="story-card-footer">
+              <span class="story-link">Ler história completa →</span>
+              <div class="card-admin-btns">
+                <button class="btn-admin-del" onclick="event.stopPropagation(); deleteStory('${s.id}')">Excluir</button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => openStory(s.id));
+        grid.appendChild(card);
+      });
+    }
+
+    function filterCategory(cat, btn) {
+      currentFilter = cat;
+      document.querySelectorAll('.btn-cat').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderStories();
+    }
+
+    // MODAL DO LEITOR
+    function openStory(id) {
+      const story = storiesDB.find(s => s.id === id);
+      if (!story) return;
+
+      document.getElementById('mHeadline').innerText = story.title;
+      
+      const draftPill = story.state === 'draft' ? ' <span class="badge-draft" style="margin-left: 0.5rem;">Rascunho Privado</span>' : '';
+      document.getElementById('mCat').innerHTML = story.category + draftPill;
+      document.getElementById('mMeta').innerText = `Bruna Folster · ${story.time || 'Leitura'}`;
+      document.getElementById('mBodyText').innerHTML = story.body;
+
+      const coverWrap = document.getElementById('mCoverWrap');
+      const coverImg = document.getElementById('mCoverImg');
+      if (story.image) {
+        coverImg.src = story.image;
+        coverWrap.style.display = 'block';
+      } else {
+        coverWrap.style.display = 'none';
+      }
+
+      // Galeria de Múltiplas Imagens que Acompanham o Texto
+      const gallerySec = document.getElementById('mGallerySection');
+      const galleryGrid = document.getElementById('mGalleryGrid');
+      if (gallerySec && galleryGrid) {
+        if (story.gallery && story.gallery.length > 0) {
+          galleryGrid.innerHTML = story.gallery.map(img => `
+            <div class="reader-gallery-item" onclick="window.open('${img}', '_blank')">
+              <img src="${img}" alt="${story.title}" loading="lazy">
+            </div>
+          `).join('');
+          gallerySec.style.display = 'block';
+        } else {
+          gallerySec.style.display = 'none';
+          galleryGrid.innerHTML = '';
+        }
+      }
+
+      document.getElementById('readerBackdrop').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStory() {
+      document.getElementById('readerBackdrop').classList.remove('open');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('readerBackdrop').addEventListener('click', function(e) {
+      if (e.target === this) closeStory();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeStory();
+        closeLoginModal();
+        closeAuthorStudio();
+        closeManagerModal();
+        closeDropdown();
+      }
+    });
+
+    // =========================================================
+    // CONTROLE DE TEMA GLOBAL (MUDA O SITE TODO)
+    // =========================================================
+    function setSiteTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      try {
+        localStorage.setItem('bruna_global_theme', theme);
+      } catch(e) {}
+
+      // Atualiza pílulas no dropdown
+      document.querySelectorAll('.theme-pills .pill-opt, .dropdown-pref-block .pill-opt').forEach(b => {
+        if (b.id.startsWith('themePill')) b.classList.remove('active');
+      });
+      if (theme === 'sepia') document.getElementById('themePillSepia').classList.add('active');
+      else if (theme === 'night') document.getElementById('themePillNight').classList.add('active');
+      else document.getElementById('themePillLight').classList.add('active');
+
+      // Atualiza botões no leitor
+      document.querySelectorAll('.reader-tools .btn-tool').forEach(b => {
+        if (b.id.startsWith('btnTool')) b.classList.remove('active');
+      });
+      if (theme === 'sepia') document.getElementById('btnToolSepia').classList.add('active');
+      else if (theme === 'night') document.getElementById('btnToolNight').classList.add('active');
+      else document.getElementById('btnToolLight').classList.add('active');
+    }
+
+    // Carrega tema salvo
+    try {
+      const savedTheme = localStorage.getItem('bruna_global_theme');
+      if (savedTheme) setSiteTheme(savedTheme);
+    } catch(e) {}
+
+    let currentFontSize = 1.25;
+    function adjustFontSize(delta) {
+      currentFontSize = Math.max(1.0, Math.min(1.6, currentFontSize + (delta * 0.1)));
+      document.getElementById('mBodyText').style.fontSize = currentFontSize + 'rem';
+    }
+
+    // =========================================================
+    // AVATAR & DROPDOWN ENGINE
+    // =========================================================
+    function toggleDropdown() {
+      document.getElementById('userProfileWrap').classList.toggle('open');
+    }
+
+    function closeDropdown() {
+      document.getElementById('userProfileWrap').classList.remove('open');
+    }
+
+    document.addEventListener('click', function(e) {
+      const wrap = document.getElementById('userProfileWrap');
+      if (!wrap.contains(e.target)) {
+        closeDropdown();
+      }
+    });
+
+    function handleMenuAction(action) {
+      closeDropdown();
+      if (!isAuthor && (action === 'write' || action === 'manage')) {
+        openLoginModal();
+        return;
+      }
+
+      if (action === 'write') openAuthorStudio();
+      if (action === 'manage') openManagerModal();
+    }
+
+    function handleLogToggle() {
+      closeDropdown();
+      if (isAuthor) {
+        logoutAuthor();
+      } else {
+        openLoginModal();
+      }
+    }
+
+    function openLoginModal() {
+      document.getElementById('modalAuth').classList.add('open');
+    }
+    function closeLoginModal() {
+      document.getElementById('modalAuth').classList.remove('open');
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      isAuthor = true;
+      document.body.classList.add('is-author');
+      
+      // Atualiza UI para Autora Autenticada
+      document.getElementById('avatarText').innerText = 'Bruna';
+      document.getElementById('dropUserName').innerText = 'Bruna Folster';
+      document.getElementById('dropUserEmail').innerText = 'bruna@folster.com.br';
+      document.getElementById('txtLogInOut').innerText = 'Sair';
+
+      // Altera ícone para LogOut SVG
+      document.getElementById('svgLogIcon').innerHTML = `
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+        <polyline points="16 17 21 12 16 7"/>
+        <line x1="21" x2="9" y1="12" y2="12"/>
+      `;
+
+      closeLoginModal();
+      renderStories();
+    }
+
+    function logoutAuthor() {
+      isAuthor = false;
+      document.body.classList.remove('is-author');
+
+      // Atualiza UI para Visitante
+      document.getElementById('avatarText').innerText = 'Entrar';
+      document.getElementById('txtLogInOut').innerText = 'Login';
+
+      // Altera ícone para LogIn SVG
+      document.getElementById('svgLogIcon').innerHTML = `
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+        <polyline points="10 17 15 12 10 7"/>
+        <line x1="15" x2="3" y1="12" y2="12"/>
+      `;
+
+      renderStories();
+    }
+
+    // ATELIER DE ESCRITA
+    function openAuthorStudio() {
+      document.getElementById('modalStudio').classList.add('open');
+    }
+    function closeAuthorStudio() {
+      document.getElementById('modalStudio').classList.remove('open');
+    }
+
+    function handlePublishStory(e) {
+      e.preventDefault();
+      const title = document.getElementById('sTitle').value.trim();
+      const cat = document.getElementById('sCategory').value;
+      const img = document.getElementById('sImage').value;
+      const rawBody = document.getElementById('sBody').value.trim();
+
+      const paras = rawBody.split('\n\n').filter(p => p.trim());
+      const htmlBody = paras.map(p => `<p>${p.trim()}</p>`).join('');
+
+      const newPost = {
+        id: 'conto-' + Date.now(),
+        title: title,
+        category: cat,
+        image: img,
+        date: '2026',
+        time: `${Math.max(2, Math.ceil(rawBody.length / 500))} min de leitura`,
+        excerpt: (paras[0] || '').substring(0, 180) + '...',
+        body: htmlBody
+      };
+
+      storiesDB.unshift(newPost);
+      localStorage.setItem('bruna_stories_v2', JSON.stringify(storiesDB));
+
+      closeAuthorStudio();
+      renderStories();
+      document.getElementById('sTitle').value = '';
+      document.getElementById('sBody').value = '';
+    }
+
+    function deleteStory(id) {
+      if (!confirm('Deseja realmente remover este conto do acervo?')) return;
+      storiesDB = storiesDB.filter(s => s.id !== id);
+      localStorage.setItem('bruna_stories_v2', JSON.stringify(storiesDB));
+      renderStories();
+      renderManagerTable();
+    }
+
+    // GERENCIADOR DE CONTOS MODAL
+    function openManagerModal() {
+      renderManagerTable();
+      document.getElementById('modalManager').classList.add('open');
+    }
+    function closeManagerModal() {
+      document.getElementById('modalManager').classList.remove('open');
+    }
+
+    function renderManagerTable() {
+      const tbody = document.getElementById('managerTableBody');
+      tbody.innerHTML = '';
+
+      storiesDB.forEach(s => {
+        const tr = document.createElement('tr');
+        const imgThumb = s.image ? `<img src="${s.image}" style="width: 40px; height: 30px; object-fit: cover; border-radius: 3px;">` : '—';
+        const statusBadge = s.state === 'draft' 
+          ? `<span class="badge-draft">Rascunho</span>` 
+          : `<span style="font-size: 0.72rem; font-weight: 700; color: #15803d; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 2px 6px; border-radius: 4px; text-transform: uppercase;">Publicado</span>`;
+
+        tr.innerHTML = `
+          <td>${imgThumb}</td>
+          <td><strong>${s.title}</strong></td>
+          <td><span style="font-size: 0.75rem; text-transform: uppercase; color: var(--terracotta); font-weight: 700;">${s.category}</span></td>
+          <td>${statusBadge}</td>
+          <td>${s.time || '4 min'}</td>
+          <td style="text-align: right;">
+            <button onclick="deleteStory('${s.id}')" style="color: #b91c1c; font-weight: 600; font-size: 0.8rem;">Excluir</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // NEWSLETTER
+    function handleNewsletter(e) {
+      e.preventDefault();
+      document.getElementById('newsFeedback').style.display = 'block';
+      document.getElementById('newsEmail').value = '';
+    }
+
+    function toggleDrawer() {
+      document.getElementById('drawerMobile').classList.toggle('open');
+    }
+
+    // MULTILÍNGUE (LOCALIZAÇÃO)
+    const i18n = {
+      pt: {
+        folioTag: 'Edição Contínua · São Paulo · Caderno Digital Vol. 2026',
+        folioCountSuffix: 'Textos Publicados · Acesso Livre',
+        sub: 'Escritas, histórias e outras ideias',
+        navTextos: 'Acervo',
+        navSobre: 'Sobre a Autora',
+        navCartas: 'Cartas',
+        heroPre: 'Caderno Literário & Ensaios',
+        heroTitle: 'Algumas pessoas olham.<br>Eu observo.',
+        heroProse: '“Aqui não há cargos nem personagens: só meu olhar sobre o mundo, entre livros, memórias, silêncios e uma mente sempre inquieta.”',
+        btnExplore: 'Explorar Textos',
+        btnLetters: 'Receber Cartas',
+        aboutTitle: 'Sobre Bruna Folster',
+        aboutP1: 'Escrever, para mim, nunca foi um exercício de vaidade — é uma necessidade biológica de desaceleração. Em meio à rotina corporativa como executiva internacional, este caderno é onde guardo aquilo que não cabe em atas ou planilhas.',
+        aboutP2: 'Aqui você encontra o registro de uma mente atenta aos detalhes periféricos: o rangido das janelas de madeira velha na praia, a luz oblíqua de fim de tarde e as perguntas essenciais que ninguém faz nas reuniões sérias.',
+        aboutBtn: 'Conhecer Atuação Executiva & ESG ↗',
+        newsTitle: 'Uma carta quando houver uma nova história.',
+        newsDesc: 'Sem algoritmos, sem rotinas comerciais. Você recebe um e-mail intimista diretamente da autora sempre que um novo conto for finalizado.',
+        newsBtn: 'Inscrever-se',
+        footerCopy: '© 2026 Bruna Folster · Feito de palavras, memória e observação.'
+      },
+      en: {
+        folioTag: 'Continuous Edition · São Paulo · Digital Folio Vol. 2026',
+        folioCountSuffix: 'Stories Published · Open Access',
+        sub: 'Writing, stories and other thoughts',
+        navTextos: 'Stories',
+        navSobre: 'About the Author',
+        navCartas: 'Letters',
+        heroPre: 'Literary Notebook & Essays',
+        heroTitle: 'Some people look.<br>I observe.',
+        heroProse: '“There are no titles or characters here: only my gaze upon the world, among books, memories, silences, and an endlessly restless mind.”',
+        btnExplore: 'Explore Stories',
+        btnLetters: 'Receive Letters',
+        aboutTitle: 'About Bruna Folster',
+        aboutP1: 'For me, writing has never been an exercise in vanity—it is a biological need to slow down. Amid my executive routine across global markets, this notebook holds what cannot fit in corporate agendas.',
+        aboutP2: 'Here you find notes from a mind tuned to subtle details: the creak of coastal windows, the low evening light, and questions left unspoken in serious boardrooms.',
+        aboutBtn: 'Executive & Keynote Profile ↗',
+        newsTitle: 'A quiet letter when a new story arrives.',
+        newsDesc: 'No algorithms, no promotional spam. Just an intimate note directly from the author whenever a new reflection is published.',
+        newsBtn: 'Subscribe',
+        footerCopy: '© 2026 Bruna Folster · Crafted from words, memory, and silence.'
+      },
+      es: {
+        folioTag: 'Edición Continua · São Paulo · Cuaderno Digital Vol. 2026',
+        folioCountSuffix: 'Textos Publicados · Acceso Libre',
+        sub: 'Escrituras, relatos y otras ideas',
+        navTextos: 'Colección',
+        navSobre: 'Sobre la Autora',
+        navCartas: 'Cartas',
+        heroPre: 'Cuaderno Literario y Ensayos',
+        heroTitle: 'Algunas pessoas miran.<br>Yo observo.',
+        heroProse: '“Aquí no hay cargos ni personajes: solo mi mirada sobre el mundo, entre libros, silencios y una mente inquieta.”',
+        btnExplore: 'Explorar Textos',
+        btnLetters: 'Recibir Cartas',
+        aboutTitle: 'Sobre Bruna Folster',
+        aboutP1: 'Escribir nunca fue un ejercicio de vanidad: es una necesidad de pausa. En medio de mi trabajo ejecutivo internacional, este espaço guarda lo que no entra en informes.',
+        aboutP2: 'Aquí encuentras reflexiones atentas a lo sutil: la luz de la tarde, la memoria familiar y las perguntas esenciales que nadie hace en reuniones formales.',
+        aboutBtn: 'Conocer Perfil Ejecutivo ↗',
+        newsTitle: 'Una carta cuando haya una nueva historia.',
+        newsDesc: 'Sin spam ni algoritmos. Una notificación directa en tu correo cada vez que termine una nueva crónica.',
+        newsBtn: 'Suscribirme',
+        footerCopy: '© 2026 Bruna Folster · Hecho de palavras, memoria y observación.'
+      }
+    };
+
+    function setLang(lang) {
+      const select = document.getElementById('langSelect');
+      if (select && select.value !== lang) {
+        select.value = lang;
+      }
+
+      const data = i18n[lang];
+      if (!data) return;
+
+      document.getElementById('mastheadSub').innerText = data.sub;
+      document.getElementById('navTextos').innerText = data.navTextos;
+      document.getElementById('navSobre').innerText = data.navSobre;
+      document.getElementById('navCartas').innerText = data.navCartas;
+      document.getElementById('heroPre').innerText = data.heroPre;
+      document.getElementById('heroTitle').innerHTML = data.heroTitle;
+      document.getElementById('heroProse').innerText = data.heroProse;
+      document.getElementById('btnExplore').innerText = data.btnExplore;
+      document.getElementById('btnLetters').innerText = data.btnLetters;
+      document.getElementById('aboutTitle').innerText = data.aboutTitle;
+      document.getElementById('aboutP1').innerText = data.aboutP1;
+      document.getElementById('aboutP2').innerText = data.aboutP2;
+      document.getElementById('aboutBtn').innerText = data.aboutBtn;
+      document.getElementById('newsTitle').innerText = data.newsTitle;
+      document.getElementById('newsDesc').innerText = data.newsDesc;
+      document.getElementById('newsBtn').innerText = data.newsBtn;
+      document.getElementById('footerCopy').innerText = data.footerCopy;
+    }
+
+    // LINHA DE PROGRESSO DE LEITURA
+    window.addEventListener('scroll', function() {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const pb = document.getElementById('readingProgressBar');
+      if (pb) pb.style.width = scrolled + '%';
+    });
+
+    // INICIALIZAÇÃO
+    renderStories();
+  </script>
+</body>
+</html>

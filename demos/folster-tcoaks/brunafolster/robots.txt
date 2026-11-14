@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /editor/
+
+Sitemap: https://brunafolster.com.br/sitemap.xml

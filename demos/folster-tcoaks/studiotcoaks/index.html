@@ -1,0 +1,3257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TC Oaks — Seu marketing com a sua identidade</title>
+  <meta name="description" content="Orientação, parceria criativa e execução de marketing para empresas que querem usar IA sem perder identidade.">
+  <meta name="theme-color" content="#092A36">
+  <link rel="canonical" href="https://studiotcoaks.com.br/">
+  <link rel="icon" type="image/png" href="images/logo-symbol.png">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://studiotcoaks.com.br/">
+  <meta property="og:title" content="TC Oaks — Seu marketing com a sua identidade">
+  <meta property="og:description" content="Orientação, parceria criativa e execução de marketing para empresas que querem usar IA sem perder identidade.">
+  <meta property="og:image" content="images/tiago-oaks.webp">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TC Oaks — Seu marketing com a sua identidade">
+  <meta name="twitter:description" content="Orientação, parceria criativa e execução de marketing para empresas que querem usar IA sem perder identidade.">
+  <meta name="twitter:image" content="images/tiago-oaks.webp">
+
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F4EFEA;
+      --bg-card: #ECE6DF;
+      --bg-subtle: #E4DDD5;
+      --surface: #FFFFFF;
+      --bg-dark: #092A36;
+      --bg-dark-card: #0D3544;
+      --fg: #1F2E35;
+      --fg-muted: #566770;
+      --fg-on-dark: #EAE6E1;
+      --fg-on-dark-muted: #A3B5BD;
+      --accent: #B05C3B;
+      --accent-hover: #964B2E;
+      --accent-subtle: #D98C6C;
+      --accent-gold: #C28D42;
+      --accent-gold-hover: #AD7B33;
+      --border: #DCD4CA;
+      --border-dark: #194454;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --radius: 8px;
+      --radius-sm: 4px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(31, 46, 53, 0.22);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(31, 46, 53, 0.36);
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(31, 46, 53, 0.22) transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+      font-size: 16px;
+      background: var(--bg);
+      overflow-x: clip;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-grid > *,
+    .pillars > *,
+    .cases-grid > *,
+    .process-layout > *,
+    .method-subgrid > *,
+    .profile-layout > *,
+    .fit-grid > *,
+    .compare-grid > *,
+    .onepager-grid > * {
+      min-width: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    em.gold-italic {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent-gold);
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+
+    .eyebrow-dark {
+      color: var(--accent-gold);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #FFFFFF;
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.94rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-gold {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.94rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-gold-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-dark {
+      border: 1px solid var(--border-dark);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--fg-on-dark);
+      padding: 0.95rem 1.7rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.94rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline-dark:hover {
+      border-color: var(--accent-gold);
+      background: rgba(194, 141, 66, 0.1);
+    }
+
+    .btn-outline-light {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--bg-dark);
+      padding: 0.85rem 1.65rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline-light:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* HEADER */
+    .site-header {
+      background: rgba(244, 239, 234, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 120;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 0;
+      gap: 1.5rem;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      height: 36px;
+      width: auto;
+    }
+
+    .brand-tagline {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--fg-muted);
+      padding-left: 0.85rem;
+      border-left: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.85rem, 1.4vw, 1.5rem);
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+
+    .nav-desktop a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--fg-muted);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-desktop a:hover {
+      color: var(--bg-dark);
+    }
+
+    .nav-desktop a.is-active {
+      color: var(--bg-dark);
+      font-weight: 600;
+      box-shadow: inset 0 -2px 0 var(--accent-gold);
+      padding-bottom: 3px;
+    }
+
+    .nav-desktop a.nav-cta {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-desktop a.btn-header-wa {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      padding: 0.58rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .nav-desktop a.btn-header-wa:hover {
+      background: var(--bg-dark-card);
+      color: #FFFFFF;
+    }
+
+    .btn-mobile-nav {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--bg-dark);
+      padding: 0.25rem 0.45rem;
+      line-height: 1;
+    }
+
+    .drawer-nav {
+      display: none;
+      position: fixed;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      height: calc(100dvh - 65px);
+      background: var(--bg);
+      padding: 2rem 1.5rem;
+      flex-direction: column;
+      gap: 1.25rem;
+      z-index: 115;
+      border-top: 1px solid var(--border);
+      overflow-y: auto;
+    }
+
+    .drawer-nav.open {
+      display: flex;
+    }
+
+    .drawer-nav a {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--fg);
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .drawer-nav a.btn-header-wa {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      border-bottom: none;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      padding: 0.9rem 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    /* HERO SECTION (DARK PETROL) */
+    .hero {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      padding: 4.5rem 0 4.8rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.15rem, 4.3vw, 3.55rem);
+      font-weight: 600;
+      line-height: 1.14;
+      color: var(--fg-on-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--fg-on-dark-muted);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-portrait {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 390px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      aspect-ratio: 4 / 4.6;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-portrait figcaption {
+      padding: 0.95rem 1.2rem;
+      font-size: 0.84rem;
+      color: var(--fg-on-dark-muted);
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .hero-portrait figcaption strong {
+      color: var(--fg-on-dark);
+      font-weight: 600;
+    }
+
+    /* TRANSITION RIBBON */
+    .ribbon {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
+    .ribbon-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.65rem 1rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--fg);
+      text-align: center;
+    }
+
+    .ribbon-inner .dot {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* SHARED SECTION STYLES */
+    .section-block {
+      padding: 5.2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-subtle {
+      background: var(--bg-subtle);
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.18;
+      color: var(--bg-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.06rem;
+      color: var(--fg-muted);
+      line-height: 1.7;
+    }
+
+    /* SECTION 01: APOIO NA MEDIDA CERTA (PILLARS + INTERACTIVE POPUPS) */
+    .service-hint {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .pillar {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.15rem 1.85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .pillar-code {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.55rem;
+    }
+
+    .pillar h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      margin-bottom: 0.85rem;
+      line-height: 1.25;
+    }
+
+    .pillar-desc {
+      font-size: 0.94rem;
+      color: var(--fg-muted);
+      line-height: 1.65;
+    }
+
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .service-item {
+      position: relative;
+      display: inline-block;
+    }
+
+    .service-trigger {
+      background: var(--surface);
+      color: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.44rem 0.92rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+    }
+
+    .service-trigger::after {
+      content: '+';
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    .service-item.is-open .service-trigger::after {
+      content: '−';
+      color: #FFFFFF;
+    }
+
+    .service-trigger:hover,
+    .service-item.is-open .service-trigger {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      border-color: var(--bg-dark);
+    }
+
+    .service-trigger:hover::after {
+      color: var(--accent-gold);
+    }
+
+    .service-popup {
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 10px);
+      width: min(290px, calc(100vw - 3rem));
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 0.95rem 1.05rem;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      box-shadow: 0 14px 32px rgba(9, 42, 54, 0.28);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+      z-index: 60;
+      pointer-events: none;
+    }
+
+    .service-popup::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      height: 14px;
+    }
+
+    .service-popup strong {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .service-popup-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+      padding: 0.38rem 0.75rem;
+      border-radius: var(--radius-sm);
+      background: rgba(194, 141, 66, 0.16);
+      border: 1px solid rgba(194, 141, 66, 0.45);
+      color: var(--accent-gold);
+      font-size: 0.76rem;
+      font-weight: 600;
+      transition: background 0.18s, color 0.18s;
+    }
+
+    .service-popup-cta:hover {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+    }
+
+    .pillar:last-child .service-popup {
+      left: auto;
+      right: 0;
+    }
+
+    .service-item.is-open .service-popup,
+    .service-item:has(> .service-trigger:focus-visible) .service-popup {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    @media (hover: hover) {
+      .service-item:hover .service-popup {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+    }
+
+    .scope-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent-gold);
+      border-radius: var(--radius-sm);
+      padding: 1.35rem 1.65rem;
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      line-height: 1.65;
+    }
+
+    .scope-note strong {
+      color: var(--bg-dark);
+      font-weight: 700;
+    }
+
+    /* STATEMENT / AI MANIFESTO */
+    .statement {
+      background: var(--bg-subtle);
+      border-bottom: 1px solid var(--border);
+      padding: 4.5rem 0;
+      text-align: center;
+    }
+
+    .statement-box {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .statement .eyebrow {
+      justify-content: center;
+    }
+
+    .statement-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+      font-weight: 600;
+      line-height: 1.22;
+      color: var(--bg-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .statement-copy {
+      font-size: 1.06rem;
+      color: var(--fg-muted);
+      line-height: 1.75;
+    }
+
+    /* SECTION 02: TRABALHOS SELECIONADOS */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .case-card:hover {
+      border-color: var(--accent-gold);
+      box-shadow: 0 12px 30px rgba(9, 42, 54, 0.08);
+    }
+
+    .case-image {
+      display: block;
+      height: 225px;
+      background: var(--bg-dark);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .case-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .case-card:hover .case-image img {
+      transform: scale(1.03);
+    }
+
+    .case-image-badge {
+      position: absolute;
+      right: 0.75rem;
+      bottom: 0.75rem;
+      background: rgba(9, 42, 54, 0.88);
+      color: var(--fg-on-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.32rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .case-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .case-client {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 0.55rem;
+    }
+
+    .case-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.32rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      line-height: 1.3;
+      margin-bottom: 0.65rem;
+    }
+
+    .case-body p {
+      font-size: 0.92rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+    }
+
+    .case-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .case-footer-btn {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--bg-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.18s;
+    }
+
+    .case-footer-btn:hover {
+      color: var(--accent);
+    }
+
+    .case-sheet-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .case-sheet-link:hover {
+      text-decoration: underline;
+    }
+
+    /* SECTION 03: ANTES DE SAIR FAZENDO (ACCORDION + COMPLEMENTARY GRID) */
+    .process-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3.5rem;
+    }
+
+    .process-intro p + p {
+      margin-top: 1rem;
+    }
+
+    .process-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .process-accordion details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .process-accordion details[open] {
+      border-color: var(--accent-gold);
+    }
+
+    .process-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.25rem 1.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+    }
+
+    .process-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .acc-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+
+    .acc-idx {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .acc-toggle {
+      font-family: var(--font-sans);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--fg-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .process-accordion details[open] .acc-toggle {
+      transform: rotate(45deg);
+      color: var(--accent);
+    }
+
+    .acc-content {
+      padding: 0 1.45rem 1.35rem 3.3rem;
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      line-height: 1.65;
+    }
+
+    .method-subgrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .method-item {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      padding: 1.65rem 1.5rem;
+    }
+
+    .method-idx {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      margin-bottom: 0.65rem;
+    }
+
+    .method-item h4 {
+      font-size: 1.04rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--fg-on-dark);
+    }
+
+    .method-item p {
+      font-size: 0.87rem;
+      color: var(--fg-on-dark-muted);
+      line-height: 1.6;
+    }
+
+    /* DIAGNÓSTICO INTERATIVO DE MARKETING */
+    .quiz-section-head {
+      text-align: center;
+      margin: 0 auto 2.75rem;
+      max-width: 680px;
+    }
+
+    .quiz-section-head .eyebrow {
+      justify-content: center;
+    }
+
+    .quiz-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.75rem 2.4rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar {
+      height: 5px;
+      background: var(--border);
+      border-radius: 999px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 25%;
+      transition: width 0.3s ease;
+    }
+
+    .quiz-step {
+      display: none;
+    }
+
+    .quiz-step.active {
+      display: block;
+    }
+
+    .quiz-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .quiz-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .quiz-choice {
+      padding: 1.05rem 1.35rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--fg);
+      background: var(--surface);
+      text-align: left;
+      line-height: 1.5;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s;
+    }
+
+    .quiz-choice:hover {
+      border-color: var(--accent);
+      background: #FFFFFF;
+      transform: translateX(4px);
+    }
+
+    .result-box {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.75rem;
+    }
+
+    .result-score {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .result-name {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      color: var(--bg-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .result-text {
+      font-size: 0.95rem;
+      color: var(--fg-muted);
+      line-height: 1.68;
+    }
+
+    .quiz-result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* SECTION 04: QUEM ESTÁ POR TRÁS */
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: 3.25rem;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .profile-photo {
+      background: var(--bg-dark);
+      height: 100%;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .profile-text {
+      padding: 3rem 3rem 3rem 0.5rem;
+    }
+
+    .profile-text h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      font-weight: 600;
+      color: var(--bg-dark);
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .profile-text p {
+      font-size: 0.98rem;
+      color: var(--fg-muted);
+      line-height: 1.72;
+      margin-bottom: 1.1rem;
+    }
+
+    .profile-signature {
+      margin: 1.5rem 0 1.75rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: var(--fg);
+    }
+
+    .profile-signature strong {
+      color: var(--bg-dark);
+      font-weight: 700;
+    }
+
+    /* CLOSING & FOOTER (DARK PETROL) */
+    footer.closing {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      padding: 5.5rem 0 2.5rem;
+    }
+
+    .closing-hero {
+      max-width: 680px;
+      margin: 0 auto 4rem;
+      text-align: center;
+    }
+
+    .closing-logo {
+      height: 76px;
+      width: auto;
+      margin: 0 auto 1.75rem;
+    }
+
+    .closing-hero h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.6vw, 2.9rem);
+      font-weight: 600;
+      color: var(--fg-on-dark);
+      line-height: 1.18;
+      margin-bottom: 1.25rem;
+    }
+
+    .closing-hero p {
+      font-size: 1.05rem;
+      color: var(--fg-on-dark-muted);
+      line-height: 1.72;
+      margin-bottom: 2.25rem;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem 2rem;
+      border-top: 1px solid var(--border-dark);
+      padding-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--fg-on-dark-muted);
+    }
+
+    .footer-meta a {
+      color: var(--fg-on-dark);
+      font-weight: 500;
+      transition: color 0.18s;
+    }
+
+    .footer-meta a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-links-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* CASE STUDY MODAL */
+    .case-modal-bg {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(9, 42, 54, 0.78);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .case-modal-bg.open {
+      display: flex;
+    }
+
+    .case-dialog {
+      background: var(--surface);
+      border-radius: var(--radius);
+      max-width: 760px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.75rem;
+      position: relative;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .close-case-btn {
+      position: absolute;
+      top: 1.15rem;
+      right: 1.15rem;
+      font-size: 1.2rem;
+      color: var(--fg-muted);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-case-btn:hover {
+      background: var(--bg-card);
+      color: var(--bg-dark);
+    }
+
+    .modal-tag {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      margin: 0.45rem 0 1.25rem;
+      line-height: 1.25;
+    }
+
+    .case-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .case-tab {
+      padding: 0.55rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--fg-muted);
+      border-bottom: 2px solid transparent;
+    }
+
+    .case-tab.active {
+      color: var(--bg-dark);
+      border-bottom-color: var(--accent-gold);
+    }
+
+    .modal-body {
+      font-size: 0.96rem;
+      line-height: 1.72;
+      color: var(--fg-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .modal-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* RESPONSIVE CONSOLIDATED IN ORDER BELOW */
+
+    /* PARA QUEM FAZ SENTIDO */
+    .fit-wrapper {
+      margin-top: 2.75rem;
+    }
+
+    .fit-heading {
+      font-family: var(--font-serif);
+      font-size: 1.38rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      margin-bottom: 1.15rem;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .fit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .fit-card-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.45rem;
+    }
+
+    .fit-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      color: var(--bg-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .fit-card p {
+      font-size: 0.9rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+    }
+
+    /* COMPARATIVO IA GENÉRICA VS DIREÇÃO TC OAKS */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.75rem;
+      text-align: left;
+    }
+
+    .compare-card {
+      border-radius: var(--radius);
+      padding: 1.85rem;
+      border: 1px solid var(--border);
+    }
+
+    .compare-generic {
+      background: var(--bg);
+    }
+
+    .compare-directed {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      border-color: var(--border-dark);
+    }
+
+    .compare-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      margin-bottom: 0.95rem;
+    }
+
+    .compare-generic .compare-badge {
+      background: var(--bg-subtle);
+      color: var(--fg-muted);
+    }
+
+    .compare-directed .compare-badge {
+      background: rgba(194, 141, 66, 0.16);
+      color: var(--accent-gold);
+      border: 1px solid rgba(194, 141, 66, 0.35);
+    }
+
+    .compare-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .compare-generic h3 {
+      color: var(--bg-dark);
+    }
+
+    .compare-directed h3 {
+      color: var(--fg-on-dark);
+    }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.91rem;
+      line-height: 1.55;
+    }
+
+    .compare-list li {
+      padding-left: 1.35rem;
+      position: relative;
+    }
+
+    .compare-generic .compare-list li {
+      color: var(--fg-muted);
+    }
+
+    .compare-generic .compare-list li::before {
+      content: '×';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .compare-directed .compare-list li {
+      color: var(--fg-on-dark-muted);
+    }
+
+    .compare-directed .compare-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    /* TAGS E KPI NOS CARDS DE PORTFÓLIO */
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.85rem 0 0.75rem;
+    }
+
+    .case-tag {
+      font-size: 0.74rem;
+      font-weight: 600;
+      background: var(--bg);
+      color: var(--fg);
+      border: 1px solid var(--border);
+      padding: 0.22rem 0.58rem;
+      border-radius: 999px;
+    }
+
+    .case-kpi {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+      background: rgba(194, 141, 66, 0.14);
+      border-left: 3px solid var(--accent-gold);
+      padding: 0.45rem 0.7rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    /* MODAL CASE VISUAL PREVIEW & NAV */
+    .modal-visual-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: var(--bg-dark);
+      margin-bottom: 1.35rem;
+      position: relative;
+    }
+
+    .modal-visual-wrap img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      cursor: zoom-in;
+      transition: max-height 0.28s ease;
+    }
+
+    .modal-visual-wrap.is-zoomed img {
+      max-height: 520px;
+      object-fit: contain;
+      background: var(--bg-dark);
+      cursor: zoom-out;
+    }
+
+    .modal-zoom-hint {
+      position: absolute;
+      right: 0.65rem;
+      bottom: 0.65rem;
+      background: rgba(9, 42, 54, 0.86);
+      color: var(--fg-on-dark);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-sm);
+      pointer-events: none;
+    }
+
+    .modal-nav-group {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-nav-btn {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--bg-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-sm);
+      transition: border-color 0.18s, background 0.18s;
+    }
+
+    .modal-nav-btn:hover {
+      border-color: var(--bg-dark);
+      background: var(--bg-card);
+    }
+
+    /* QUIZ MELHORADO */
+    .quiz-step-nav {
+      margin-top: 1.35rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .quiz-back-btn {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--fg-muted);
+      padding: 0.35rem 0.1rem;
+    }
+
+    .quiz-back-btn:hover {
+      color: var(--bg-dark);
+      text-decoration: underline;
+    }
+
+    .result-pillar-badge {
+      display: inline-block;
+      margin: 0.85rem 0 0.75rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: var(--bg-dark);
+      color: var(--accent-gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .result-actions-list {
+      margin-top: 0.95rem;
+      padding-left: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.91rem;
+      color: var(--fg);
+      line-height: 1.55;
+    }
+
+    /* BENTO DE CREDENCIAIS EM #SOBRE */
+    .profile-left-col {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--bg-dark);
+    }
+
+    .profile-photo {
+      flex: 1;
+    }
+
+    .profile-bento {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border-dark);
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .profile-bento-item {
+      background: var(--bg-dark-card);
+      padding: 1rem 1.05rem;
+    }
+
+    .profile-bento-item strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-bento-item span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--fg-on-dark-muted);
+      line-height: 1.45;
+    }
+
+    .profile-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    /* FAQ ESTRATÉGICO */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      max-width: 880px;
+    }
+
+    .faq-list details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-list details[open] {
+      border-color: var(--accent-gold);
+    }
+
+    .faq-list summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.2rem 1.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--bg-dark);
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list details[open] .acc-toggle {
+      transform: rotate(45deg);
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      padding: 0 1.45rem 1.3rem;
+      font-size: 0.94rem;
+      color: var(--fg-muted);
+      line-height: 1.68;
+    }
+
+    /* ONE-PAGER EXECUTIVO MODAL & PRINT */
+    .onepager-dialog {
+      background: var(--surface);
+      border-radius: var(--radius);
+      max-width: 820px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      padding: 2.6rem 2.75rem;
+      position: relative;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .onepager-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 2px solid var(--bg-dark);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .onepager-head img {
+      height: 40px;
+      width: auto;
+    }
+
+    .onepager-meta {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+    }
+
+    .onepager-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+
+    .onepager-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+    }
+
+    .onepager-box h4 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--bg-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .onepager-box p {
+      font-size: 0.83rem;
+      color: var(--fg-muted);
+      line-height: 1.5;
+    }
+
+    .onepager-contact-bar {
+      background: var(--bg-dark);
+      color: var(--fg-on-dark);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.86rem;
+      margin-top: 1.25rem;
+    }
+
+    .onepager-contact-bar strong {
+      color: var(--accent-gold);
+    }
+
+    .footer-onepager-btn {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      padding: 0;
+    }
+
+    .footer-onepager-btn:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links-right {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media (max-width: 1140px) {
+      .brand-tagline {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .process-layout,
+      .profile-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .pillars,
+      .cases-grid,
+      .fit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pillar:last-child .service-popup {
+        left: 0;
+        right: auto;
+      }
+
+      .pillar:nth-child(even) .service-popup {
+        left: auto;
+        right: 0;
+      }
+
+      .hero-visual {
+        justify-content: flex-start;
+      }
+
+      .hero-portrait {
+        max-width: 360px;
+      }
+
+      .method-subgrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-layout {
+        gap: 0;
+      }
+
+      .profile-photo img {
+        min-height: 320px;
+        max-height: 420px;
+      }
+
+      .profile-text {
+        padding: 2.25rem 2rem;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .nav-desktop {
+        display: none;
+      }
+
+      .btn-mobile-nav {
+        display: block;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section-block {
+        padding: 3.5rem 0;
+      }
+
+      .hero {
+        padding: 3rem 0 3.5rem;
+      }
+
+      .pillars,
+      .cases-grid,
+      .fit-grid,
+      .compare-grid,
+      .method-subgrid,
+      .onepager-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quiz-container,
+      .case-dialog,
+      .onepager-dialog {
+        padding: 1.5rem 1.15rem;
+      }
+
+      .acc-content {
+        padding: 0 1.2rem 1.2rem 1.2rem;
+      }
+
+      .footer-meta {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .service-list {
+        position: relative;
+      }
+
+      .service-item {
+        position: static;
+      }
+
+      .service-popup,
+      .pillar:last-child .service-popup,
+      .pillar:nth-child(even) .service-popup {
+        left: 0;
+        right: 0;
+        width: calc(100vw - 4rem);
+        max-width: 280px;
+        bottom: calc(100% + 8px);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .profile-bento {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+
+      body.printing-onepager .site-header,
+      body.printing-onepager main,
+      body.printing-onepager footer,
+      body.printing-onepager #caseModal,
+      body.printing-onepager .modal-no-print {
+        display: none !important;
+      }
+
+      body.printing-onepager #onePagerModal {
+        display: block !important;
+        position: static !important;
+        background: #FFFFFF !important;
+        padding: 0 !important;
+        backdrop-filter: none !important;
+      }
+
+      body.printing-onepager .onepager-dialog {
+        max-height: none !important;
+        max-width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://studiotcoaks.com.br/#service",
+        "name": "TC Oaks",
+        "url": "https://studiotcoaks.com.br/",
+        "logo": "https://studiotcoaks.com.br/images/logo-symbol.png",
+        "image": "https://studiotcoaks.com.br/images/tiago-oaks.webp",
+        "description": "Orientação, parceria criativa e execução de marketing para empresas que querem usar IA sem perder identidade.",
+        "telephone": "+5511967378171",
+        "areaServed": "BR",
+        "founder": {
+          "@id": "https://studiotcoaks.com.br/#tiago-oaks"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Modelos de Apoio em Marketing TC Oaks",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "01 / A gente orienta",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Revisão de materiais" } }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "02 / A gente faz junto",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Direção criativa" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design dedicado" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planejamento" } }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "03 / A gente executa",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Campanhas" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conteúdo" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Audiovisual" } }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://studiotcoaks.com.br/#tiago-oaks",
+        "name": "Tiago Oaks",
+        "jobTitle": "Fundador & Diretor de Estratégia e Criação",
+        "worksFor": { "@id": "https://studiotcoaks.com.br/#service" },
+        "sameAs": [
+          "https://www.linkedin.com/in/tiago-oaks/"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://studiotcoaks.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual a diferença entre a TC Oaks e uma agência tradicional?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Agências tradicionais costumam vender pacotes fechados com estrutura pesada e intermediários. A TC Oaks opera como boutique: você conversa diretamente com quem pensa estratégia e criação, acionando uma rede de parceiros especialistas apenas quando o projeto pede."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso fechar um contrato mensal longo ou posso contratar algo pontual?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Você escolhe o formato conforme o momento da empresa: orientações pontuais, revisão de materiais, projetos fechados (como branding, campanhas ou deck comercial) ou acompanhamento contínuo de direção criativa e design dedicado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Minha equipe já usa IA e faz o básico internamente. Como vocês entram?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Você não precisa abandonar as ferramentas que agilizam sua rotina. A TC Oaks entra para definir critério, linguagem visual, tom de voz e revisar o que importa, garantindo que a marca não pareça feita em template genérico."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quem vai cuidar do meu projeto no dia a dia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tiago Oaks lidera o diagnóstico, a estratégia e a direção criativa diretamente com você, coordenando os especialistas certos da rede quando houver necessidade de execução complementar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funciona essa primeira conversa no WhatsApp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "É uma conversa franca para entender o momento do negócio, identificar onde a comunicação ou o comercial estão travando e combinar o próximo passo sem compromisso nem fórmula pronta."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-wrap header-row">
+      <a href="#inicio" class="brand-link">
+        <img src="images/logo-horizontal.png" alt="TC Oaks" class="brand-logo">
+        <span class="brand-tagline">Boutique de Marketing</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navegação principal">
+        <a href="#servicos">Como ajudamos</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#metodo">Método</a>
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#sobre" class="nav-cta">Quem faz</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://wa.me/5511967378171" target="_blank" rel="noopener noreferrer" class="btn-header-wa">Vamos conversar ↗</a>
+      </nav>
+
+      <button type="button" class="btn-mobile-nav" id="mobileNavBtn" aria-label="Abrir menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+    </div>
+
+    <!-- DRAWER NAV MOBILE -->
+    <div class="drawer-nav" id="drawerNav">
+      <a href="#servicos" onclick="toggleNav()">Como ajudamos</a>
+      <a href="#trabalhos" onclick="toggleNav()">Trabalhos</a>
+      <a href="#metodo" onclick="toggleNav()">Método</a>
+      <a href="#diagnostico" onclick="toggleNav()">Diagnóstico</a>
+      <a href="#sobre" onclick="toggleNav()">Quem faz</a>
+      <a href="#faq" onclick="toggleNav()">Dúvidas</a>
+      <a href="https://wa.me/5511967378171" target="_blank" rel="noopener noreferrer" class="btn-header-wa">Vamos conversar no WhatsApp ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="site-wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow eyebrow-dark">Inteligência artificial. Identidade própria.</span>
+          <h1 class="hero-title">Você se vira com IA. Mas seu marketing precisa ter a <em class="gold-italic">mesma cara</em> de todo mundo?</h1>
+          <p class="hero-desc">
+            Hoje, qualquer empresa coloca coisa no ar. Difícil é fazer sua comunicação parecer sua — e ajudar o negócio de verdade.
+          </p>
+          <div class="hero-actions">
+            <a href="https://wa.me/5511967378171" target="_blank" rel="noopener noreferrer" class="btn-primary">Vamos conversar ↗</a>
+            <a href="#diagnostico" class="btn-outline-dark">Fazer Diagnóstico Rápido →</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="hero-portrait">
+            <img src="images/tiago-oaks.webp" alt="Tiago Oaks, fundador da TC Oaks" width="460" height="560">
+            <figcaption><strong>Tiago Oaks</strong> · Estratégia, criação e direção humana.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA DE TRANSIÇÃO -->
+    <div class="ribbon" aria-label="Modelos de atuação">
+      <div class="site-wrap ribbon-inner">
+        <span>Orientação para fazer sozinho.</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Parceria para fazer junto.</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Execução para tirar da sua mão.</span>
+      </div>
+    </div>
+
+    <!-- SEÇÃO 01: APOIO NA MEDIDA CERTA -->
+    <section class="section-block" id="servicos">
+      <div class="site-wrap">
+        <div class="section-head">
+          <span class="eyebrow">01 / Apoio na medida certa</span>
+          <h2 class="section-title">Talvez você não precise de uma agência para <em class="gold-italic">tudo.</em></h2>
+          <p class="section-lead">
+            Mas talvez precise de alguém experiente para pensar junto, dar direção ou assumir o que está travando seu marketing.
+          </p>
+        </div>
+
+        <p class="service-hint">Clique em cada serviço para entender como funciona:</p>
+
+        <div class="pillars">
+          <!-- PILAR 01 -->
+          <article class="pillar">
+            <div>
+              <div class="pillar-code">01 / A gente orienta</div>
+              <h3>Um olhar de fora.</h3>
+              <p class="pillar-desc">
+                Para quem toca o marketing no dia a dia, mas quer ajuda para enxergar melhor o caminho, ajustar a rota e tomar decisões com mais segurança.
+              </p>
+            </div>
+            <div class="service-list">
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-1">Consultoria</button>
+                <div class="service-popup" id="service-tip-1" role="tooltip">
+                  <strong>Consultoria</strong>
+                  Um olhar experiente para suas dúvidas de marketing, com orientação prática para decidir os próximos passos.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Consultoria%20(A%20gente%20orienta)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Consultoria ↗</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-2">Diagnóstico</button>
+                <div class="service-popup" id="service-tip-2" role="tooltip">
+                  <strong>Diagnóstico</strong>
+                  Análise da comunicação e do contexto do negócio para identificar o que está funcionando e o que precisa mudar.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Diagn%C3%B3stico%20(A%20gente%20orienta)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Diagnóstico ↗</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-3">Revisão de materiais</button>
+                <div class="service-popup" id="service-tip-3" role="tooltip">
+                  <strong>Revisão de materiais</strong>
+                  Uma avaliação de textos, peças e apresentações, com ajustes para melhorar clareza, consistência e identidade.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Revis%C3%A3o%20de%20materiais%20(A%20gente%20orienta)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Revisão de materiais ↗</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PILAR 02 -->
+          <article class="pillar">
+            <div>
+              <div class="pillar-code">02 / A gente faz junto</div>
+              <h3>Apoio para a sua rotina.</h3>
+              <p class="pillar-desc">
+                Para quem já faz acontecer internamente, mas sente falta de acompanhamento próximo para manter consistência, qualidade e direção.
+              </p>
+            </div>
+            <div class="service-list">
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-4">Direção criativa</button>
+                <div class="service-popup" id="service-tip-4" role="tooltip">
+                  <strong>Direção criativa</strong>
+                  Definição da linguagem visual e do tom da comunicação para que cada entrega tenha a cara da sua marca.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Dire%C3%A7%C3%A3o%20criativa%20(A%20gente%20faz%20junto)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Direção criativa ↗</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-5">Design dedicado</button>
+                <div class="service-popup" id="service-tip-5" role="tooltip">
+                  <strong>Design dedicado</strong>
+                  Apoio recorrente de criação, com um profissional que conhece a marca e acompanha suas demandas.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Design%20dedicado%20(A%20gente%20faz%20junto)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Design dedicado ↗</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-6">Planejamento</button>
+                <div class="service-popup" id="service-tip-6" role="tooltip">
+                  <strong>Planejamento</strong>
+                  Organização das prioridades, ações e entregas de acordo com seus objetivos e recursos.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Planejamento%20(A%20gente%20faz%20junto)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Planejamento ↗</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PILAR 03 -->
+          <article class="pillar">
+            <div>
+              <div class="pillar-code">03 / A gente executa</div>
+              <h3>Da ideia à entrega.</h3>
+              <p class="pillar-desc">
+                Para momentos em que você precisa tirar um projeto do papel com mais estrutura, criação e acabamento, sem carregar tudo sozinho.
+              </p>
+            </div>
+            <div class="service-list">
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-7">Branding</button>
+                <div class="service-popup" id="service-tip-7" role="tooltip">
+                  <strong>Branding</strong>
+                  Construção e alinhamento de posicionamento, identidade e expressão da marca.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Branding%20(A%20gente%20executa)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Branding ↗</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-8">Campanhas</button>
+                <div class="service-popup" id="service-tip-8" role="tooltip">
+                  <strong>Campanhas</strong>
+                  Conceito, mensagem e peças conectados a um objetivo específico de comunicação.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Campanhas%20(A%20gente%20executa)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Campanhas ↗</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-9">Conteúdo</button>
+                <div class="service-popup" id="service-tip-9" role="tooltip">
+                  <strong>Conteúdo</strong>
+                  Textos e materiais pensados para seu público, seu negócio e os canais em que você se comunica.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Conte%C3%BAdo%20(A%20gente%20executa)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Conteúdo ↗</a>
+                </div>
+              </div>
+              <div class="service-item">
+                <button type="button" class="service-trigger" aria-expanded="false" aria-controls="service-tip-10">Audiovisual</button>
+                <div class="service-popup" id="service-tip-10" role="tooltip">
+                  <strong>Audiovisual</strong>
+                  Criação e coordenação de vídeos e materiais audiovisuais para apresentar sua marca e suas ideias.
+                  <a href="https://wa.me/5511967378171?text=Ol%C3%A1%20Tiago!%20Vi%20no%20site%20o%20servi%C3%A7o%20de%20Audiovisual%20(A%20gente%20executa)%20e%20gostaria%20de%20conversar%20sobre%20isso." target="_blank" rel="noopener noreferrer" class="service-popup-cta">Conversar sobre Audiovisual ↗</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="scope-note">
+          <strong>Além da peça bonita:</strong> Posicionamento, redes sociais, comunicação comercial, endomarketing e treinamento. Porque o problema nem sempre está só na divulgação — às vezes está na forma de vender ou de alinhar a equipe.
+        </aside>
+
+        <div class="fit-wrapper" aria-label="Para quem a TC Oaks faz sentido">
+          <h3 class="fit-heading">Para quem faz sentido</h3>
+          <div class="fit-grid">
+            <article class="fit-card">
+              <div class="fit-card-label">Perfil 01</div>
+              <h4>Empresas Técnicas e B2B</h4>
+              <p>Têm um produto, serviço ou engenharia de alto nível, mas a apresentação comercial e a presença digital ainda não transmitem essa solidez.</p>
+            </article>
+            <article class="fit-card">
+              <div class="fit-card-label">Perfil 02</div>
+              <h4>Times Enxutos que Já Usam IA</h4>
+              <p>Já produzem peças no dia a dia com IA e ferramentas rápidas, mas sentem que a marca ficou genérica e precisa de critério e direção criativa.</p>
+            </article>
+            <article class="fit-card">
+              <div class="fit-card-label">Perfil 03</div>
+              <h4>Momentos de Virada ou Lançamento</h4>
+              <p>Precisam reposicionar a marca, revisar o discurso de vendas ou tirar uma campanha crítica do papel sem o peso de uma agência tradicional.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATEMENT / MANIFESTO DE IA -->
+    <section class="statement">
+      <div class="site-wrap statement-box">
+        <span class="eyebrow">Inteligência artificial. Direção humana.</span>
+        <h2 class="statement-title">A gente usa IA. Bastante. Mas a marca continua <em class="gold-italic">sendo sua.</em></h2>
+        <p class="statement-copy">
+          Você pode continuar usando as ferramentas que economizam seu tempo. Nosso trabalho é garantir que o resultado tenha critério, direção e a identidade do seu negócio — não cara de template pronto.
+        </p>
+      </div>
+
+      <div class="site-wrap">
+        <div class="compare-grid" aria-label="Comparativo entre IA sem direção e direção humana TC Oaks">
+          <div class="compare-card compare-generic">
+            <span class="compare-badge">Sem direção · IA no piloto automático</span>
+            <h3>Comunicação intercambiável e sem peso comercial</h3>
+            <ul class="compare-list">
+              <li>Texto cheio de jargões que qualquer concorrente poderia assinar no mesmo dia.</li>
+              <li>Layout de template pronto, sem hierarquia de leitura nem identidade visual própria.</li>
+              <li>Peças soltas que apenas preenchem calendário, mas não ajudam o time comercial a fechar.</li>
+            </ul>
+          </div>
+
+          <div class="compare-card compare-directed">
+            <span class="compare-badge">Com direção TC Oaks · IA + Repertório Humano</span>
+            <h3>Identidade proprietária que sustenta valor e venda</h3>
+            <ul class="compare-list">
+              <li>Argumento proprietário que traduz o diferencial real e a complexidade do seu negócio.</li>
+              <li>Direção de arte e tom de voz consistentes em site, decks, catálogos e campanhas.</li>
+              <li>Materiais desenhados com intenção para abrir portas, defender margem e gerar retorno.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 02: TRABALHOS SELECIONADOS -->
+    <section class="section-block" id="trabalhos">
+      <div class="site-wrap">
+        <div class="section-head">
+          <span class="eyebrow">02 / Trabalhos selecionados</span>
+          <h2 class="section-title">Cada negócio pede uma <em class="gold-italic">resposta diferente.</em></h2>
+          <p class="section-lead">
+            Alguns exemplos de como estratégia, linguagem e criação se encontram na prática.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <!-- CASE 1: 4TEX -->
+          <article class="case-card">
+            <a href="images/work-4tex.webp" target="_blank" rel="noopener noreferrer" class="case-image" aria-label="Abrir lâmina completa do case 4Tex">
+              <img src="images/work-4tex.webp" alt="Portfólio TC Oaks — 4Tex" width="500" height="300" loading="lazy">
+              <span class="case-image-badge">Ver imagem ↗</span>
+            </a>
+            <div class="case-body">
+              <div>
+                <div class="case-client">4Tex · Indústria Têxtil B2B</div>
+                <h3>Identidade clara e posicionamento industrial</h3>
+                <p>Identidade mais clara para uma empresa que precisava parecer tão sólida quanto o que entrega.</p>
+                <div class="case-tags">
+                  <span class="case-tag">Identidade Visual</span>
+                  <span class="case-tag">Catálogo Técnico</span>
+                  <span class="case-tag">Posicionamento B2B</span>
+                </div>
+                <div class="case-kpi">+35% no tíquete médio em 6 meses</div>
+              </div>
+              <div class="case-actions">
+                <button type="button" class="case-footer-btn" onclick="openCaseDetails('4tex', this)">Ver Estudo Completo →</button>
+                <a href="images/work-4tex.webp" target="_blank" rel="noopener noreferrer" class="case-sheet-link">Ver lâmina ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 2: AQUATECH -->
+          <article class="case-card">
+            <a href="images/work-aquatech.webp" target="_blank" rel="noopener noreferrer" class="case-image" aria-label="Abrir lâmina completa do case Aquatech">
+              <img src="images/work-aquatech.webp" alt="Portfólio TC Oaks — Aquatech" width="500" height="300" loading="lazy">
+              <span class="case-image-badge">Ver imagem ↗</span>
+            </a>
+            <div class="case-body">
+              <div>
+                <div class="case-client">Aquatech · Engenharia Hídrica B2B</div>
+                <h3>Engenharia traduzida para decisão executiva</h3>
+                <p>Comunicação técnica traduzida de um jeito mais simples, profissional e fácil de entender.</p>
+                <div class="case-tags">
+                  <span class="case-tag">Narrativa Comercial</span>
+                  <span class="case-tag">Deck Executivo</span>
+                  <span class="case-tag">Tradução Técnica</span>
+                </div>
+                <div class="case-kpi">Ciclo comercial de 9 meses para 11 semanas</div>
+              </div>
+              <div class="case-actions">
+                <button type="button" class="case-footer-btn" onclick="openCaseDetails('aquatech', this)">Ver Estudo Completo →</button>
+                <a href="images/work-aquatech.webp" target="_blank" rel="noopener noreferrer" class="case-sheet-link">Ver lâmina ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CASE 3: SABRY -->
+          <article class="case-card">
+            <a href="images/work-sabry.webp" target="_blank" rel="noopener noreferrer" class="case-image" aria-label="Abrir lâmina completa do case Sabry">
+              <img src="images/work-sabry.webp" alt="Portfólio TC Oaks — Sabry" width="500" height="300" loading="lazy">
+              <span class="case-image-badge">Ver imagem ↗</span>
+            </a>
+            <div class="case-body">
+              <div>
+                <div class="case-client">Sabry · Moda & Varejo Autoral</div>
+                <h3>Presença autoral, linguagem e desejo</h3>
+                <p>Construção de presença e linguagem para dar mais personalidade e consistência à marca.</p>
+                <div class="case-tags">
+                  <span class="case-tag">Direção Criativa</span>
+                  <span class="case-tag">Linguagem Autoral</span>
+                  <span class="case-tag">Campanhas</span>
+                </div>
+                <div class="case-kpi">+42% no ticket médio por pedido</div>
+              </div>
+              <div class="case-actions">
+                <button type="button" class="case-footer-btn" onclick="openCaseDetails('sabry', this)">Ver Estudo Completo →</button>
+                <a href="images/work-sabry.webp" target="_blank" rel="noopener noreferrer" class="case-sheet-link">Ver lâmina ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 03: ANTES DE SAIR FAZENDO -->
+    <section class="section-block section-subtle" id="metodo">
+      <div class="site-wrap">
+        <div class="process-layout">
+          <div class="process-intro">
+            <span class="eyebrow">03 / Antes de sair fazendo</span>
+            <h2 class="section-title">Seu problema não vem organizado num <em class="gold-italic">briefing.</em></h2>
+            <p class="section-lead">
+              Às vezes, a conversa começa com "meu Instagram não está legal". Quando a gente olha direito, descobre que o desafio está no discurso comercial, na apresentação da empresa ou na falta de clareza sobre o que dizer.
+            </p>
+            <p class="section-lead">
+              Por isso, antes de sair produzindo, a gente conversa para entender o momento do negócio.
+            </p>
+          </div>
+
+          <div class="process-accordion">
+            <details open>
+              <summary>
+                <span class="acc-title-wrap">
+                  <span class="acc-idx">01</span>
+                  <span>Entender o que está acontecendo</span>
+                </span>
+                <span class="acc-toggle" aria-hidden="true">+</span>
+              </summary>
+              <div class="acc-content">
+                Uma conversa franca sobre o negócio, o momento atual e o que está incomodando na comunicação ou nas vendas.
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="acc-title-wrap">
+                  <span class="acc-idx">02</span>
+                  <span>Decidir o que vale fazer</span>
+                </span>
+                <span class="acc-toggle" aria-hidden="true">+</span>
+              </summary>
+              <div class="acc-content">
+                Nem tudo precisa virar um projeto grande. A ideia é separar o que é prioridade do que é só ruído.
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                <span class="acc-title-wrap">
+                  <span class="acc-idx">03</span>
+                  <span>Combinar quem faz o quê</span>
+                </span>
+                <span class="acc-toggle" aria-hidden="true">+</span>
+              </summary>
+              <div class="acc-content">
+                Definimos juntos o que você consegue tocar internamente e onde a TC Oaks entra para dar direção ou executar.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="method-subgrid" aria-label="Pilares práticos da metodologia">
+          <div class="method-item">
+            <div class="method-idx">01</div>
+            <h4>Diagnóstico Sincero</h4>
+            <p>Identificamos onde sua empresa está investindo esforço sem retorno com peças automáticas que não diferenciam a marca.</p>
+          </div>
+          <div class="method-item">
+            <div class="method-idx">02</div>
+            <h4>Direção de Tom & Voz</h4>
+            <p>Definição do discurso proprietário que impede sua equipe de soar como uma resposta genérica gerada por robô.</p>
+          </div>
+          <div class="method-item">
+            <div class="method-idx">03</div>
+            <h4>Craft & Refinamento</h4>
+            <p>Mais de duas décadas de experiência em direção de arte, escrita publicitária e governança comercial na mesa.</p>
+          </div>
+          <div class="method-item">
+            <div class="method-idx">04</div>
+            <h4>Execução Híbrida</h4>
+            <p>Você continua tocando a rotina que faz sentido fazer internamente; a TC Oaks assume o que exige peso estratégico.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGNÓSTICO INTERATIVO DE MATURIDADE -->
+    <section class="section-block" id="diagnostico">
+      <div class="site-wrap">
+        <div class="quiz-section-head">
+          <span class="eyebrow">Ferramenta Rápida</span>
+          <h2 class="section-title">Descubra a maturidade do seu <em class="gold-italic">marketing.</em></h2>
+          <p class="section-lead">Responda a 3 perguntas para identificar os gargalos da sua comunicação comercial.</p>
+        </div>
+
+        <div class="quiz-container">
+          <div class="quiz-progress-bar" aria-label="Progresso do diagnóstico">
+            <div class="quiz-progress-fill" id="quizBar"></div>
+          </div>
+
+          <!-- ETAPA 1 -->
+          <div class="quiz-step active" id="step1">
+            <h3 class="quiz-title">1. Como as peças visuais e os textos da sua marca são criados hoje?</h3>
+            <div class="quiz-choices">
+              <button type="button" class="quiz-choice" onclick="selectChoice(1, 10, 'Faço tudo sozinho usando templates rápidos de Canva e IA')">
+                A) Faço tudo sozinho usando templates prontos e prompts rápidos
+              </button>
+              <button type="button" class="quiz-choice" onclick="selectChoice(1, 20, 'Temos freelancer ou agência, mas sinto que o material é genérico')">
+                B) Contratamos agência/freelancers, mas as peças parecem sem alma
+              </button>
+              <button type="button" class="quiz-choice" onclick="selectChoice(1, 30, 'Temos equipe interna, mas falta direção executiva sênior')">
+                C) Equipe interna bem estruturada, porém sobrecarregada na rotina
+              </button>
+            </div>
+          </div>
+
+          <!-- ETAPA 2 -->
+          <div class="quiz-step" id="step2">
+            <h3 class="quiz-title">2. O que acontece quando um cliente qualificado visita seu site ou perfil?</h3>
+            <div class="quiz-choices">
+              <button type="button" class="quiz-choice" onclick="selectChoice(2, 10, 'Ele não entende claramente nosso diferencial em 5 segundos')">
+                A) Não fica claro o que nos torna únicos em relação à concorrência
+              </button>
+              <button type="button" class="quiz-choice" onclick="selectChoice(2, 20, 'O visual parece muito inferior à qualidade real do nosso produto')">
+                B) O design parece amador comparado à sofisticação do nosso produto
+              </button>
+              <button type="button" class="quiz-choice" onclick="selectChoice(2, 30, 'Recebemos visitantes, mas a taxa de conversão em reuniões é baixa')">
+                C) Temos tráfego constante, mas poucos contatos qualificados
+              </button>
+            </div>
+            <div class="quiz-step-nav">
+              <button type="button" class="quiz-back-btn" onclick="prevQuizStep(2)">← Voltar pergunta</button>
+            </div>
+          </div>
+
+          <!-- ETAPA 3 -->
+          <div class="quiz-step" id="step3">
+            <h3 class="quiz-title">3. Qual é o principal objetivo comercial da sua empresa nos próximos 6 meses?</h3>
+            <div class="quiz-choices">
+              <button type="button" class="quiz-choice" onclick="selectChoice(3, 10, 'Reposicionar o tíquete médio e parar de brigar por centavos')">
+                A) Aumentar o tíquete médio e atrair clientes de maior poder aquisitivo
+              </button>
+              <button type="button" class="quiz-choice" onclick="selectChoice(3, 20, 'Lançar novos produtos com campanhas de impacto visual')">
+                B) Lançar uma nova linha de produtos/serviços com presença marcante
+              </button>
+              <button type="button" class="quiz-choice" onclick="selectChoice(3, 30, 'Criar uma linha editorial autêntica que construa marca')">
+                C) Estruturar um tom de voz proprietário que construa valor de longo prazo
+              </button>
+            </div>
+            <div class="quiz-step-nav">
+              <button type="button" class="quiz-back-btn" onclick="prevQuizStep(3)">← Voltar pergunta</button>
+            </div>
+          </div>
+
+          <!-- RESULTADO -->
+          <div class="quiz-step" id="stepResult">
+            <div class="result-box">
+              <div class="result-score" id="resBadge">Diagnóstico Concluído</div>
+              <h3 class="result-name" id="resTitle">Marca em Risco de Padronização Genérica</h3>
+              <p class="result-text" id="resDesc">
+                Sua empresa está investindo esforço operacional em peças repetitivas, mas falha em estabelecer o diferencial que justifica preços maiores perante os tomadores de decisão.
+              </p>
+              <div class="result-pillar-badge" id="resPillarBadge">Recomendação: 01 / A gente orienta</div>
+              <ul class="result-actions-list" id="resActionList"></ul>
+            </div>
+
+            <div class="quiz-result-actions">
+              <a href="https://wa.me/5511967378171" id="btnZapFinal" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                Conversar com Tiago Oaks sobre o Diagnóstico no WhatsApp ↗
+              </a>
+              <button type="button" class="btn-outline-light" id="btnCopyQuiz" onclick="copyQuizDiagnostic()">Copiar Diagnóstico</button>
+              <button type="button" class="btn-outline-light" onclick="resetQuiz()">Refazer diagnóstico</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 04: QUEM ESTÁ POR TRÁS -->
+    <section class="section-block" id="sobre">
+      <div class="site-wrap">
+        <div class="profile-layout">
+          <div class="profile-left-col">
+            <div class="profile-photo">
+              <img src="images/tiago-oaks.webp" alt="Retrato de Tiago Oaks" width="450" height="550" loading="lazy">
+            </div>
+            <div class="profile-bento" aria-label="Credenciais executivas">
+              <div class="profile-bento-item">
+                <strong>+20 anos</strong>
+                <span>Repertório entre criação, vendas, aulas e gestão</span>
+              </div>
+              <div class="profile-bento-item">
+                <strong>Visão 360°</strong>
+                <span>Comunicação conectada ao comercial e à operação</span>
+              </div>
+              <div class="profile-bento-item">
+                <strong>Rede sob medida</strong>
+                <span>Especialistas acionados conforme o projeto</span>
+              </div>
+              <div class="profile-bento-item">
+                <strong>Sem intermediários</strong>
+                <span>Direção direta de Tiago Oaks na mesa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-text">
+            <span class="eyebrow">04 / Quem está por trás</span>
+            <h2>Experiência para traduzir <em class="gold-italic">o caos.</em></h2>
+            <p>
+              Tiago Oaks construiu sua trajetória entre criação, atendimento, vendas, conteúdo, aulas e gestão de projetos. Essa mistura ajudou a desenvolver uma habilidade rara: ouvir o problema real do cliente e transformar isso em direção clara.
+            </p>
+            <p>
+              A TC Oaks nasce dessa bagagem — e de uma rede de parceiros acionada conforme a necessidade de cada projeto.
+            </p>
+            <p>
+              Com mais de duas décadas entre agências de publicidade, redação criativa, vendas consultivas e gestão multidisciplinar, a estrutura funciona como uma mesa de trabalho ágil — sem custos inflados, para pensar junto, questionar certezas confortáveis e colocar no ar projetos que gerem retorno e orgulho.
+            </p>
+            <div class="profile-signature">
+              <strong>Tiago Oaks</strong> — Fundador da TC Oaks · Estratégia, criação e operação
+            </div>
+            <div class="profile-actions">
+              <a href="https://wa.me/5511967378171" target="_blank" rel="noopener noreferrer" class="btn-outline-light">Agendar Conversa Diagnóstica ↗</a>
+              <button type="button" class="btn-outline-light" onclick="openOnePager(this)">Apresentação Executiva (One-Pager PDF)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ESTRATÉGICO -->
+    <section class="section-block section-subtle" id="faq">
+      <div class="site-wrap">
+        <div class="section-head">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2 class="section-title">Dúvidas comuns antes de <em class="gold-italic">conversarmos.</em></h2>
+          <p class="section-lead">
+            Respostas diretas sobre modelo de trabalho, escopo, uso de IA e rotina de atendimento.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>
+              <span>Qual a diferença entre a TC Oaks e uma agência tradicional?</span>
+              <span class="acc-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              Agências tradicionais costumam vender pacotes fechados com estrutura pesada e vários níveis de atendimento entre você e quem cria. A TC Oaks funciona como boutique: você conversa diretamente com quem pensa estratégia e criação, acionando uma rede de parceiros especialistas apenas quando o projeto pede.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Preciso fechar um contrato mensal longo ou posso contratar algo pontual?</span>
+              <span class="acc-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              Você escolhe o formato de acordo com o momento do negócio. Pode começar com uma orientação pontual, diagnóstico ou revisão de materiais, contratar um projeto fechado (como branding, deck comercial ou campanha) ou manter acompanhamento contínuo de direção criativa e design dedicado.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Minha equipe já usa IA e faz o básico internamente. Como vocês entram?</span>
+              <span class="acc-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              Você continua aproveitando a agilidade das ferramentas que economizam tempo no dia a dia. A TC Oaks entra para definir critério, identidade visual, tom de voz e revisar o que importa — evitando que sua comunicação pareça saída do mesmo template genérico de todo mundo.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Quem vai cuidar do meu projeto no dia a dia?</span>
+              <span class="acc-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              Tiago Oaks participa diretamente do diagnóstico, da estratégia e da direção criativa do projeto, coordenando eventuais especialistas da rede conforme a entrega exigir. Nada é terceirizado sem critério ou supervisão.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span>Como funciona essa primeira conversa no WhatsApp?</span>
+              <span class="acc-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              É uma conversa objetiva para entender o contexto da empresa, o que está incomodando na comunicação ou nas vendas e avaliar juntos o que vale fazer primeiro — sem fórmula pronta e sem empurrar o que você não precisa.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FECHAMENTO E FOOTER -->
+  <footer class="closing">
+    <div class="site-wrap">
+      <div class="closing-hero">
+        <img src="images/logo-gold.png" alt="Monograma TC Oaks" class="closing-logo" loading="lazy">
+        <h2>Seu marketing pode continuar <em class="gold-italic">sendo seu.</em></h2>
+        <p>
+          Se você sente que sua comunicação está genérica, confusa ou pesada demais para tocar sozinho, vamos conversar. Sem fórmula pronta e sem empurrar o que você não precisa.
+        </p>
+        <a href="https://wa.me/5511967378171" target="_blank" rel="noopener noreferrer" class="btn-gold">
+          WhatsApp · (11) 96737-8171 ↗
+        </a>
+      </div>
+
+      <div class="footer-meta">
+        <a href="https://www.linkedin.com/in/tiago-oaks/" target="_blank" rel="noopener noreferrer">LinkedIn de Tiago Oaks ↗</a>
+        <span>© 2026 TC Oaks · Boutique de Marketing</span>
+        <div class="footer-links-right">
+          <button type="button" class="footer-onepager-btn" onclick="openOnePager(this)">Apresentação Executiva (PDF)</button>
+          <a href="#servicos">Serviços</a>
+          <a href="#trabalhos">Trabalhos</a>
+          <a href="#faq">Dúvidas</a>
+          <a href="#inicio">Voltar ao início ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE ESTUDO DE CASO COM ABAS -->
+  <div class="case-modal-bg" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="case-dialog">
+      <button type="button" class="close-case-btn" aria-label="Fechar estudo de caso" onclick="closeCase()">✕</button>
+      <span class="modal-tag" id="modalTag">Case</span>
+      <h3 class="modal-title" id="modalTitle">Título</h3>
+
+      <div class="modal-visual-wrap" id="modalVisualWrap" onclick="toggleModalImageZoom()">
+        <img id="modalImage" src="images/work-4tex.webp" alt="Lâmina do projeto">
+        <span class="modal-zoom-hint" id="modalZoomHint">Clique para ampliar</span>
+      </div>
+
+      <div class="case-tabs" role="tablist" aria-label="Etapas do estudo de caso">
+        <button type="button" class="case-tab active" role="tab" aria-selected="true" onclick="switchCaseTab('visao', this)">Visão Geral</button>
+        <button type="button" class="case-tab" role="tab" aria-selected="false" onclick="switchCaseTab('estrategia', this)">Estratégia</button>
+        <button type="button" class="case-tab" role="tab" aria-selected="false" onclick="switchCaseTab('resultado', this)">Impacto no Negócio</button>
+      </div>
+
+      <div id="modalBody" class="modal-body" role="tabpanel"></div>
+
+      <div class="modal-footer">
+        <div class="modal-nav-group">
+          <button type="button" class="modal-nav-btn" onclick="prevCase()">← Case Anterior</button>
+          <button type="button" class="modal-nav-btn" onclick="nextCase()">Próximo Case →</button>
+          <a href="#" id="modalSheetLink" target="_blank" rel="noopener noreferrer" class="case-sheet-link">Abrir lâmina ↗</a>
+        </div>
+        <a href="https://wa.me/5511967378171" id="modalWaLink" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Quero um Projeto como Este ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL ONE-PAGER EXECUTIVO (PRONTO PARA PDF A4) -->
+  <div class="case-modal-bg" id="onePagerModal" role="dialog" aria-modal="true" aria-labelledby="onePagerTitle">
+    <div class="onepager-dialog">
+      <button type="button" class="close-case-btn modal-no-print" aria-label="Fechar apresentação executiva" onclick="closeOnePager()">✕</button>
+      <div class="onepager-head">
+        <img src="images/logo-horizontal.png" alt="TC Oaks — Boutique de Marketing">
+        <div class="onepager-meta">
+          <strong>Apresentação Executiva</strong><br>
+          Estratégia, Criação &amp; Direção Humana
+        </div>
+      </div>
+
+      <h3 class="modal-title" id="onePagerTitle" style="font-size: 1.55rem; margin-bottom: 0.7rem;">Seu marketing com a sua identidade — sem parecer feito em série</h3>
+      <p style="font-size: 0.92rem; color: var(--fg-muted); line-height: 1.65;">
+        A TC Oaks apoia empresas B2B, marcas técnicas e operações enxutas que já usam IA e ferramentas rápidas no dia a dia, mas precisam de critério, posicionamento e direção criativa para se diferenciar e defender margem.
+      </p>
+
+      <div class="onepager-grid">
+        <div class="onepager-box">
+          <h4>01 / A gente orienta</h4>
+          <p>Consultoria, Diagnóstico e Revisão de materiais para empresas que tocam a operação e querem segurança de rota.</p>
+        </div>
+        <div class="onepager-box">
+          <h4>02 / A gente faz junto</h4>
+          <p>Direção criativa, Design dedicado e Planejamento recorrente para manter padrão, tom de voz e consistência.</p>
+        </div>
+        <div class="onepager-box">
+          <h4>03 / A gente executa</h4>
+          <p>Branding, Campanhas, Conteúdo e Audiovisual com estrutura, linguagem própria e acabamento comercial.</p>
+        </div>
+      </div>
+
+      <div class="onepager-box" style="margin-bottom: 1rem;">
+        <h4>Casos Selecionados &amp; Liderança</h4>
+        <p style="margin-bottom: 0.45rem;">
+          <strong>4Tex:</strong> +35% no tíquete médio em 6 meses com reposicionamento B2B e catálogo técnico. ·
+          <strong>Aquatech:</strong> ciclo comercial reduzido de 9 meses para 11 semanas com narrativa para CFOs. ·
+          <strong>Sabry:</strong> +42% no ticket médio por pedido com linguagem editorial autoral.
+        </p>
+        <p>
+          <strong>Tiago Oaks:</strong> +20 anos entre criação, atendimento, vendas consultivas, ensino e gestão, liderando uma rede de especialistas sob demanda.
+        </p>
+      </div>
+
+      <div class="onepager-contact-bar">
+        <span><strong>Contato direto:</strong> WhatsApp (11) 96737-8171 · linkedin.com/in/tiago-oaks</span>
+        <span>studiotcoaks.com.br</span>
+      </div>
+
+      <div class="modal-footer modal-no-print" style="margin-top: 1.25rem;">
+        <button type="button" class="btn-outline-light" onclick="closeOnePager()">Fechar</button>
+        <button type="button" class="btn-primary" onclick="printOnePager()">Imprimir / Salvar em PDF A4</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleNav() {
+      const drawer = document.getElementById('drawerNav');
+      const btn = document.getElementById('mobileNavBtn');
+      const isOpen = drawer.classList.toggle('open');
+      if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    // POPUPS INTERATIVOS DOS 10 SERVIÇOS (CLIQUES + HOVER/FOCO)
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    function resetPopupPosition(item) {
+      const popup = item.querySelector('.service-popup');
+      if (!popup) return;
+      popup.style.left = '';
+      popup.style.right = '';
+    }
+
+    function closeAllServicePopups(exceptItem) {
+      serviceItems.forEach((item) => {
+        if (item !== exceptItem) {
+          item.classList.remove('is-open');
+          resetPopupPosition(item);
+          const trigger = item.querySelector('.service-trigger');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    function clampPopupPosition(item) {
+      const popup = item.querySelector('.service-popup');
+      if (!popup) return;
+      if (window.innerWidth <= 640) {
+        resetPopupPosition(item);
+        return;
+      }
+      popup.style.left = '0';
+      popup.style.right = 'auto';
+      const rect = popup.getBoundingClientRect();
+      const maxRight = document.documentElement.clientWidth - 16;
+      const overflowRight = rect.right - maxRight;
+      if (overflowRight > 0) {
+        popup.style.left = `${-overflowRight}px`;
+      }
+      if (rect.left < 16) {
+        popup.style.left = `${16 - rect.left}px`;
+      }
+    }
+
+    serviceItems.forEach((item) => {
+      const trigger = item.querySelector('.service-trigger');
+      if (!trigger) return;
+
+      item.addEventListener('mouseenter', () => clampPopupPosition(item));
+      trigger.addEventListener('focus', () => clampPopupPosition(item));
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const willOpen = !item.classList.contains('is-open');
+        closeAllServicePopups(item);
+        if (willOpen) {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+          clampPopupPosition(item);
+        } else {
+          item.classList.remove('is-open');
+          resetPopupPosition(item);
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.service-item.is-open').forEach((item) => clampPopupPosition(item));
+    }, { passive: true });
+
+    document.addEventListener('click', () => {
+      closeAllServicePopups(null);
+    });
+
+    // BASE DE DADOS DOS CASES
+    const caseKeys = ['4tex', 'aquatech', 'sabry'];
+    const casesData = {
+      '4tex': {
+        tag: '4Tex · Indústria Têxtil B2B',
+        title: '4Tex: Da Comoditização à Liderança em Soluções Técnicas',
+        sheet: 'images/work-4tex.webp',
+        waText: 'Olá Tiago! Vi o case da 4Tex no site da TC Oaks e gostaria de conversar sobre um projeto semelhante.',
+        tabs: {
+          visao: '<p>A 4Tex é uma fabricante tradicional de compósitos têxteis industriais. Apesar do maquinário de ponta, seus clientes a tratavam como fornecedora descartável de commodities, disputando cada contrato por centavos de dólar.</p>',
+          estrategia: '<p>Desenvolvemos uma nova linguagem técnica e visual: substituímos folders genéricos por catálogos e manuais de aplicação claros, reorganizamos a apresentação comercial em torno da durabilidade e consolidamos uma identidade sóbria à altura do que a empresa entrega.</p>',
+          resultado: '<p>A 4Tex elevou seu tíquete médio em 35% nos 6 meses seguintes, fechou contratos anuais com multinacionais do setor automotivo e parou de depender de leilões predatórios de preço.</p>'
+        }
+      },
+      'aquatech': {
+        tag: 'Aquatech · Engenharia Hídrica B2B',
+        title: 'Aquatech: Traduzindo Engenharia em Retorno Financeiro',
+        sheet: 'images/work-aquatech.webp',
+        waText: 'Olá Tiago! Vi o case da Aquatech no site da TC Oaks e gostaria de conversar sobre um projeto semelhante.',
+        tabs: {
+          visao: '<p>A equipe de engenheiros da Aquatech desenvolve sistemas avançados de reaproveitamento hídrico. Contudo, suas reuniões comerciais com CFOs falhavam porque as apresentações eram excessivamente técnicas e áridas.</p>',
+          estrategia: '<p>Traduzimos o discurso técnico para uma comunicação mais simples, profissional e fácil de entender: reestruturamos o deck de vendas colocando payback, conformidade ESG e economia líquida em metros cúbicos no centro da conversa.</p>',
+          resultado: '<p>O tempo médio de fechamento de contrato caiu de 9 meses para 11 semanas. A empresa passou a ser vista como parceira estratégica de sustentabilidade pelos comitês executivos.</p>'
+        }
+      },
+      'sabry': {
+        tag: 'Sabry · Moda & Varejo Autoral',
+        title: 'Sabry: Construção de Desejo Sem Cair nos Clichês do Algoritmo',
+        sheet: 'images/work-sabry.webp',
+        waText: 'Olá Tiago! Vi o case da Sabry no site da TC Oaks e gostaria de conversar sobre um projeto semelhante.',
+        tabs: {
+          visao: '<p>A Sabry precisava expandir suas vendas online sem virar refém de promoções constantes que desgastavam o posicionamento sofisticado de suas criações artesanais.</p>',
+          estrategia: '<p>Construímos presença e linguagem própria para dar mais personalidade e consistência à marca: ensaios fotográficos conceituais com foco nos detalhes de costura e narrativa editorial em cada lançamento.</p>',
+          resultado: '<p>Aumento de 42% no valor médio do carrinho de compras e fidelização de uma comunidade de clientes que aguarda ansiosamente por cada coleção, eliminando a dependência de liquidações.</p>'
+        }
+      }
+    };
+
+    let activeCaseKey = null;
+    let lastFocusedElement = null;
+
+    function openCaseDetails(key, triggerEl) {
+      const c = casesData[key];
+      if (!c) return;
+      if (triggerEl) lastFocusedElement = triggerEl;
+      activeCaseKey = key;
+      document.getElementById('modalTag').innerText = c.tag;
+      document.getElementById('modalTitle').innerText = c.title;
+      document.getElementById('modalBody').innerHTML = c.tabs.visao;
+      document.getElementById('modalSheetLink').href = c.sheet;
+      document.getElementById('modalWaLink').href = `https://wa.me/5511967378171?text=${encodeURIComponent(c.waText)}`;
+
+      const modalImg = document.getElementById('modalImage');
+      const visualWrap = document.getElementById('modalVisualWrap');
+      modalImg.src = c.sheet;
+      modalImg.alt = `Lâmina completa do projeto — ${c.tag}`;
+      visualWrap.classList.remove('is-zoomed');
+      document.getElementById('modalZoomHint').innerText = 'Clique para ampliar';
+
+      document.querySelectorAll('.case-tab').forEach((t, idx) => {
+        t.classList.toggle('active', idx === 0);
+        t.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+      });
+
+      const modal = document.getElementById('caseModal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      const closeBtn = modal.querySelector('.close-case-btn');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function prevCase() {
+      const idx = caseKeys.indexOf(activeCaseKey);
+      const nextIdx = (idx - 1 + caseKeys.length) % caseKeys.length;
+      openCaseDetails(caseKeys[nextIdx]);
+    }
+
+    function nextCase() {
+      const idx = caseKeys.indexOf(activeCaseKey);
+      const nextIdx = (idx + 1) % caseKeys.length;
+      openCaseDetails(caseKeys[nextIdx]);
+    }
+
+    function toggleModalImageZoom() {
+      const wrap = document.getElementById('modalVisualWrap');
+      const hint = document.getElementById('modalZoomHint');
+      const zoomed = wrap.classList.toggle('is-zoomed');
+      hint.innerText = zoomed ? 'Clique para reduzir' : 'Clique para ampliar';
+    }
+
+    function switchCaseTab(tabKey, btn) {
+      if (!activeCaseKey) return;
+      document.querySelectorAll('.case-tab').forEach((t) => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById('modalBody').innerHTML = casesData[activeCaseKey].tabs[tabKey];
+    }
+
+    function closeCase() {
+      const modal = document.getElementById('caseModal');
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
+    }
+
+    document.getElementById('caseModal').addEventListener('click', function (e) {
+      if (e.target === this) closeCase();
+    });
+
+    // MODAL ONE-PAGER EXECUTIVO & PRINT A4
+    function openOnePager(triggerEl) {
+      if (triggerEl) lastFocusedElement = triggerEl;
+      const modal = document.getElementById('onePagerModal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      const closeBtn = modal.querySelector('.close-case-btn');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeOnePager() {
+      const modal = document.getElementById('onePagerModal');
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      document.body.style.overflow = 'auto';
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+        lastFocusedElement = null;
+      }
+    }
+
+    function printOnePager() {
+      document.body.classList.add('printing-onepager');
+      window.print();
+    }
+
+    window.addEventListener('afterprint', () => {
+      document.body.classList.remove('printing-onepager');
+    });
+
+    document.getElementById('onePagerModal').addEventListener('click', function (e) {
+      if (e.target === this) closeOnePager();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeAllServicePopups(null);
+        closeCase();
+        closeOnePager();
+        const drawer = document.getElementById('drawerNav');
+        const btn = document.getElementById('mobileNavBtn');
+        if (drawer && drawer.classList.contains('open')) {
+          drawer.classList.remove('open');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+
+    // DIAGNÓSTICO INTERATIVO DE MATURIDADE (COM VOLTAR, PILAR RECOMENDADO E CÓPIA)
+    const quizAnswers = [null, null, null];
+    let lastQuizSummaryText = '';
+
+    function setQuizStep(activeId, progressPct) {
+      ['step1', 'step2', 'step3', 'stepResult'].forEach((id) => {
+        document.getElementById(id).classList.toggle('active', id === activeId);
+      });
+      document.getElementById('quizBar').style.width = progressPct;
+    }
+
+    function selectChoice(step, score, text) {
+      quizAnswers[step - 1] = { score, text };
+
+      if (step === 1) {
+        setQuizStep('step2', '60%');
+      } else if (step === 2) {
+        setQuizStep('step3', '85%');
+      } else if (step === 3) {
+        setQuizStep('stepResult', '100%');
+        renderQuizResult();
+      }
+    }
+
+    function prevQuizStep(currentStep) {
+      if (currentStep === 2) setQuizStep('step1', '25%');
+      if (currentStep === 3) setQuizStep('step2', '60%');
+    }
+
+    function renderQuizResult() {
+      const totalScore = quizAnswers.reduce((sum, item) => sum + (item ? item.score : 0), 0);
+      let title = '';
+      let desc = '';
+      let pillar = '';
+      let steps = [];
+
+      if (totalScore <= 40) {
+        title = 'Diagnóstico: Marca Operacional & Genérica';
+        desc = 'Sua empresa está gerando volume de conteúdo, mas sofre de invisibilidade seletiva. O público vê suas postagens, mas não as associa a um valor singular, o que força sua equipe a competir por preço.';
+        pillar = 'Recomendação: 01 / A gente orienta';
+        steps = [
+          'Auditar os 5 principais pontos de contato atuais (site, deck e redes) para eliminar linguagem genérica.',
+          'Definir uma tese clara de posicionamento para separar sua proposta dos templates de mercado.',
+          'Estabelecer critérios práticos de revisão antes de publicar novos materiais com IA.'
+        ];
+      } else if (totalScore <= 70) {
+        title = 'Diagnóstico: Potencial Desperdiçado por Falta de Direção';
+        desc = 'Você já possui produtos ou serviços de qualidade comprovada, mas sua comunicação visual e argumentos comerciais ainda não transmitem essa sofisticação ao mercado executivo.';
+        pillar = 'Recomendação: 02 / A gente faz junto';
+        steps = [
+          'Estruturar direção criativa e guia de tom de voz alinhados ao perfil de decisores.',
+          'Reorganizar as apresentações e propostas comerciais para focar no retorno percebido pelo cliente.',
+          'Estabelecer ritmo mensal de planejamento e design dedicado para manter consistência.'
+        ];
+      } else {
+        title = 'Diagnóstico: Marca Pronta para Escalar com Autoridade';
+        desc = 'Sua estrutura está madura. O que falta agora é uma direção criativa consistente que posicione sua marca como referência indiscutível no setor, descolando da concorrência comum.';
+        pillar = 'Recomendação: 03 / A gente executa';
+        steps = [
+          'Consolidar arquitetura de marca, narrativa executiva e ativos de campanha proprietários.',
+          'Lançar materiais de alto impacto (site, catálogo ou audiovisual) com acabamento editorial.',
+          'Alinhar discurso de marketing e vendas para elevar conversão em contas qualificadas.'
+        ];
+      }
+
+      document.getElementById('resTitle').innerText = title;
+      document.getElementById('resDesc').innerText = desc;
+      document.getElementById('resPillarBadge').innerText = pillar;
+      document.getElementById('resActionList').innerHTML = steps.map((s) => `<li>${s}</li>`).join('');
+
+      const a0 = quizAnswers[0] ? quizAnswers[0].text : '';
+      const a1 = quizAnswers[1] ? quizAnswers[1].text : '';
+      const a2 = quizAnswers[2] ? quizAnswers[2].text : '';
+
+      lastQuizSummaryText =
+        `Diagnóstico de Maturidade de Marketing — TC Oaks\n\n` +
+        `• Situação: ${a0}\n` +
+        `• Sintoma: ${a1}\n` +
+        `• Objetivo: ${a2}\n` +
+        `• Resultado: ${title}\n` +
+        `• ${pillar}\n` +
+        `• Próximos passos:\n` +
+        steps.map((s, i) => `  ${i + 1}. ${s}`).join('\n');
+
+      const zapMsg = encodeURIComponent(
+        `Olá Tiago Oaks! Realizei o diagnóstico no site da TC Oaks.\n\n` +
+        `• Situação: ${a0}\n` +
+        `• Sintoma: ${a1}\n` +
+        `• Objetivo: ${a2}\n` +
+        `• Resultado: ${title} (${pillar})\n\n` +
+        `Gostaria de agendar uma conversa para avaliarmos o posicionamento da minha empresa.`
+      );
+
+      document.getElementById('btnZapFinal').href = `https://wa.me/5511967378171?text=${zapMsg}`;
+    }
+
+    function copyQuizDiagnostic() {
+      const btn = document.getElementById('btnCopyQuiz');
+      if (!lastQuizSummaryText) return;
+      const original = btn.innerText;
+      const markCopied = () => {
+        btn.innerText = 'Diagnóstico copiado! ✓';
+        setTimeout(() => {
+          btn.innerText = original;
+        }, 2400);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(lastQuizSummaryText).then(markCopied).catch(() => {
+          fallbackCopyText(lastQuizSummaryText, markCopied);
+        });
+      } else {
+        fallbackCopyText(lastQuizSummaryText, markCopied);
+      }
+    }
+
+    function fallbackCopyText(text, onDone) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        if (document.execCommand('copy') && onDone) onDone();
+      } finally {
+        document.body.removeChild(ta);
+      }
+    }
+
+    function resetQuiz() {
+      quizAnswers[0] = null;
+      quizAnswers[1] = null;
+      quizAnswers[2] = null;
+      lastQuizSummaryText = '';
+      setQuizStep('step1', '25%');
+    }
+
+    // SCROLLSPY PRECISO POR POSIÇÃO DE SCROLL
+    const spyLinks = document.querySelectorAll('.nav-desktop a[href^="#"]');
+    const spySectionIds = ['servicos', 'trabalhos', 'metodo', 'diagnostico', 'sobre', 'faq'];
+    const spySections = spySectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    let spyTicking = false;
+
+    function updateScrollSpy() {
+      spyTicking = false;
+      if (!spySections.length) return;
+
+      const scrollPos = window.scrollY + 140;
+      const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40;
+
+      let activeId = null;
+      if (nearBottom) {
+        activeId = spySections[spySections.length - 1].id;
+      } else {
+        for (let i = spySections.length - 1; i >= 0; i--) {
+          if (scrollPos >= spySections[i].offsetTop) {
+            activeId = spySections[i].id;
+            break;
+          }
+        }
+      }
+
+      spyLinks.forEach((link) => {
+        const isMatch = activeId !== null && link.getAttribute('href') === `#${activeId}`;
+        link.classList.toggle('is-active', isMatch);
+      });
+    }
+
+    function requestScrollSpyUpdate() {
+      if (!spyTicking) {
+        spyTicking = true;
+        window.requestAnimationFrame(updateScrollSpy);
+      }
+    }
+
+    window.addEventListener('scroll', requestScrollSpyUpdate, { passive: true });
+    window.addEventListener('resize', requestScrollSpyUpdate, { passive: true });
+    updateScrollSpy();
+  </script>
+</body>
+</html>

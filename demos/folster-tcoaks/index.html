@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hub de Demonstração & Simulador Interativo — Bruna Folster & TC Oaks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c121d;
+      --card-bg: #141c2c;
+      --border: #232f48;
+      --gold: #d4af37;
+      --emerald: #10b981;
+      --blue: #3b82f6;
+      --text: #f3f4f6;
+      --muted: #94a3b8;
+      --sans: 'Plus Jakarta Sans', sans-serif;
+      --serif: 'Newsreader', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .container { max-width: 1300px; margin: 0 auto; }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2.5rem;
+    }
+    .badge-top {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+      font-weight: 500;
+    }
+    p.subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* BARRA DE AUDITORIA & FUNÇÕES VERIFICADAS */
+    .checklist-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .check-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.4rem;
+    }
+    .check-card h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .check-card ul {
+      list-style: none;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+    .check-card li {
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .check-card li::before {
+      content: '✔';
+      color: var(--emerald);
+      font-weight: bold;
+    }
+
+    /* NAVEGADOR / SIMULADOR EMBUTIDO */
+    .sim-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: #1a2438;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      padding: 1rem 1.5rem;
+    }
+    .sim-site-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .tab-site {
+      background: transparent;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.45rem 1rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-site.active {
+      background: var(--bg);
+      color: #fff;
+      border-color: var(--border);
+    }
+    .sim-viewport-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .vp-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .vp-btn.active, .vp-btn:hover {
+      background: var(--border);
+      color: #fff;
+    }
+    .btn-fullscreen {
+      background: var(--gold);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-left: 0.5rem;
+    }
+
+    .sim-stage {
+      background: #080c14;
+      border: 1px solid var(--border);
+      border-radius: 0 0 8px 8px;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 850px;
+      margin-bottom: 4rem;
+      overflow-x: auto;
+    }
+    .preview-frame {
+      width: 100%;
+      height: 820px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      transition: width 0.3s ease;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .btn-official {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-official:hover {
+      background: var(--border);
+      color: #fff;
+    }
+    .btn-fullscreen {
+      text-decoration: none;
+    }
+
+    /* TABELA COMPARATIVA OFICIAL VS PROGRAMADO */
+    .comp-section {
+      margin-bottom: 4rem;
+    }
+    .comp-header {
+      margin-bottom: 2rem;
+    }
+    .comp-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .comp-header p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 780px;
+    }
+    .comp-kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .comp-kpi {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.15rem 1.25rem;
+    }
+    .comp-kpi-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .comp-kpi-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--emerald);
+      margin: 0.25rem 0;
+    }
+    .comp-kpi-sub {
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+    .comp-table-wrap {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+    .comp-table-title {
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      border-bottom: 1px solid var(--border);
+      background: #1a2438;
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 760px;
+    }
+    .comp-table th {
+      text-align: left;
+      padding: 0.9rem 1.15rem;
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 12, 20, 0.45);
+    }
+    .comp-table td {
+      padding: 1rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: #e2e8f0;
+      line-height: 1.55;
+    }
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+    .pill-old {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(244, 63, 94, 0.14);
+      color: #fda4af;
+      border: 1px solid rgba(244, 63, 94, 0.3);
+      margin-bottom: 0.35rem;
+    }
+    .pill-new {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.32);
+      margin-bottom: 0.35rem;
+    }
+    .site-link-inline {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge-top">Engenharia Web & Design Autêntico</span>
+      <h1>Demonstração das 3 Novas Plataformas</h1>
+      <p class="subtitle">
+        Eliminação total de padrões genéricos de IA. Cada plataforma foi construída com direção de arte personalizada, micro-interações 100% operacionais e imagens comprimidas em WebP (-94.6% de carga).
+      </p>
+    </header>
+
+    <!-- STATUS DE RECURSOS E INTERAÇÕES TESTADAS -->
+    <div class="checklist-bar">
+      <div class="check-card">
+        <h4>BR Folster (Executivo & ESG)</h4>
+        <ul>
+          <li>Modal de Rider Técnico com requisitos</li>
+          <li>Filtro em tempo real de podcasts e artigos</li>
+          <li>Formulário corporativo com validação</li>
+          <li>Menu móvel responsivo</li>
+          <li>Schema.org Person e Speaker</li>
+        </ul>
+      </div>
+
+      <div class="check-card">
+        <h4>Bruna Folster (Atelier Literário)</h4>
+        <ul>
+          <li>Imagens oficiais em todos os contos (WebP)</li>
+          <li>Leitor 100% legível (Claro, Sépia e Noturno)</li>
+          <li>Área de Login e Atelier da Autora integrado</li>
+          <li>Publicação e gestão em tempo real de contos</li>
+          <li>Motor Multilíngue dinâmico (PT, EN, ES)</li>
+        </ul>
+      </div>
+
+      <div class="check-card">
+        <h4>TC Oaks (Boutique de Marketing)</h4>
+        <ul>
+          <li>Quiz interativo de 3 etapas com pontuação</li>
+          <li>Geração de mensagem dinâmica no WhatsApp</li>
+          <li>Dossiês de cases com abas (Visão/Estratégia/Métricas)</li>
+          <li>Menu gaveta acessível</li>
+          <li>Payload de mídia reduzido de 6,7 MB para 366,6 KB (-94,5%)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SIMULADOR INTERATIVO AO VIVO -->
+    <div class="sim-header">
+      <div class="sim-site-tabs">
+        <button class="tab-site active" onclick="loadSite('brfolster/index.html', 'https://brfolster.com.br/', this)">1. BR Folster (Executivo)</button>
+        <button class="tab-site" onclick="loadSite('brunafolster/index.html', 'https://brunafolster.com.br/', this)">2. Bruna Folster (Literário)</button>
+        <button class="tab-site" onclick="loadSite('studiotcoaks/index.html', 'https://studiotcoaks.com.br/', this)">3. TC Oaks (Boutique)</button>
+      </div>
+
+      <div class="sim-viewport-tools">
+        <span style="font-size: 0.75rem; color: var(--muted); margin-right: 0.2rem;">Visualização:</span>
+        <button class="vp-btn active" onclick="setViewport('100%', this)">Desktop</button>
+        <button class="vp-btn" onclick="setViewport('768px', this)">Tablet</button>
+        <button class="vp-btn" onclick="setViewport('380px', this)">Mobile</button>
+        <a href="https://brfolster.com.br/" target="_blank" rel="noopener noreferrer" id="btnOfficialTab" class="btn-official">Site Oficial Antigo ↗</a>
+        <a href="brfolster/index.html" target="_blank" id="btnFullTab" class="btn-fullscreen">Abrir Nova Versão ↗</a>
+      </div>
+    </div>
+
+    <div class="sim-stage">
+      <iframe src="brfolster/index.html" id="previewIframe" class="preview-frame" title="Pré-visualização Interativa"></iframe>
+    </div>
+
+    <!-- COMPARATIVO TÉCNICO E VISUAL: SITE OFICIAL VS. SITE PROGRAMADO -->
+    <section class="comp-section" id="comparativo">
+      <div class="comp-header">
+        <span class="badge-top">Auditoria Comparativa</span>
+        <h2>Site Oficial (Antes) vs. Nova Versão Programada (Depois)</h2>
+        <p>Comparação direta entre as versões oficiais publicadas anteriormente e as três novas versões programadas com foco em velocidade, SEO técnico, design editorial autêntico e conversão comercial.</p>
+      </div>
+
+      <div class="comp-kpis">
+        <div class="comp-kpi">
+          <div class="comp-kpi-label">BR Folster (Pacote Completo)</div>
+          <div class="comp-kpi-val">249,6 KB</div>
+          <div class="comp-kpi-sub">Antes: ~720 KB (-65,3%) • 5 arquivos totais</div>
+        </div>
+        <div class="comp-kpi">
+          <div class="comp-kpi-label">Bruna Folster (Foto &amp; Carga Inicial)</div>
+          <div class="comp-kpi-val">63,9 KB</div>
+          <div class="comp-kpi-sub">Foto perfil antes: 2,8 MB (-97,7%) • Lazy loading</div>
+        </div>
+        <div class="comp-kpi">
+          <div class="comp-kpi-label">Studio TC Oaks (Pacote Completo)</div>
+          <div class="comp-kpi-val">475,3 KB</div>
+          <div class="comp-kpi-sub">Antes: ~6,7 MB (-92,9%) • Foto Tiago: 21,1 KB (-99,3%)</div>
+        </div>
+      </div>
+
+      <!-- TABELA 1: DESEMPENHO & SEO -->
+      <div class="comp-table-wrap">
+        <div class="comp-table-title">1. Comparativo de Desempenho, Peso de Mídia e SEO Técnico</div>
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Projeto</th>
+              <th>Site Oficial (Versão Atual no Ar)</th>
+              <th>Nova Versão Programada</th>
+              <th>Ganho Mensurado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>BR Folster</strong><br>
+                <a href="https://brfolster.com.br/" target="_blank" rel="noopener noreferrer" class="site-link-inline">Oficial ↗</a> ·
+                <a href="brfolster/index.html" target="_blank" class="site-link-inline">Novo ↗</a>
+              </td>
+              <td>
+                <span class="pill-old">~720 KB</span><br>
+                Arquivo único no GitHub Pages sem <code>robots.txt</code>, sem <code>sitemap.xml</code>, sem Schema.org e com fonte <em>DM Sans</em> não importada (caindo em Arial).
+              </td>
+              <td>
+                <span class="pill-new">249,6 KB totais</span><br>
+                HTML semântico (179 KB), imagens WebP (69,8 KB), <code>robots.txt</code> e <code>sitemap.xml</code> ativos, Schema.org (<code>@graph</code>: <code>Person</code>, <code>ProfessionalService</code>, <code>FAQPage</code>), OpenGraph e Google Fonts com <code>preconnect</code>.
+              </td>
+              <td>
+                <strong>-65,3% de payload</strong><br>
+                Indexação estruturada completa + zero fallback tipográfico.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Bruna Folster</strong><br>
+                <a href="https://brunafolster.com.br/" target="_blank" rel="noopener noreferrer" class="site-link-inline">Oficial ↗</a> ·
+                <a href="brunafolster/index.html" target="_blank" class="site-link-inline">Novo ↗</a>
+              </td>
+              <td>
+                <span class="pill-old">~2,8 MB só na foto de perfil</span><br>
+                Total estimado de ~3,4 MB no carregamento inicial; erros 404 de scripts no console; sem <code>robots.txt</code> nem <code>sitemap.xml</code>.
+              </td>
+              <td>
+                <span class="pill-new">~271 KB críticos (WebP)</span><br>
+                Foto perfil reduzida para <strong>63,9 KB</strong>, capa 51,4 KB, hero 58 KB e 16 ilustrações WebP em <code>loading="lazy"</code>; zero erros 404 no console; <code>robots.txt</code> e <code>sitemap.xml</code> válidos.
+              </td>
+              <td>
+                <strong>-97,7% na foto principal</strong><br>
+                Carregamento inicial ~92% mais leve com mídia sob demanda.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Studio TC Oaks</strong><br>
+                <a href="https://studiotcoaks.com.br/" target="_blank" rel="noopener noreferrer" class="site-link-inline">Oficial ↗</a> ·
+                <a href="studiotcoaks/index.html" target="_blank" class="site-link-inline">Novo ↗</a>
+              </td>
+              <td>
+                <span class="pill-old">~6,7 MB em PNGs pesados</span><br>
+                Foto do Tiago (3,3 MB) carregada 2x; <code>robots.txt</code> e <code>sitemap.xml</code> quebrados retornando HTML completo; sem OpenGraph no WhatsApp.
+              </td>
+              <td>
+                <span class="pill-new">475,3 KB pacote completo</span><br>
+                Foto do Tiago em <strong>21,1 KB</strong> (WebP); cases 4Tex (112,3 KB), Aquatech (99,6 KB) e Sabry (62,1 KB) em WebP com <code>lazy</code>; Schema.org <code>ProfessionalService</code>, OpenGraph, <code>robots.txt</code> e <code>sitemap.xml</code> autênticos.
+              </td>
+              <td>
+                <strong>-92,9% no pacote total</strong><br>
+                <strong>-99,3% na foto principal</strong> + previews corretos em compartilhamentos.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- TABELA 2: DIFERENÇAS VISUAIS & UX -->
+      <div class="comp-table-wrap">
+        <div class="comp-table-title">2. Comparativo de Diferenças Visuais, Tipografia e Recursos Interativos</div>
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Projeto</th>
+              <th>Visual &amp; Experiência (Oficial)</th>
+              <th>Evolução Visual &amp; Interativa (Programada)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>BR Folster</strong><br><em>Executivo &amp; ESG</em></td>
+              <td>
+                Página estática simples com tipografia genérica (fallback Arial), sem fluxo guiado de contratação de palestras, lista de conteúdos fixa no JS e contato limitado a link <code>mailto:</code>.
+              </td>
+              <td>
+                Paleta executiva <strong>Verde Floresta Nobre</strong> (<code>#143E35</code>), <strong>Papel Quente</strong> (<code>#F4F3EC</code>) e <strong>Lima Suave</strong> (<code>#DCE9A9</code>); tipografia <em>Manrope + Newsreader + DM Sans</em>; Hero com duplo CTA e selos de credenciais (FGV, PUCRS, ABRASCI); <strong>Keynote Hub com Modal de Rider Técnico e Media Kit imprimível</strong>; filtros em tempo real; <strong>Seletor PT/EN/ES</strong> e formulário B2B validado.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Bruna Folster</strong><br><em>Atelier Literário</em></td>
+              <td>
+                Interface de leitura sem controle de conforto visual e com botão público <code>"Escrever"</code> exposto salvando rascunhos diretamente no <code>localStorage</code> do visitante.
+              </td>
+              <td>
+                Estética de caderno literário (<strong>Marfim</strong> <code>#FAF7F2</code>, <strong>Azul Real</strong> <code>#162947</code>, <strong>Terracota</strong> <code>#B85444</code>) com <em>Cormorant Garamond</em> + <em>Plus Jakarta Sans</em>; <strong>3 Temas de Leitura (Claro, Sépia e Noturno)</strong>; barra de progresso de leitura no topo; ilustrações WebP em todos os contos; <strong>Atelier da Autora protegido por login</strong> e <strong>Motor Multilíngue (PT/EN/ES)</strong>.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Studio TC Oaks</strong><br><em>Boutique de Marketing</em></td>
+              <td>
+                Layout com aparência genérica e pesada, onde os links de portfólio (4Tex, Aquatech, Sabry) abriam apenas arquivos PNG isolados sem contexto estratégico nem funil de diagnóstico.
+              </td>
+              <td>
+                Estética boutique editorial (<strong>Areia</strong> <code>#F4EFEA</code>, <strong>Petróleo Profundo</strong> <code>#092A36</code>, <strong>Terracota</strong> <code>#B05C3B</code>, <strong>Ouro</strong> <code>#C28D42</code>) com <em>Playfair Display</em> + <em>Inter</em>; <strong>Dossiês de Cases Interativos em Abas (Visão, Estratégia e Métricas)</strong>; <strong>Quiz de Diagnóstico em 3 etapas</strong> gerando mensagem personalizada no WhatsApp e menu gaveta acessível.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Pacote Entregue com Conformidade Total · Anti-Slop &amp; Ponytail · Novembro 2026</p>
+    </footer>
+  </div>
+
+  <script>
+    let currentSitePath = 'brfolster/index.html';
+
+    function loadSite(path, officialUrl, btn) {
+      document.querySelectorAll('.tab-site').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSitePath = path;
+      document.getElementById('previewIframe').src = path;
+      document.getElementById('btnFullTab').href = path;
+      document.getElementById('btnOfficialTab').href = officialUrl;
+    }
+
+    function setViewport(width, btn) {
+      document.querySelectorAll('.vp-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('previewIframe').style.width = width;
+    }
+  </script>
+</body>
+</html>
