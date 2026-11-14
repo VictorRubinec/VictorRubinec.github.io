@@ -4,6 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hub de Demonstração & Simulador Interativo — Bruna Folster & TC Oaks</title>
+  <meta name="description" content="Simulador interativo e comparativo de desempenho e design das plataformas BR Folster, Bruna Folster e Studio TC Oaks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://victorrubinec.github.io/demos/folster-tcoaks/">
+  <meta property="og:title" content="Hub de Demonstração & Comparativo — Bruna Folster & TC Oaks">
+  <meta property="og:description" content="Teste interativo em Desktop, Tablet e Mobile e comparativo oficial vs. nova versão das 3 plataformas.">
+  <meta property="og:image" content="https://victorrubinec.github.io/demos/folster-tcoaks/studiotcoaks/images/tiago-oaks.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hub de Demonstração & Comparativo — Bruna Folster & TC Oaks">
+  <meta name="twitter:description" content="Teste interativo em Desktop, Tablet e Mobile e comparativo oficial vs. nova versão das 3 plataformas.">
+  <meta name="twitter:image" content="https://victorrubinec.github.io/demos/folster-tcoaks/studiotcoaks/images/tiago-oaks.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -23,6 +33,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: clip; }
     body {
       background-color: var(--bg);
       color: var(--text);
@@ -143,6 +154,7 @@
     .sim-viewport-tools {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 0.5rem;
     }
     .vp-btn {
@@ -341,6 +353,18 @@
       font-size: 0.85rem;
       border-top: 1px solid var(--border);
       padding-top: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 1.25rem 0.75rem; }
+      header { margin-bottom: 1.75rem; padding-bottom: 1.5rem; }
+      .sim-header { padding: 0.85rem; gap: 0.75rem; }
+      .sim-site-tabs { width: 100%; }
+      .tab-site { flex: 1 1 100%; text-align: left; }
+      .sim-viewport-tools { width: 100%; justify-content: flex-start; }
+      .btn-fullscreen { margin-left: 0; }
+      .sim-stage { padding: 0.5rem; min-height: 680px; margin-bottom: 2.5rem; }
+      .preview-frame { height: 660px; }
     }
   </style>
 </head>

@@ -11,16 +11,16 @@
 
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://brfolster.com.br/">
+  <meta property="og:url" content="https://victorrubinec.github.io/demos/folster-tcoaks/brfolster/">
   <meta property="og:title" content="BR Folster — Bruna Folster | Consultoria ESG, Biodegradação e Palestras">
   <meta property="og:description" content="Consultoria em sustentabilidade, biodegradação e economia circular para a indústria do plástico. Palestras sobre sustentabilidade, liderança feminina e neurodiversidade.">
-  <meta property="og:image" content="https://brfolster.com.br/assets/bruna-folster.webp">
+  <meta property="og:image" content="https://victorrubinec.github.io/demos/folster-tcoaks/brfolster/assets/bruna-folster.webp">
 
   <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BR Folster — Bruna Folster | Consultoria ESG, Biodegradação e Palestras">
   <meta name="twitter:description" content="Consultoria em sustentabilidade, biodegradação e economia circular para a indústria do plástico. Palestras sobre sustentabilidade, liderança feminina e neurodiversidade.">
-  <meta name="twitter:image" content="https://brfolster.com.br/assets/bruna-folster.webp">
+  <meta name="twitter:image" content="https://victorrubinec.github.io/demos/folster-tcoaks/brfolster/assets/bruna-folster.webp">
 
   <!-- Webfonts: Manrope, DM Sans & Newsreader -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +59,7 @@
       scroll-behavior: smooth;
       scroll-padding-top: 96px;
       font-size: 16px;
+      overflow-x: clip;
     }
 
     body {
@@ -66,6 +67,7 @@
       color: var(--ink);
       font-family: var(--sans);
       line-height: 1.7;
+      overflow-x: clip;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -301,6 +303,7 @@
     /* HERO */
     .hero {
       padding: 60px 0 80px;
+      overflow-x: clip;
     }
     .hero-grid {
       display: grid;
@@ -1648,6 +1651,14 @@
     }
 
     @media (max-width: 640px) {
+      header { height: 68px; }
+      .header-inner { gap: 8px; }
+      .brand-logo img { width: 118px; }
+      .header-right { gap: 6px; }
+      .lang-switch { padding: 2px; gap: 1px; }
+      .lang-btn { padding: 4px 6px; font-size: 10px; }
+      .menu-toggle { width: 36px; height: 36px; font-size: 16px; }
+      .main-nav { top: 68px; }
       .wrap { width: calc(100% - 36px); }
       .hero { padding: 36px 0 56px; }
       .hero-title {

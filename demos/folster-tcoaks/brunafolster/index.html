@@ -10,10 +10,14 @@
 
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://brunafolster.com.br/">
+  <meta property="og:url" content="https://victorrubinec.github.io/demos/folster-tcoaks/brunafolster/">
   <meta property="og:title" content="Bruna Folster — Caderno Literário">
   <meta property="og:description" content="Contos, crônicas e ensaios sobre memória, silêncio e o que existe além do véu.">
-  <meta property="og:image" content="images/bruna-capa.webp">
+  <meta property="og:image" content="https://victorrubinec.github.io/demos/folster-tcoaks/brunafolster/images/bruna-capa.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bruna Folster — Caderno Literário">
+  <meta name="twitter:description" content="Contos, crônicas e ensaios sobre memória, silêncio e o que existe além do véu.">
+  <meta name="twitter:image" content="https://victorrubinec.github.io/demos/folster-tcoaks/brunafolster/images/bruna-capa.webp">
 
   <!-- Favicon / Ícone de Aba do Navegador -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -106,12 +110,13 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: clip; }
     body {
       background: var(--bg);
       color: var(--ink);
       font-family: var(--font-sans);
       line-height: 1.7;
+      overflow-x: clip;
       -webkit-font-smoothing: antialiased;
       transition: background-color 0.25s ease, color 0.25s ease;
     }
@@ -160,7 +165,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.15rem 0;
+      padding: 1.15rem 1.5rem;
     }
 
     /* MASTHEAD COM LOGO NO HEADER */
@@ -778,6 +783,7 @@
     }
     .newsletter-row input {
       flex: 1;
+      min-width: 0;
       padding: 0.8rem 1rem;
       border: 1px solid var(--line);
       border-radius: 4px;
@@ -1327,8 +1333,77 @@
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .menu-mobile-btn { display: block; }
-      .reader-sheet, .studio-sheet, .manager-sheet { padding: 1.8rem; }
+      .menu-mobile-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        flex-shrink: 0;
+      }
+      .header-flex {
+        padding: 0.75rem 1rem;
+        gap: 0.5rem;
+      }
+      .drawer-mobile {
+        top: 61px;
+        height: calc(100dvh - 61px);
+      }
+      .masthead-brand {
+        gap: 0.6rem;
+        min-width: 0;
+      }
+      .masthead-logo {
+        width: 34px;
+        height: 34px;
+      }
+      .masthead-title {
+        font-size: 1.25rem;
+        white-space: nowrap;
+      }
+      .masthead-sub {
+        font-size: 0.62rem;
+        letter-spacing: 0.05em;
+        margin-top: 0.18rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 165px;
+      }
+      .nav-right-cluster {
+        gap: 0.45rem;
+        flex-shrink: 0;
+      }
+      .avatar-btn {
+        padding: 0.28rem 0.55rem;
+        gap: 0.35rem;
+      }
+      .avatar-circle {
+        width: 26px;
+        height: 26px;
+      }
+      .avatar-text {
+        font-size: 0.76rem;
+      }
+      .dropdown-menu {
+        right: -0.5rem;
+        width: min(280px, calc(100vw - 1.5rem));
+      }
+      .reader-sheet, .studio-sheet, .manager-sheet { padding: 1.5rem 1.15rem; }
+    }
+
+    @media (max-width: 640px) {
+      .container-editorial { padding-inline: 1rem; }
+      .masthead-sub { display: none; }
+      .hero { padding: 3.25rem 0 2.75rem; }
+      .hero-prose { font-size: 1.1rem; margin-bottom: 1.6rem; }
+      .hero-actions { flex-wrap: wrap; gap: 0.75rem; }
+      .btn-read, .btn-secondary { width: 100%; text-align: center; justify-content: center; }
+      .stories-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .newsletter-card { padding: 2.25rem 1.25rem; }
+      .newsletter-row { flex-direction: column; }
+      .newsletter-row button { width: 100%; }
     }
   </style>
 
